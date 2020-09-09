@@ -1,7 +1,6 @@
-Second Color Project. MuJAM &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Start. 2020-09-09<br>
 ![Start](https://user-images.githubusercontent.com/48445082/92608454-5926a880-f2f0-11ea-9134-43c05b3782de.png)
+<br>Second Color Project. MuJAM &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Start. 2020-09-09<br>
 
-<br>
 <b>개발 목적</b>
 <br>1. DATABASE 영상 용량 관찰
 <BR>2. 싱어송 라이터 수요 조사
