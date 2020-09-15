@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="수정 확인용">
+    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="이상한navbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,7 @@
       <updated>1600093868540</updated>
       <workItem from="1600093870689" duration="5193000" />
       <workItem from="1600100900473" duration="1855000" />
-      <workItem from="1600176984021" duration="4854000" />
+      <workItem from="1600176984021" duration="5103000" />
     </task>
     <task id="LOCAL-00001" summary="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
       <created>1600102453185</created>
@@ -92,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600178603591</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="이상한navbar">
+      <created>1600182655151</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600182655151</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,7 +120,8 @@
     <MESSAGE value="기본 구조 합치기//밑 사이즈 확인 후 수정 필요" />
     <MESSAGE value="영상 클릭시 페이지 이동" />
     <MESSAGE value="수정 확인용" />
-    <option name="LAST_COMMIT_MESSAGE" value="수정 확인용" />
+    <MESSAGE value="이상한navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="이상한navbar" />
   </component>
   <component name="WindowStateProjectService">
     <state width="498" height="446" key="SwitcherDM" timestamp="1600179743216">
