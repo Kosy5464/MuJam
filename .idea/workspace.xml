@@ -19,136 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
-      <change afterPath="$PROJECT_DIR$/.idea/MuJam.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/License.url" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/spinning.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_spinning.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/font-awesome/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/generic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/10-zoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/17.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/18.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/19.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/21.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/6-zoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7-zoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8-zoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9-zoom.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/banner.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/banner.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/banner.webm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/f9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/image-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/main-bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/p-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/p-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/p-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/p-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic09.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/pic11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/thumb-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/agency.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/cbpAnimatedHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/classie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/html5shiv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery-1.11.3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jquery.scrolly.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/lightbox-plus-jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/skel.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/single.html" afterDir="false" />
+    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="영상 클릭시 페이지 이동">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,8 +67,24 @@
       <option name="presentableId" value="Default" />
       <updated>1600093868540</updated>
       <workItem from="1600093870689" duration="5193000" />
-      <workItem from="1600100900473" duration="1370000" />
+      <workItem from="1600100900473" duration="1855000" />
+      <workItem from="1600176984021" duration="770000" />
     </task>
+    <task id="LOCAL-00001" summary="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
+      <created>1600102453185</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600102453185</updated>
+    </task>
+    <task id="LOCAL-00002" summary="영상 클릭시 페이지 이동">
+      <created>1600102478838</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600102478838</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,16 +100,18 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="기본 구조 합치기//밑 사이즈 확인 후 수정 필요" />
-    <option name="LAST_COMMIT_MESSAGE" value="기본 구조 합치기//밑 사이즈 확인 후 수정 필요" />
+    <MESSAGE value="영상 클릭시 페이지 이동" />
+    <option name="LAST_COMMIT_MESSAGE" value="영상 클릭시 페이지 이동" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600102024658">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600102571105">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600102024658" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600102571105" />
     <state x="730" y="198" key="run.anything.popup" timestamp="1600097457136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
