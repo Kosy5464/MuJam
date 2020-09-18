@@ -148,7 +148,7 @@ header .intro-text .intro-lead-in {font-family: 'Shadows Into Light', cursive;fo
 /* ---------------------------------------------------------------------------- */
 /* -------------------------------------Content-------------------------------- */
 /* ---------------------------------------------------------------------------- */
-#page-content{}
+#page-content{ background-color: white;}
 #page-content.index-page {padding: 70px 0;}
 
 
@@ -252,7 +252,7 @@ footer .col-footer.footer-4 ul a{display:inline;margin: 5px;float:left;backgroun
 footer .col-footer.footer-4 a:hover{background:#fff;color: #FD4239;}
   
   
-footer .copyright {padding: 10px 0;background-color: #fff;color:#333;}
+footer .copyright {padding: 10px 0;background-color:black;color:white;}
 
 footer ul.social-buttons li a{margin-top: 10px;display: block;width: 40px;height: 40px;border-radius: 50%;font-size: 20px;line-height: 40px;color: #ffffff;background-color: #FD4239;transition-duration: 0.3s;}
 footer ul.social-buttons li a:hover, ul.social-buttons li a:focus, ul.social-buttons li a:active{background-color: #333333;}
