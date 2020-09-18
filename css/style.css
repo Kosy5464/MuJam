@@ -369,3 +369,16 @@ textarea {display:block;width:90%;height:200px; border-radius:4px;-webkit-border
 	z-index: 10;
 	color: #fff;
 }
+#main-content .mainCategory{
+    color: black;
+    font-weight: bold;
+    font-family: "나눔고딕 ExtraBold";
+    font-size: xx-large;
+    text-align: center;
+}
+#main-content .mainCategory .subCategory{
+    font-weight: lighter;
+}
+.divideTab{
+    color: black;
+}
