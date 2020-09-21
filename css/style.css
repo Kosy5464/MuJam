@@ -382,3 +382,16 @@ textarea {display:block;width:90%;height:200px; border-radius:4px;-webkit-border
 .divideTab{
     color: black;
 }
+header .header{
+    text-align: center;
+    color: #fff;
+    background-color:rgba(0,0,0,0.9);
+    background-attachment: scroll;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 350px;
+}
