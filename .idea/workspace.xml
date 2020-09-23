@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="main.css">
-      <change afterPath="$PROJECT_DIR$/css/style2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/empty.html" afterDir="false" />
+    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지">
+      <change afterPath="$PROJECT_DIR$/videoPlay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/videoUpload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/gallery.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.empty.html">
+  <component name="RunManager" selected="JavaScript Debug.videoPlay.html">
     <configuration name="empty.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/empty.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -71,15 +71,19 @@
     <configuration name="generic.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/generic.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/index.html" useBuiltInWebServerPort="true">
+    <configuration name="single.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/single.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="videoPlay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/videoPlay.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.videoPlay.html" />
+        <item itemvalue="JavaScript Debug.generic.html" />
+        <item itemvalue="JavaScript Debug.single.html" />
         <item itemvalue="JavaScript Debug.empty.html" />
         <item itemvalue="JavaScript Debug.gallery.html" />
-        <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.generic.html" />
       </list>
     </recent_temporary>
   </component>
@@ -99,7 +103,7 @@
       <workItem from="1600403496649" duration="12493000" />
       <workItem from="1600685647956" duration="1919000" />
       <workItem from="1600774152417" duration="1830000" />
-      <workItem from="1600839649040" duration="569000" />
+      <workItem from="1600839649040" duration="2737000" />
     </task>
     <task id="LOCAL-00001" summary="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
       <created>1600102453185</created>
@@ -171,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600687276022</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지">
+      <created>1600840277802</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1600840277802</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +212,8 @@
     <MESSAGE value="메인콘텐츠 수정" />
     <MESSAGE value="동영상 첨부" />
     <MESSAGE value="main.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="main.css" />
+    <MESSAGE value="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지" />
+    <option name="LAST_COMMIT_MESSAGE" value="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지" />
   </component>
   <component name="WindowStateProjectService">
     <state x="147" y="65" key="DiffContextDialog" timestamp="1600403750304">

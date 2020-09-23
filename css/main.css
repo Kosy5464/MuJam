@@ -2163,9 +2163,13 @@ table.alt tbody tr td {
 
 }
 
+.wrapper.style0{
+	background-color: white;
+	color: black;
+}
 .wrapper.style1 {
-	background-color: #062038;
-	color: #c1c7cd;
+	background-color: white;
+	color: #000000;
 }
 
 .wrapper.style1 input, .wrapper.style1 select, .wrapper.style1 textarea {
@@ -2675,7 +2679,7 @@ table.alt tbody tr td {
 }
 
 .video .caption {
-	color: #c0c5c9;
+	color: black;
 	padding: 1.5em;
 	font-size: 1.25em;
 	font-weight: 300;
