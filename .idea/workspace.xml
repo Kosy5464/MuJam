@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지">
-      <change afterPath="$PROJECT_DIR$/videoPlay.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/videoUpload.html" afterDir="false" />
+    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="기본페이지 생성(upload,play)&#10;play페이지 기본 작성">
+      <change afterPath="$PROJECT_DIR$/js/Thumbnail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoUpload.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoUpload.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +34,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -61,11 +62,8 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.videoPlay.html">
-    <configuration name="empty.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/empty.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="gallery.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/gallery.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.videoUpload.html">
+    <configuration name="contact.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/contact.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="generic.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/generic.html" useBuiltInWebServerPort="true">
@@ -77,13 +75,16 @@
     <configuration name="videoPlay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/videoPlay.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="videoUpload.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/videoUpload.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.videoUpload.html" />
+        <item itemvalue="JavaScript Debug.contact.html" />
         <item itemvalue="JavaScript Debug.videoPlay.html" />
         <item itemvalue="JavaScript Debug.generic.html" />
         <item itemvalue="JavaScript Debug.single.html" />
-        <item itemvalue="JavaScript Debug.empty.html" />
-        <item itemvalue="JavaScript Debug.gallery.html" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +104,9 @@
       <workItem from="1600403496649" duration="12493000" />
       <workItem from="1600685647956" duration="1919000" />
       <workItem from="1600774152417" duration="1830000" />
-      <workItem from="1600839649040" duration="2737000" />
+      <workItem from="1600839649040" duration="7929000" />
+      <workItem from="1601002847751" duration="5022000" />
+      <workItem from="1601008237361" duration="6034000" />
     </task>
     <task id="LOCAL-00001" summary="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
       <created>1600102453185</created>
@@ -182,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600840277802</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="기본페이지 생성(upload,play)&#10;play페이지 기본 작성">
+      <created>1600842510324</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1600842510324</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,9 +223,14 @@
     <MESSAGE value="동영상 첨부" />
     <MESSAGE value="main.css" />
     <MESSAGE value="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지" />
-    <option name="LAST_COMMIT_MESSAGE" value="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지" />
+    <MESSAGE value="기본페이지 생성(upload,play)&#10;play페이지 기본 작성" />
+    <option name="LAST_COMMIT_MESSAGE" value="기본페이지 생성(upload,play)&#10;play페이지 기본 작성" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601013032540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601013032540" />
     <state x="147" y="65" key="DiffContextDialog" timestamp="1600403750304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -228,10 +243,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1600410901127" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600687281109">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600842560816">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600687281109" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600842560816" />
     <state x="730" y="198" key="run.anything.popup" timestamp="1600097457136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
