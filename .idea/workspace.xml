@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="" />
+    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +16,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -88,6 +105,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -104,11 +122,14 @@
       <workItem from="1600769882802" duration="5114000" />
       <workItem from="1601297243423" duration="458000" />
       <workItem from="1601356829907" duration="2426000" />
+      <workItem from="1601373530010" duration="343000" />
+      <workItem from="1601373886990" duration="40000" />
+      <workItem from="1601374562418" duration="117000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600686393484">
@@ -119,10 +140,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600684214338" />
-    <state x="196" y="165" key="FileChooserDialogImpl" timestamp="1600680904032">
+    <state x="196" y="165" key="FileChooserDialogImpl" timestamp="1601373923581">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600680904032" />
+    <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601373923581" />
     <state width="946" height="210" key="GridCell.Tab.0.bottom" timestamp="1601358079521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
