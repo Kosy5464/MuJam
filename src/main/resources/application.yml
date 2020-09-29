@@ -1,0 +1,21 @@
+#application.properties 삭제 후 application.yml파일 만들기
+#이게더 좋다함
+spring:
+  #mysql 연결
+  datasource:
+    url: jdbc:mysql://localhost:3306/video?allowPublicKeyRetrieval=true&useSSL=false&useUniCode=true&serverTimezone=Asia/Seoul
+    username : root
+    password : MySQL
+
+  #jpa 적용 sql문 보이게 설정
+  jpa:
+    show-sql: true
+
+  #jsp 접두사 접미어 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+    static-path-pattern: /resources/**
+

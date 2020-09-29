@@ -1,259 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="기본페이지 생성(upload,play)&#10;play페이지 기본 작성">
-      <change afterPath="$PROJECT_DIR$/js/Thumbnail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoUpload.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoUpload.html" afterDir="false" />
-    </list>
+    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1hVQdWOD8pjkHMi8i3PZMogtJDZ" />
+  <component name="ProjectId" id="1hocBI4WqeD7PtGU517NYzVvgTN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.videoUpload.html">
-    <configuration name="contact.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/contact.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\resources" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\webapp" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java\com\sample\video\controller" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java\com\sample\video" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java\com\sample\video\domain" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java\com\sample\video\dto" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java\com\sample\video\service" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main\java" />
+      <recent name="C:\Users\xogh9\Desktop\video\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.VideoApplication (1)">
+    <configuration name="VideoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="video.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sample.video.VideoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="generic.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/generic.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+    <configuration name="VideoApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="video.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sample.video.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sample.video.service.VideoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="single.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/single.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="videoPlay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/videoPlay.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="videoUpload.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/MuJam/videoUpload.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+    <configuration name="VideoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="video.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.video.VideoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.videoUpload.html" />
-        <item itemvalue="JavaScript Debug.contact.html" />
-        <item itemvalue="JavaScript Debug.videoPlay.html" />
-        <item itemvalue="JavaScript Debug.generic.html" />
-        <item itemvalue="JavaScript Debug.single.html" />
+        <item itemvalue="Spring Boot.VideoApplication (2)" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cd04dd63-60f8-4656-bea4-1fbcbc2cfc68" name="Default Changelist" comment="" />
-      <created>1600093868540</created>
+      <changelist id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="" />
+      <created>1600680748767</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600093868540</updated>
-      <workItem from="1600093870689" duration="5193000" />
-      <workItem from="1600100900473" duration="1855000" />
-      <workItem from="1600176984021" duration="5248000" />
-      <workItem from="1600319231992" duration="1209000" />
-      <workItem from="1600355144170" duration="2086000" />
-      <workItem from="1600403496649" duration="12493000" />
-      <workItem from="1600685647956" duration="1919000" />
-      <workItem from="1600774152417" duration="1830000" />
-      <workItem from="1600839649040" duration="7929000" />
-      <workItem from="1601002847751" duration="5022000" />
-      <workItem from="1601008237361" duration="6034000" />
+      <updated>1600680748767</updated>
+      <workItem from="1600680756083" duration="8263000" />
+      <workItem from="1600692609020" duration="11564000" />
+      <workItem from="1600760483851" duration="3473000" />
+      <workItem from="1600769882802" duration="5114000" />
+      <workItem from="1601297243423" duration="458000" />
+      <workItem from="1601356829907" duration="2426000" />
     </task>
-    <task id="LOCAL-00001" summary="기본 구조 합치기//밑 사이즈 확인 후 수정 필요">
-      <created>1600102453185</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1600102453185</updated>
-    </task>
-    <task id="LOCAL-00002" summary="영상 클릭시 페이지 이동">
-      <created>1600102478838</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1600102478838</updated>
-    </task>
-    <task id="LOCAL-00003" summary="수정 확인용">
-      <created>1600178603591</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1600178603591</updated>
-    </task>
-    <task id="LOCAL-00004" summary="이상한navbar">
-      <created>1600182655151</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1600182655151</updated>
-    </task>
-    <task id="LOCAL-00005" summary="navbar배치(임시)">
-      <created>1600182899010</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1600182899010</updated>
-    </task>
-    <task id="LOCAL-00006" summary="navbar 수정/footer 생성">
-      <created>1600409996862</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1600409996863</updated>
-    </task>
-    <task id="LOCAL-00007" summary="메인 배너 수정">
-      <created>1600410557871</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1600410557872</updated>
-    </task>
-    <task id="LOCAL-00008" summary="메인콘텐츠 수정">
-      <created>1600415529522</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1600415529522</updated>
-    </task>
-    <task id="LOCAL-00009" summary="동영상 첨부">
-      <created>1600415827773</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1600415827773</updated>
-    </task>
-    <task id="LOCAL-00010" summary="main.css">
-      <created>1600687276022</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1600687276022</updated>
-    </task>
-    <task id="LOCAL-00011" summary="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지">
-      <created>1600840277802</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1600840277802</updated>
-    </task>
-    <task id="LOCAL-00012" summary="기본페이지 생성(upload,play)&#10;play페이지 기본 작성">
-      <created>1600842510324</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1600842510324</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="기본 구조 합치기//밑 사이즈 확인 후 수정 필요" />
-    <MESSAGE value="영상 클릭시 페이지 이동" />
-    <MESSAGE value="수정 확인용" />
-    <MESSAGE value="이상한navbar" />
-    <MESSAGE value="navbar배치(임시)" />
-    <MESSAGE value="navbar 수정" />
-    <MESSAGE value="navbar 수정/footer 생성" />
-    <MESSAGE value="메인 배너 수정" />
-    <MESSAGE value="메인콘텐츠 수정" />
-    <MESSAGE value="동영상 첨부" />
-    <MESSAGE value="main.css" />
-    <MESSAGE value="empty.html &gt;&gt; 메뉴바,footer만 있는 기본 페이지" />
-    <MESSAGE value="기본페이지 생성(upload,play)&#10;play페이지 기본 작성" />
-    <option name="LAST_COMMIT_MESSAGE" value="기본페이지 생성(upload,play)&#10;play페이지 기본 작성" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601013032540">
+    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600686393484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601013032540" />
-    <state x="147" y="65" key="DiffContextDialog" timestamp="1600403750304">
+    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600686393484" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600684214338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="65" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1600403750304" />
-    <state x="561" y="114" key="RollbackChangesDialog" timestamp="1600403752606">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600684214338" />
+    <state x="196" y="165" key="FileChooserDialogImpl" timestamp="1600680904032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="561" y="114" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600403752606" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1600410901127">
+    <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600680904032" />
+    <state width="946" height="210" key="GridCell.Tab.0.bottom" timestamp="1601358079521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1600410901127" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1600842560816">
+    <state width="946" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.0.center" timestamp="1601358079521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1600842560816" />
-    <state x="730" y="198" key="run.anything.popup" timestamp="1600097457136">
+    <state width="946" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.0.left" timestamp="1601358079521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="730" y="198" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600097457136" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1600407727842">
+    <state width="946" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.0.right" timestamp="1601358079521">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600407727842" />
+    <state width="946" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.1.bottom" timestamp="1601358079522">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="946" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601358079522" />
+    <state width="946" height="210" key="GridCell.Tab.1.center" timestamp="1601358079521">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="946" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.1.left" timestamp="1601358079521">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="946" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
+    <state width="946" height="210" key="GridCell.Tab.1.right" timestamp="1601358079522">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="946" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601358079522" />
+    <state x="476" y="10" width="584" height="804" key="find.popup" timestamp="1600687707089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="476" y="10" width="584" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600687707089" />
   </component>
 </project>
