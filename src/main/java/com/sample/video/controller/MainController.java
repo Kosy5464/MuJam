@@ -38,6 +38,7 @@ public class MainController {
     @GetMapping("/single")
     public String single(Model model){ return "main/single"; }
     //test
+    //test2
 
 
 }
