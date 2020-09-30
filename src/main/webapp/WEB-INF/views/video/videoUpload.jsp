@@ -151,13 +151,19 @@
                         <div class="col-sm-5">
                             <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
                             <div id="video-demo-container">
-                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음
+<%--                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음--%>
+                                <span style = color:white>썸네일 이미지 업로드</span>
+                                <form action="http://localhost:8080/videoUpload" method="post" enctype="multipart/form-data">
+                                    <input type="file" name="profile">
+                                    <input type="submit">
+                                </form>
+                                <span style = color:white>썸네일 이미지 다운로드</span>
                                 <canvas id="video-canvas"></canvas> <%--//캡처화면 나타내는 부분--%>
                                 <div id="thumbnail-container">
                                     Seek to
-                                    <select id="set-video-seconds"></select> <%--//비디오 시간 가져오는 부분--%>
+                                    <select id="set-video-seconds" style = "color:white;background-color: #5e5e5e"></select> <%--//비디오 시간 가져오는 부분--%>
                                     seconds
-                                    <a id="get-thumbnail" href="#">Download Thumbnail</a> <%--다운로드--%>
+                                    <a id="get-thumbnail" href="#"><span style = "display:block;background-color:gray;text-align:center">DownLoad</span></a> <%--다운로드--%>
                                 </div>
                             </div>
                             <!--여기까지가 썸네일 부분-->

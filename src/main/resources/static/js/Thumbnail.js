@@ -50,11 +50,11 @@ var _CANVAS = document.querySelector("#video-canvas"), //영상 캡처 보여주
     _VIDEO = document.querySelector("#main-video"); //동영상 띄우는 부분 가져오쥬?
 
 //html에서 필요없을거 같다한 버튼 눌렀을때 작동하는 부분
-document
+/*document
     .querySelector("#upload-button")
     .addEventListener("click", function () {
         document.querySelector("#video_upload").click();
-    });
+    });*/
 
 //영상 선택후 업로드하는 부분
 document
@@ -71,7 +71,7 @@ document
         }
 
         // 그 필요없을거 같다한 버튼 숨기는 부분(없앨거면 지워도됨)
-        document.querySelector("#upload-button").style.display = "none";
+        // document.querySelector("#upload-button").style.display = "none";
 
         // 비디오 띄우는 소스 가져오쥬? 사실 잘몰라 보이는데로 씀
         document
@@ -108,8 +108,8 @@ document
 
             // 비디오 화면 크기랑 같게 캡처 이미지 보여주는 부분/여기 조절하면 보기 좋게 크기 맞출수 있겠다.
             // 이거 쓸 시간에 그냥 내가 할 걸 그랬나 미안
-            _CANVAS.width = _VIDEO.videoWidth;
-            _CANVAS.height = _VIDEO.videoHeight;
+            _CANVAS.width = 400;
+            _CANVAS.height = 250;
         });
     });
 
@@ -127,19 +127,30 @@ document
     });
 
 // Seeking video to the specified duration is complete <<해석해 잘 모르겠어
+// 동영상 몇분짜리인지 파악하고 N초 단위로 끊는 작업을 완료했을때?
 document
     .querySelector("#main-video")
     .addEventListener("timeupdate", function () {
         // Re-enable the dropdown and show the Download link
+        // 드롭다운이 활성화되고 다운로드 링크가 보임
         document.querySelector("#set-video-seconds").disabled = false;
         document.querySelector("#get-thumbnail").style.display = "inline";
     });
+
+//기존에 썸네일 다운로드를 눌러야 미리보기 썸네일 이미지가 나왔는데 드랍박스에서 초를 선택하면 미리보기 이미지가 나오게하는 코드 추가
+
+document
+    .querySelector("#set-video-seconds")
+    .addEventListener("click", function () {
+        _CTX.drawImage(_VIDEO, 0, 0, 400, 200);
+    });
+
 
 // 이미지 다운로드 하는 부분!
 document
     .querySelector("#get-thumbnail")
     .addEventListener("click", function () {
-        _CTX.drawImage(_VIDEO, 0, 0, _VIDEO.videoWidth, _VIDEO.videoHeight);
+
 
         document
             .querySelector("#get-thumbnail")
