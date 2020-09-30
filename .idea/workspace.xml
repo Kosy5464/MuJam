@@ -3,9 +3,30 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="">
+    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Thumbnail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Thumbnail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoUpload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoUpload.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +43,12 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="video" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -54,6 +80,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -70,6 +97,13 @@
       <recent name="C:\Users\xogh9\Desktop\video\src\main\java" />
       <recent name="C:\Users\xogh9\Desktop\video\src\main" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.VideoApplication (1)">
     <configuration name="VideoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -99,6 +133,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.VideoApplication" />
+      <item itemvalue="Spring Boot.VideoApplication (1)" />
+      <item itemvalue="Spring Boot.VideoApplication (2)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.VideoApplication (2)" />
@@ -124,12 +163,38 @@
       <workItem from="1601356829907" duration="2426000" />
       <workItem from="1601373530010" duration="343000" />
       <workItem from="1601373886990" duration="40000" />
-      <workItem from="1601374562418" duration="117000" />
+      <workItem from="1601374562418" duration="3239000" />
+      <workItem from="1601427234337" duration="995000" />
+      <workItem from="1601450251012" duration="814000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1601374779728</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601374779728</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600686393484">
@@ -144,41 +209,85 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601373923581" />
-    <state width="946" height="210" key="GridCell.Tab.0.bottom" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.0.bottom" timestamp="1601391181298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.0.center" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601391181298" />
+    <state width="1027" height="211" key="GridCell.Tab.0.center" timestamp="1601391181297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.0.left" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601391181297" />
+    <state width="1027" height="211" key="GridCell.Tab.0.left" timestamp="1601391181297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.0.right" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601391181297" />
+    <state width="1027" height="211" key="GridCell.Tab.0.right" timestamp="1601391181297">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.1.bottom" timestamp="1601358079522">
+    <state width="1027" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601391181297" />
+    <state width="1027" height="211" key="GridCell.Tab.1.bottom" timestamp="1601391181298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601358079522" />
-    <state width="946" height="210" key="GridCell.Tab.1.center" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601391181298" />
+    <state width="1027" height="211" key="GridCell.Tab.1.center" timestamp="1601391181298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.1.left" timestamp="1601358079521">
+    <state width="1027" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601391181298" />
+    <state width="1027" height="211" key="GridCell.Tab.1.left" timestamp="1601391181298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601358079521" />
-    <state width="946" height="210" key="GridCell.Tab.1.right" timestamp="1601358079522">
+    <state width="1027" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601391181298" />
+    <state width="1027" height="211" key="GridCell.Tab.1.right" timestamp="1601391181298">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="946" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601358079522" />
+    <state width="1027" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601391181298" />
+    <state width="1177" height="369" key="GridCell.Tab.2.bottom" timestamp="1601387075346">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1177" height="369" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
+    <state width="1177" height="369" key="GridCell.Tab.2.center" timestamp="1601387075346">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1177" height="369" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
+    <state width="1177" height="369" key="GridCell.Tab.2.left" timestamp="1601387075346">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1177" height="369" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
+    <state width="1177" height="369" key="GridCell.Tab.2.right" timestamp="1601387075346">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1177" height="369" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1601374733864">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601374733864" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601374783998">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601374783998" />
+    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601374796404">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601374796404" />
     <state x="476" y="10" width="584" height="804" key="find.popup" timestamp="1600687707089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="476" y="10" width="584" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600687707089" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sample/video/VideoApplication.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sample/video/VideoApplication.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

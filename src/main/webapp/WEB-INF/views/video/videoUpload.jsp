@@ -121,8 +121,17 @@
         <div id="main-content" class="col-md-12">
             <div id="upload_form">
                 <form name="form1" id="ff" method="post" action="contact.php">
+                    <h2>Upload your video</h2>
                     <div class="row">
-                        <div class="col-sm-8">
+                        <label class="col-sm-5">
+                            <span>영상 업로드</span>
+                            <div style="width: 100%; height:250px; background-color: white">
+                                <video id="preview" style="width:100%; height: 100%;" controls></video>
+                            </div>
+                            <input type="file" id="getfile" accept="video/*">
+                        </label>
+
+                        <div class="col-sm-7">
                             <label>
                                 <span>제목(필수 항목)</span>
                                 <input type="text"  name="title" id="title" placeholder="제목(필수 항목)" required>
@@ -132,47 +141,78 @@
                                 <textarea name="message" id="message" placeholder="영상 설명"></textarea>
                             </label>
                         </div>
-                        <label class="col-sm-4">
-                            <span>영상 업로드</span>
-                            <div style="width: 100%; height:250px; background-color: white">
-                                <iframe id="preview">이미지 파일 내용 출력 영역</iframe>
-                            </div>
-                            <input type="file" id="getfile" accept="video/*">
-                        </label>
                     </div>
                     <br>
-                    <label>
-                        <span>장르1(필수 선택)</span><br/>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="balad" name="genre1">
-                            <label class="control-label" for="balad">Balad</label>
-                        </div>
 
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="hiphop" name="genre1">
-                            <label class="control-label" for="hiphop">HipHop</label>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
+                            <div id="video-demo-container">
+                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음
+                                <input type="file" id="video_upload" accept="video/mp4" /> //파일업로드 부분
+                                <video id="main-video" controls> //동영상 띄우는 부분
+                                    <source type="video/mp4" />
+                                </video>
+                                <canvas id="video-canvas"></canvas> //캡처화면 나타내는 부분
+                                <div id="thumbnail-container">
+                                    Seek to
+                                    <select id="set-video-seconds"></select> //비디오 시간 가져오는 부분
+                                    seconds
+                                    <a id="get-thumbnail" href="#">Download Thumbnail</a> //응 다운로드
+                                </div>
+                            </div>
+                            <!--여기까지가 썸네일 부분-->
                         </div>
+                        <label class="col-sm-3">
+                            <span>장르1(필수 선택)</span>
+                            <select class="select">
+                                <option selected>장르1 선택</option>
+                                <option>Balad</option>
+                                <option>HipHop</option>
+                                <option>Jazz</option>
+                                <option>Rock</option>
+                            </select>
+                        </label>
+                        <label class="col-sm-3">
+                            <span>장르2</span><br/>
+                            <select class="select">
+                                <option selected>장르2 선택</option>
+                                <optgroup label="mood">
+                                    <option>기분 좋은 날</option>
+                                    <option>불쾌한 날</option>
+                                    <option>우울한 날</option>
+                                </optgroup>
+                                <optgroup label="place">
+                                    <option>카페에서</option>
+                                    <option>도서관에서</option>
+                                    <option>공원에서</option>
+                                </optgroup>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- <label>
+                         <span>장르1(필수 선택)</span><br/>
+                         <div class="radio-inline">
+                             <input type="radio" class="radio" id="balad" name="genre1">
+                             <label class="control-label" for="balad">Balad</label>
+                          </div>
 
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="jazz" name="genre1">
-                            <label class="control-label" for="jazz">Jazz</label>
-                        </div>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="rock" name="genre1">
-                            <label class="control-label" for="rock">Rock</label>
-                        </div>
-                    </label>
-                    <br>
-                    <label>
-                        <select class="select">
-                            <option selected>장르1 선택</option>
-                            <option>Balad</option>
-                            <option>HipHop</option>
-                            <option>Jazz</option>
-                            <option>Rock</option>
-                        </select>
-                    </label>
-                    <br>
+                         <div class="radio-inline">
+                             <input type="radio" class="radio" id="hiphop" name="genre1">
+                             <label class="control-label" for="hiphop">HipHop</label>
+                         </div>
+
+                         <div class="radio-inline">
+                             <input type="radio" class="radio" id="jazz" name="genre1">
+                             <label class="control-label" for="jazz">Jazz</label>
+                         </div>
+                         <div class="radio-inline">
+                             <input type="radio" class="radio" id="rock" name="genre1">
+                             <label class="control-label" for="rock">Rock</label>
+                         </div>
+                     </label>
+                     <br>-->
+                    <!--<br>
                     <label>
                         <span>장르2</span><br/>
                         <div class="radio-inline">
@@ -195,23 +235,7 @@
                             <input type="radio" class="radio" id="example5" name="genre2">
                             <label class="custom-control-label" for="example5">카페에서 듣기 좋은 뭬</label>
                         </div>
-                    </label>
-                    <br>
-                    <label>
-                        <select class="select">
-                            <option selected>장르2 선택</option>
-                            <optgroup label="mood">
-                                <option>기분 좋은 날</option>
-                                <option>불쾌한 날</option>
-                                <option>우울한 날</option>
-                            </optgroup>
-                            <optgroup label="place">
-                                <option>카페에서</option>
-                                <option>도서관에서</option>
-                                <option>공원에서</option>
-                            </optgroup>
-                        </select>
-                    </label><br>
+                    </label>-->
 
                     <input class="sendButton" type="submit" name="Submit" value="Submit">
                 </form>
@@ -220,6 +244,7 @@
     </div>
 </div>
 </div>
+
 
 
 
