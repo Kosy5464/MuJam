@@ -7,7 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -34,6 +38,7 @@ public class VideoController {
     @GetMapping("/videoPlay/{no}")
     public String videoPlay(@PathVariable("no") Long id, Model model){
         VideoDto videoDto = videoService.getVideo(id);
+        System.out.println(videoDto);
         model.addAttribute("videoDto",videoDto);
         return "video/videoPlay";
     }
@@ -43,9 +48,14 @@ public class VideoController {
         return "video/videoUpload";
     }
 
-    @PostMapping("/videpUpload")
-    public String upload(VideoDto videoDto){
+    @PostMapping("/videoUploadFile")
+    public String upload(@RequestParam("title") String title, @RequestParam("content") String content,
+                         @RequestParam("genre1") String genre1, @RequestParam("genre2") String genre2,
+                         @RequestParam("video_upload") MultipartFile videoFile,
+                         @RequestParam("thumbnail_upload") MultipartFile thumbnailFile){
+        VideoDto videoDto = videoService.uploadVideo(title,content,genre1,genre2,videoFile,thumbnailFile);
+
         videoService.writeVideo(videoDto);
-        return "redirect:/videolist";
+        return "redirect:/main";
     }
 }

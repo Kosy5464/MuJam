@@ -27,4 +27,14 @@ public class Video extends TimeEntity{
     private Long singerId;
 
     private String storedLocation;
+
+    private String genre1;
+
+    private String genre2;
+
+    private String thumbnailStoredLocation;
+
+    private String videoFileName;
+
+    private String thumbnailFileName;
 }

@@ -18,7 +18,11 @@ public class VideoDto {
     private Long singerId;
     private String storedLocation;
     private LocalDateTime createdAt;
-
+    private String genre1;
+    private String genre2;
+    private String thumbnailStoredLocation;
+    private String videoFileName;
+    private String thumbnailFileName;
     public Video toEntity(){
         Video build = Video.builder()
                 .id(id)
@@ -26,6 +30,11 @@ public class VideoDto {
                 .content(content)
                 .singerId(singerId)
                 .storedLocation(storedLocation)
+                .genre1(genre1)
+                .genre2(genre2)
+                .thumbnailStoredLocation(thumbnailStoredLocation)
+                .thumbnailFileName(thumbnailFileName)
+                .videoFileName(videoFileName)
                 .build();
         return build;
     }

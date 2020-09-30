@@ -140,7 +140,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="video-wrapper">
-                                <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/video/video1.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div>${videoList[0].title}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link"><span>Click Me</span></a>
@@ -156,7 +156,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="video-wrapper">
-                                <iframe src="${pageContext.request.contextPath}../resources/video/greeny.mp4" controls></iframe>
+                                <iframe src="${pageContext.request.contextPath}../resources/${videoList[2].storedLocation}" controls></iframe>
                             </div>
                             <div>${videoList[2].title}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link"><span>Click Me</span></a>
@@ -164,7 +164,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic04.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
@@ -175,7 +175,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[4].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
@@ -186,7 +186,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[5].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>

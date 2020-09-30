@@ -120,18 +120,18 @@
     <div class="container">
         <div id="main-content" class="col-md-12">
             <div id="upload_form">
-                <form name="form1" id="ff" method="post" action="contact.php">
+                <form name="form1" id="videoUploadForm" method="post" action="/videoUploadFile" enctype="multipart/form-data">
                     <h2>Upload your video</h2>
                     <div class="row">
                         <label class="col-sm-5">
                             <span>영상 업로드</span>
                             <div style="width: 100%; height:250px; background-color: white">
                                 <%--<video id="preview" style="width:100%; height: 100%;" controls></video>--%>
-                                    <video id="main-video" style="width:100%; height: 100%;" controls> //동영상 띄우는 부분
-                                        <source type="video/mp4" />
-                                    </video>
+                                <video id="main-video" style="width:100%; height: 100%;" controls> //동영상 띄우는 부분
+                                    <source type="video/mp4" />
+                                </video>
                             </div>
-                            <input type="file" id="video_upload" accept="video/mp4" />
+                            <input type="file" id="video_upload" name="video_upload" accept="video/mp4" />
                         </label>
 
                         <div class="col-sm-7">
@@ -141,7 +141,7 @@
                             </label>
                             <label>
                                 <span>영상 설명 :</span>
-                                <textarea name="message" id="message" placeholder="영상 설명"></textarea>
+                                <textarea name="content" id="content" placeholder="content"></textarea>
                             </label>
                         </div>
                     </div>
@@ -151,12 +151,14 @@
                         <div class="col-sm-5">
                             <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
                             <div id="video-demo-container">
-<%--                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음--%>
+                                <%--                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음--%>
                                 <span style = color:white>썸네일 이미지 업로드</span>
-                                <form action="http://localhost:8080/videoUpload" method="post" enctype="multipart/form-data">
-                                    <input type="file" name="profile">
-                                    <input type="submit">
-                                </form>
+                                <!--<form action="http://localhost:8080/videoUpload" method="post" enctype="multipart/form-data">
+
+                                <input type="submit">
+                                </form>!-->
+                                <input type="file" name="thumbnail_upload" id="thumbnail_upload"
+                                       accept="image/png, image/jpg, image/jpeg, image/gif">
                                 <span style = color:white>썸네일 이미지 다운로드</span>
                                 <canvas id="video-canvas"></canvas> <%--//캡처화면 나타내는 부분--%>
                                 <div id="thumbnail-container">
@@ -170,27 +172,27 @@
                         </div>
                         <label class="col-sm-3">
                             <span>장르1(필수 선택)</span>
-                            <select class="select">
+                            <select name ="genre1" class="select" form="videoUploadForm">
                                 <option selected>장르1 선택</option>
-                                <option>Balad</option>
-                                <option>HipHop</option>
-                                <option>Jazz</option>
-                                <option>Rock</option>
+                                <option value="Balad">Balad</option>
+                                <option value="HipHop">HipHop</option>
+                                <option value="Jazz">Jazz</option>
+                                <option value="Rock">Rock</option>
                             </select>
                         </label>
                         <label class="col-sm-3">
                             <span>장르2</span><br/>
-                            <select class="select">
+                            <select name="genre2" class="select" form="videoUploadForm">
                                 <option selected>장르2 선택</option>
                                 <optgroup label="mood">
-                                    <option>기분 좋은 날</option>
-                                    <option>불쾌한 날</option>
-                                    <option>우울한 날</option>
+                                    <option value="기분 좋은 날">기분 좋은 날</option>
+                                    <option value="불쾌한 날">불쾌한 날</option>
+                                    <option value="우울한 날">우울한 날</option>
                                 </optgroup>
                                 <optgroup label="place">
-                                    <option>카페에서</option>
-                                    <option>도서관에서</option>
-                                    <option>공원에서</option>
+                                    <option value="카페에서">카페에서</option>
+                                    <option value="도서관에서">도서관에서</option>
+                                    <option value="공원에서">공원에서</option>
                                 </optgroup>
                             </select>
                         </label>
