@@ -124,11 +124,15 @@
                     <h2>Upload your video</h2>
                     <div class="row">
                         <label class="col-sm-5">
-                            <span>영상 업로드</span>
+                            <span>영상 업로드</span> <%--//여기서 영상 띄움--%>
                             <div style="width: 100%; height:250px; background-color: white">
-                                <video id="preview" style="width:100%; height: 100%;" controls></video>
+                                <%--<video id="preview" style="width:100%; height: 100%;" controls></video>--%>
+                                    <video id="main-video" style="width:100%; height: 100%;" controls><%-- //동영상 띄우는 부분--%>
+                                        <source type="video/*" />
+                                    </video>
                             </div>
-                            <input type="file" id="getfile" accept="video/*">
+                            <input type="file" id="video_upload" accept="video/*" /> <%--//파일업로드 부분--%>
+                           <%-- <input type="file" id="getfile" accept="video/*">--%>
                         </label>
 
                         <div class="col-sm-7">
@@ -148,17 +152,16 @@
                         <div class="col-sm-5">
                             <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
                             <div id="video-demo-container">
-                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음
-                                <input type="file" id="video_upload" accept="video/mp4" /> //파일업로드 부분
-                                <video id="main-video" controls> //동영상 띄우는 부분
+                               <%-- <button id="upload-button">Select MP4 Video</button> //없어도 될거같음--%>
+                              <%--  <video id="main-video" controls> //동영상 띄우는 부분
                                     <source type="video/mp4" />
-                                </video>
-                                <canvas id="video-canvas"></canvas> //캡처화면 나타내는 부분
+                                </video>--%>
+                                <canvas id="video-canvas"></canvas> <%--//캡처화면 나타내는 부분--%>
                                 <div id="thumbnail-container">
                                     Seek to
-                                    <select id="set-video-seconds"></select> //비디오 시간 가져오는 부분
+                                    <select id="set-video-seconds"></select> <%--//비디오 시간 가져오는 부분--%>
                                     seconds
-                                    <a id="get-thumbnail" href="#">Download Thumbnail</a> //응 다운로드
+                                    <a id="get-thumbnail" href="#">Download Thumbnail</a> <%--//응 다운로드--%>
                                 </div>
                             </div>
                             <!--여기까지가 썸네일 부분-->
