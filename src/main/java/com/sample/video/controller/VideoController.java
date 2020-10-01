@@ -23,10 +23,6 @@ public class VideoController {
         this.videoService = videoService;
     }
 
-    @GetMapping("/")
-    public String home(){
-        return "/WEB-INF/index.jsp";
-    }
 
     @GetMapping("/videolist")
     public String videolist(Model model){

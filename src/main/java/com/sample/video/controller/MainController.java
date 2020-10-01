@@ -16,6 +16,11 @@ public class MainController {
         this.videoService = videoService;
     }
 
+    @GetMapping("/")
+    public String home(){
+        return "index";
+    }
+
     @GetMapping("/main")
     public String hello(Model model){
         List<VideoDto> videoList = videoService.getVideoList();

@@ -91,8 +91,8 @@ public class VideoService {
         String uploadThumbnailName = Long.toString(index)+"."+thumbnailExtension;
         try{
             //본인 uploadvideo, thumbnail 경로로 바꾸기
-            videoFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/uploadvideo/"+uploadVideoName));
-            thumbnailFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/thumbnail/"+uploadThumbnailName));
+            videoFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/upload/video/"+uploadVideoName));
+            thumbnailFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/upload/thumbnail/"+uploadThumbnailName));
         } catch(IllegalStateException | IOException e){
             e.printStackTrace();
         }
@@ -104,8 +104,8 @@ public class VideoService {
         videoDto.setSingerId(1L);
         videoDto.setGenre1(genre1);
         videoDto.setGenre2(genre2);
-        videoDto.setStoredLocation("uploadvideo/"+uploadVideoName);
-        videoDto.setThumbnailStoredLocation("thumbnail/"+uploadThumbnailName);
+        videoDto.setStoredLocation("upload/video/"+uploadVideoName);
+        videoDto.setThumbnailStoredLocation("upload/thumbnail/"+uploadThumbnailName);
         videoDto.setVideoFileName(videoName);
         videoDto.setThumbnailFileName(thumbnailName);
         return videoDto;

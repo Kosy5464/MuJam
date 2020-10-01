@@ -164,7 +164,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
