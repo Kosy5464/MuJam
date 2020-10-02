@@ -90,7 +90,7 @@ public class VideoService {
         String uploadVideoName = Long.toString(index)+"."+videoExtension;
         String uploadThumbnailName = Long.toString(index)+"."+thumbnailExtension;
         try{
-            //본인 uploadvideo, thumbnail 경로로 바꾸기
+            //본인 upload/video, upload/thumbnail 경로로 바꾸기
             videoFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/upload/video/"+uploadVideoName));
             thumbnailFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/upload/thumbnail/"+uploadThumbnailName));
         } catch(IllegalStateException | IOException e){
