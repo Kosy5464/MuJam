@@ -87,8 +87,8 @@ public class VideoService {
             index = getVideoList().get(0).getId() + 1;
         }
         System.out.println(index);
-        String uploadVideoName = Long.toString(index)+"."+videoExtension;
-        String uploadThumbnailName = Long.toString(index)+"."+thumbnailExtension;
+        String uploadVideoName = videoName.split("[.]")[0]+"_uploadVideo"+Long.toString(index)+"."+videoExtension;
+        String uploadThumbnailName = thumbnailName.split("[.]")[0]+"_uploadThumbnail"+Long.toString(index)+"."+thumbnailExtension;
         try{
             //본인 upload/video, upload/thumbnail 경로로 바꾸기
             videoFile.transferTo(new File("C:/Users/chlee/IdeaProjects/MuJam/src/main/resources/static/upload/video/"+uploadVideoName));
