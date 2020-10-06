@@ -3,9 +3,9 @@
 spring:
   #mysql 연결
   datasource:
-    url: jdbc:mysql://localhost:3306/videoSample?allowPublicKeyRetrieval=true&useSSL=false&useUniCode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/mujam_db?allowPublicKeyRetrieval=true&useSSL=false&useUniCode=true&serverTimezone=Asia/Seoul
     username : root
-    password : root
+    password : ski13153236!
 
   #jpa 적용 sql문 보이게 설정
   jpa:
