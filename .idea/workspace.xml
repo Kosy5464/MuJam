@@ -22,8 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="업로드 화면 수정">
+    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="업로드 오류 재수정">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/aboutSign.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/Login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/SignUp.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sample/video/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sample/video/service/VideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/Thumbnail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Thumbnail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoPlay.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoPlay.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoUpload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/videoUpload.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +62,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -78,7 +95,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -104,6 +121,17 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.VideoApplication (1)">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VideoApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="video.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sample.video.VideoApplication" />
@@ -163,7 +191,12 @@
       <workItem from="1601373886990" duration="40000" />
       <workItem from="1601374562418" duration="3239000" />
       <workItem from="1601427234337" duration="995000" />
-      <workItem from="1601450251012" duration="2056000" />
+      <workItem from="1601450251012" duration="2308000" />
+      <workItem from="1601556858732" duration="2210000" />
+      <workItem from="1601559791351" duration="612000" />
+      <workItem from="1601904873848" duration="7965000" />
+      <workItem from="1601948812582" duration="1226000" />
+      <workItem from="1601951294589" duration="3183000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1601374779728</created>
@@ -186,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601451878217</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="업로드 오류 재수정">
+      <created>1601452562605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601452562605</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,13 +248,14 @@
     <MESSAGE value="test" />
     <MESSAGE value="업로드 화면 수정&#10;썸네일 부분(복붙)" />
     <MESSAGE value="업로드 화면 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="업로드 화면 수정" />
+    <MESSAGE value="업로드 오류 재수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="업로드 오류 재수정" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600686393484">
+    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601905416518">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600686393484" />
+    <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601905416518" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600684214338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -223,38 +264,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601373923581" />
-    <state width="1027" height="211" key="GridCell.Tab.0.bottom" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.0.bottom" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.0.center" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.0.center" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.0.left" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.0.left" timestamp="1601950047761">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.0.right" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601950047761" />
+    <state width="1027" height="142" key="GridCell.Tab.0.right" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.1.bottom" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.1.bottom" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.1.center" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.1.center" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.1.left" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.1.left" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
-    <state width="1027" height="211" key="GridCell.Tab.1.right" timestamp="1601452278390">
+    <state width="1027" height="142" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1027" height="142" key="GridCell.Tab.1.right" timestamp="1601950047762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1027" height="211" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601452278390" />
+    <state width="1027" height="142" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
     <state width="1177" height="369" key="GridCell.Tab.2.bottom" timestamp="1601387075346">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -271,18 +312,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1177" height="369" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1601374733864">
+    <state x="147" y="65" key="MergeDialog" timestamp="1601904955012">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601374733864" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601451881747">
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1601904955012" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1601559752971">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601451881747" />
-    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601374796404">
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601559752971" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601452565745">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601374796404" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601452565745" />
+    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601948827315">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601948827315" />
     <state x="476" y="10" width="584" height="804" key="find.popup" timestamp="1600687707089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

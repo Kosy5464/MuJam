@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: chlee
-  Date: 2020-09-29
-  Time: 오전 11:49
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -39,7 +33,6 @@
 
 </head>
 <body>
-
 <!-- Navigation -->
 <header id="page-top">
     <div class="wrap-header">
@@ -83,7 +76,7 @@
                             </li>
                             <li><a>|</a></li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Follow</a>
+                                <a class="page-scroll" href="${pageContext.request.contextPath}contact">Follow</a>
                             </li>
                             <li>
                                 <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Like</a>
@@ -91,7 +84,6 @@
                             <li>
                                 <a class="page-scroll" href="${pageContext.request.contextPath}/contact">PlayList</a>
                             </li>
-
                             <li>
                                 <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -99,7 +91,6 @@
                                            aria-label="Search">
                                     <i class="fas fa-search" aria-hidden="true"></i>
                                 </form>
-
                             </li>
                         </ul>
                     </div>
@@ -111,36 +102,113 @@
         </div>
     </div>
 </header>
-<!-- Header -->
-<!-- /////////////////////////////////////////Content -->
-
-<!-- Main -->
 <div id="page-content">
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#"  id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                    <div class="form-group" style="text-align: left">
+                                        <div class="radio-inline">
+                                            <input type="radio" class="radio" id="member" name="user">
+                                            <label class="control-label" for="member"style="color: black;font-weight: bold">일반회원</label>
+                                        </div>
 
-    <!-- One -->
-    <section class="wrapper style1">
-        <div class="inner">
-            <!--<header class="align-center">
-                <h2>영상 제목?</h2>
-                <p>가수이름 장르?</p>
-            </header>-->
-            <div class="video">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allowfullscreen></iframe>
+                                        <div class="radio-inline">
+                                            <input type="radio" class="radio" id="musician" name="user">
+                                            <label class="control-label" for="musician"style="color: black;font-weight: bold">뮤지션</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember">Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="LOGIN">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form id="register-form" action="" method="" role="form" style="display: none;">
+                                    <div class="form-group col-sm-8">
+                                        <input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="UserID" value="">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <input type="button" name="checkIDbtn" id="checkIDbtn" tabindex="1" class="form-control" value="중복확인">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input type="password" name="password" id="password2" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+                                        <input type="text" name="username" id="username2" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                    </div>
+                                    <div class="form-group col-sm-8">
+                                        <input type="text" name="phoneNum" id="phoneNum" tabindex="1" class="form-control" placeholder="010-1234-5678" value="">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <input type="button" name="checkPhoneNum" id="checkPhoneNum" tabindex="1" class="form-control" value="번호인증">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <input type="text" name="homeAddress" id="homeAddress" tabindex="1" class="form-control" placeholder="Home Address" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p class="caption">
-                    영상 제목 노래제목이라는거지 응 - 가수 이름
-                </p>
             </div>
-            <p>영상설명이다</p>
-            <p>영상설명이다2</p>
         </div>
-    </section>
+    </div>
+
+
 
 </div>
-
-
-
 <!-- /////////////////////////////////////////Footer -->
 <footer>
     <div class="copyright">
@@ -188,6 +256,9 @@
 <script src="${pageContext.request.contextPath}../resources/js/jquery.easing.min.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/classie.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/cbpAnimatedHeader.js"></script>
+
+<!--로그인, 회원가입 관련 -->
+<script src="${pageContext.request.contextPath}../resources/js/aboutSign.js"></script>
 
 <!--다른 템플릿-->
 <script src="${pageContext.request.contextPath}../resources/js/jquery.min.js"></script>

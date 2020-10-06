@@ -42,10 +42,10 @@
                     <div class="row">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <h5><a class="page-scroll" href="">로그인&nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/Login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                             <li>
-                                <h5><a class="page-scroll" href="">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/SignUP">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                         </ul>
                     </div>

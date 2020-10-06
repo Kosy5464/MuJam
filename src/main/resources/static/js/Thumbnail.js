@@ -1,5 +1,4 @@
-/*
-var file = document.querySelector('#getfile');
+/*var file = document.querySelector('#getfile');
 
 file.onchange = function(){
     var fileList = file.files;
@@ -41,8 +40,8 @@ file.onchange = function(){
             document.querySelector('download').href = dataURI;
         };*!/
     };
-};
-*/ //위에 거는 기존 영상 업로드 부분(썸네일 X)
+};*/
+ //위에 거는 기존 영상 업로드 부분(썸네일 X)
 
 //밑에가 복붙인데 기존 영상 업로드 부분이랑 연결해서 수정부탁드릴게요!
 var _CANVAS = document.querySelector("#video-canvas"), //영상 캡처 보여주는 부분
@@ -108,8 +107,8 @@ document
 
             // 비디오 화면 크기랑 같게 캡처 이미지 보여주는 부분/여기 조절하면 보기 좋게 크기 맞출수 있겠다.
             // 이거 쓸 시간에 그냥 내가 할 걸 그랬나 미안
-            _CANVAS.width = 400;
-            _CANVAS.height = 250;
+            _CANVAS.width = 100;
+            _CANVAS.height = 100;
         });
     });
 
