@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: kijk6
+  Date: 2020-10-06
+  Time: 오전 10:47
+  To change this template use File | Settings | File Templates.
+--%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
@@ -42,10 +49,10 @@
                     <div class="row">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/Login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                             <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/SignUP">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                         </ul>
                     </div>
@@ -111,10 +118,10 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-6">
-                                <a href="#" class="active" id="login-form-link">Login</a>
+                                <a href="#" id="login-form-link">Login</a>
                             </div>
                             <div class="col-xs-6">
-                                <a href="#"  id="register-form-link">Register</a>
+                                <a href="#" class="active"  id="register-form-link">Register</a>
                             </div>
                         </div>
                         <hr>
@@ -122,7 +129,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                <form id="login-form" action="" method="post" role="form" style="display: none;">
                                     <div class="form-group" style="text-align: left">
                                         <div class="radio-inline">
                                             <input type="radio" class="radio" id="member" name="user">
@@ -161,7 +168,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="" method="" role="form" style="display: none;">
+                                <form id="register-form" action="" method="" role="form" style="display: block;">
                                     <div class="form-group col-sm-8">
                                         <input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
@@ -205,9 +212,6 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 <!-- /////////////////////////////////////////Footer -->
 <footer>

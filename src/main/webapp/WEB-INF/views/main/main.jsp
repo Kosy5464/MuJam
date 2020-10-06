@@ -42,10 +42,10 @@
                     <div class="row">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/Login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                             <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/SignUP">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
+                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
                             </li>
                         </ul>
                     </div>
@@ -164,7 +164,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}}" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>

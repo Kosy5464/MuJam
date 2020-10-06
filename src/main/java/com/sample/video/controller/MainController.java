@@ -27,6 +27,14 @@ public class MainController {
         model.addAttribute("videoList",videoList);
         return "main/main";
     }
+    @GetMapping("/login")
+    public String login(Model model){
+        return "main/login";
+    }
+    @GetMapping("/signUp")
+    public String signUp(Model model){
+        return "main/signUp";
+    }
     @GetMapping("/contact")
     public String contact(Model model){
         return "main/contact";
