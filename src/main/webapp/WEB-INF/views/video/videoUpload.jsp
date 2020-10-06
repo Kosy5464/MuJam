@@ -158,7 +158,8 @@
                                 <input type="submit">
                                 </form>!-->
                                 <input type="file" name="thumbnail_upload" id="thumbnail_upload"
-                                       accept="image/png, image/jpg, image/jpeg, image/gif">
+                                       accept="image/*">
+
                                 <span style = color:white>썸네일 이미지 다운로드</span>
                                 <canvas id="video-canvas"></canvas> <%--//캡처화면 나타내는 부분--%>
                                 <div id="thumbnail-container">

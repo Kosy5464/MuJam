@@ -80,6 +80,8 @@ public class VideoService {
         VideoDto videoDto = new VideoDto();
         String videoName = videoFile.getOriginalFilename();
         String thumbnailName = thumbnailFile.getOriginalFilename();
+        System.out.println(videoName);
+        System.out.println(thumbnailName);
         String videoExtension = videoName.split("[.]")[1];
         String thumbnailExtension = thumbnailName.split("[.]")[1];
         long index = 1;
