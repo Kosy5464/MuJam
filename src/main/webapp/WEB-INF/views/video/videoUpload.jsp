@@ -123,50 +123,63 @@
                     <div class="row">
                         <label class="col-sm-5">
                             <span>영상 업로드</span>
-                            <div style="width: 100%; height:250px; background-color: white">
-                                <%--<video id="preview" style="width:100%; height: 100%;" controls></video>--%>
+                            <div style="width: 100%; height:250px; margin-top:20px; background-color: white">
                                 <video id="main-video" style="width:100%; height: 100%;" controls> //동영상 띄우는 부분
                                     <source type="video/mp4" />
                                 </video>
                             </div>
                             <input type="file" id="video_upload" name="video_upload" accept="video/*" />
                         </label>
-
                         <div class="col-sm-7">
+                            <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
+                            <label id="video-demo-container">
+                                <span>썸네일 이미지 설정 &nbsp;<i data-toggle="tooltip" class="far fa-question-circle"style="font-weight: bold"
+                                                          title="step 1에서는 업로드한 영상에서 구간을 선택하여 썸네일로 설정할 이미지를 다운 받을 수 있습니다.&#10;step 2에서는 썸네일로 사용할 이미지를 업로드 합니다.">
+                                </i></span>
+                                <div class="row" style="margin-top:20px;">
+                                    <div class="col-sm-3">
+                                        <ul class="flex-tabs tab-list" style="width: 100%">
+                                            <li class="active" title="업로드 영상에서 썸네일 이미지를 뽑아올 수 있는 부분 입니다."><a data-toggle="tab" href="#step1">Step 1</a></li>
+                                            <li><a data-toggle="tab" title="썸네일 이미지를 첨부하는 부분 입니다." href="#step2">Step 2</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-content col-sm-9">
+                                        <div id="step1" class="tab-pane fade in active">
+                                            <canvas id="video-canvas" style="width: 90%;height:90%;  background-color: white;"></canvas>
+                                            <div id="thumbnail-container"class="btn-group">
+                                                <!--<input id="set-video-seconds" style = "color:white;background-color: #5e5e5e">-->
+                                                <button id="set-video-seconds" class="btn btn-danger btn-sm">미리보기</button>
+                                                <a id="get-thumbnail" class="btn btn-danger" href="#" >다운로드</a>
+                                            </div>
+                                        </div>
+                                        <div id="step2" class="tab-pane fade">
+                                            <div  style="width: 90%; height:230px; background-color: white">
+                                                <img id="preview" width=100%>
+                                            </div>
+                                            <input type="file" name="thumbnail_upload" id="thumbnail_upload" accept="image/*">
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                            <!--여기까지가 썸네일 부분-->
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-sm-12">
                             <label>
                                 <span>제목(필수 항목)</span>
                                 <input type="text"  name="title" id="title" placeholder="제목(필수 항목)" required>
                             </label>
                             <label>
                                 <span>영상 설명 :</span>
-                                <textarea name="content" id="content" placeholder="content"></textarea>
+                                <textarea name="content" id="content" placeholder="영상 설명" style="resize:none;"></textarea>
                             </label>
                         </div>
                     </div>
-                    <br>
-
                     <div class="row">
-                        <div class="col-sm-5">
-                            <!--여기에 썸네일 업로드 만들어주시면 됩니다!!!!!! 밑에는 복붙한 부분-->
-                            <div id="video-demo-container">
-                                <%--                                <button id="upload-button">Select MP4 Video</button> //없어도 될거같음--%>
-                                <span style = color:white>썸네일 이미지 업로드</span>
-                                <!--<form action="http://localhost:8080/videoUpload" method="post" enctype="multipart/form-data">
-
-                                <input type="submit">
-                                </form>!-->
-                                <input type="file" name="thumbnail_upload" id="thumbnail_upload"
-                                       accept="image/*">
-
-                                <canvas id="video-canvas"></canvas> <%--//캡처화면 나타내는 부분--%>
-                                <div id="thumbnail-container">
-                                    <input id="set-video-seconds" style = "color:white;background-color: #5e5e5e">
-                                   <%-- <select id="set-video-seconds" style = "color:white;background-color: #5e5e5e"></select> --%><%--//비디오 시간 가져오는 부분--%>
-                                    <a id="get-thumbnail" href="#"><span style = "display:block;background-color:gray;text-align:center">DownLoad</span></a> <%--다운로드--%>
-                                </div>
-                            </div>
-                            <!--여기까지가 썸네일 부분-->
-                        </div>
                         <label class="col-sm-3">
                             <span>장르1(필수 선택)</span>
                             <select name ="genre1" class="select" form="videoUploadForm">
@@ -216,30 +229,6 @@
                          </div>
                      </label>
                      <br>-->
-                    <!--<br>
-                    <label>
-                        <span>장르2</span><br/>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="example1" name="genre2">
-                            <label class="custom-control-label" for="example1">운동할 때</label>
-                        </div>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="example2" name="genre2">
-                            <label class="custom-control-label" for="example2">기분 좋은 날</label>
-                        </div>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="example3" name="genre2">
-                            <label class="custom-control-label" for="example3">슬픈 날</label>
-                        </div>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="example4" name="genre2">
-                            <label class="custom-control-label" for="example4">위로받고 싶은 날</label>
-                        </div>
-                        <div class="radio-inline">
-                            <input type="radio" class="radio" id="example5" name="genre2">
-                            <label class="custom-control-label" for="example5">카페에서 듣기 좋은 뭬</label>
-                        </div>
-                    </label>-->
 
                     <input class="sendButton" type="submit" name="Submit" value="Submit">
                 </form>
@@ -248,7 +237,6 @@
     </div>
 </div>
 </div>
-
 
 
 

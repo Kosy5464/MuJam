@@ -417,9 +417,15 @@ form label .select{
 form label #title{
     width: 100%;
 }
-form label #video_upload{
+form label #getfile{
     width: 100%;
 }
+
+dl.movs { width:100%; float:left; border:solid 1px #ccc;}
+dl.movs + dl.movs { margin-left:10px;}
+dl.movs dt, dl.movs dd { margin:0; padding:0;}
+dl.movs dd.desc, dl.movs dd.url { display:none; }
+
 body {
     padding-top: 90px;
 }
