@@ -128,12 +128,19 @@
                 <div class="video-wrapper">
                     <iframe width="560" height="315" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <p class="caption">
-                    영상 제목 노래제목이라는거지 응 - 가수 이름
-                </p>
+                <div id="most" class="tab-pane fade in active">
+                    <div class="post">
+                        <div class="wrapper">
+                            <h5>조회수 ${videoDto.viewcount}</h5>
+                            <p>제목 ${videoDto.title}</p>
+                            <h3>가수id ${videoDto.singerId}</h3>
+                            <p>장르 1 ${videoDto.genre1}</p>
+                            <p>장르 2 ${videoDto.genre2}</p>
+                        </div>
+                    </div>
             </div>
-            <p>영상설명이다</p>
-            <p>영상설명이다2</p>
+            <p>내용 ${videoDto.content}</p>
+
         </div>
     </section>
 

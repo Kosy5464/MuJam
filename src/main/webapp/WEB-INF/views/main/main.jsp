@@ -29,6 +29,20 @@
     <script src="${pageContext.request.contextPath}../resources/js/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath}../resources/js/respond.min.js"></script>
     <![endif]-->
+    <script>
+        const videos = document.querySelectorAll('.video-preview')
+        for (let i = 0; i < videos.length; i++) {
+            videos[i].addEventListener('mouseover', function() {
+                console.log('play')
+                videos[i].play()
+            })
+            videos[i].addEventListener('mouseout', function() {
+                console.log('pause')
+                videos[i].pause()
+                videos[i].currentTime = 0;
+            })
+        }
+    </script>
 
 </head>
 <body>
@@ -140,7 +154,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="video-wrapper">
-                                <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div>${videoList[0].title}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link"><span>Click Me</span></a>
@@ -148,7 +162,7 @@
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <video class="video-preview" poster="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" width="300" height="150" src="${pageContext.request.contextPath}../resources/${videoList[1].storedLocation}" controls onmouseout="this.pause()" onmouseover="this.play()" ></video>
                             </div>
                             <div>${videoList[1].title}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link"><span>Click Me</span></a>
