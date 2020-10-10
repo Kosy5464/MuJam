@@ -122,7 +122,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="" method="post" role="form" style="display: block;">
+                                <form id="login-form" action="${pageContext.request.contextPath}/submitLogin" method="post" role="form" style="display: block;">
                                     <div class="form-group" style="text-align: left">
                                         <div class="radio-inline">
                                             <input type="radio" class="radio" id="member" name="user">
@@ -135,10 +135,12 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        <input type="text" name="userId" id="userId2" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        <br>${msg1}
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                        <br>${msg2}
                                     </div>
                                     <div class="form-group text-center">
                                         <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -161,9 +163,9 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="" method="" role="form" style="display: none;">
+                                <form id="register-form" action="${pageContext.request.contextPath}/submitSignUp" method="post" role="form" style="display: none;">
                                     <div class="form-group col-sm-8">
-                                        <input type="text" name="userID" id="userID" tabindex="1" class="form-control" placeholder="UserID" value="">
+                                        <input type="text" name="userId" id="userId" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
                                     <div class="form-group col-sm-4">
                                         <input type="button" name="checkIDbtn" id="checkIDbtn" tabindex="1" class="form-control" value="중복확인">
@@ -176,13 +178,13 @@
                                     </div>
 
                                     <div class="form-group col-sm-12">
-                                        <input type="text" name="username" id="username2" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        <input type="text" name="name" id="username2" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
                                     <div class="form-group col-sm-12">
-                                        <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                        <input type="email" name="emailAddress" id="emailAddress" tabindex="1" class="form-control" placeholder="Email Address" value="">
                                     </div>
                                     <div class="form-group col-sm-8">
-                                        <input type="text" name="phoneNum" id="phoneNum" tabindex="1" class="form-control" placeholder="010-1234-5678" value="">
+                                        <input type="text" name="phoneNumber" id="phoneNumber" tabindex="1" class="form-control" placeholder="010-1234-5678" value="">
                                     </div>
                                     <div class="form-group col-sm-4">
                                         <input type="button" name="checkPhoneNum" id="checkPhoneNum" tabindex="1" class="form-control" value="번호인증">
