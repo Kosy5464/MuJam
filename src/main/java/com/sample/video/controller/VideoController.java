@@ -35,7 +35,9 @@ public class VideoController {
     public String videoPlay(@PathVariable("no") Long id, Model model){
         VideoDto videoDto = videoService.getVideo(id);
         System.out.println(videoDto);
+        videoDto.setViewcount(videoDto.getViewcount()+1);
         model.addAttribute("videoDto",videoDto);
+        videoService.writeVideo(videoDto);
         return "video/videoPlay";
     }
 

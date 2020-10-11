@@ -25,6 +25,7 @@ public class MainController {
     public String hello(Model model){
         List<VideoDto> videoList = videoService.getVideoList();
         model.addAttribute("videoList",videoList);
+        
         return "main/main";
     }
 

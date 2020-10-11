@@ -23,6 +23,7 @@ public class VideoDto {
     private String thumbnailStoredLocation;
     private String videoFileName;
     private String thumbnailFileName;
+    private Long viewcount;
     public Video toEntity(){
         Video build = Video.builder()
                 .id(id)
@@ -35,6 +36,7 @@ public class VideoDto {
                 .thumbnailStoredLocation(thumbnailStoredLocation)
                 .thumbnailFileName(thumbnailFileName)
                 .videoFileName(videoFileName)
+                .viewcount(viewcount)
                 .build();
         return build;
     }
