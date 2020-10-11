@@ -55,12 +55,27 @@
                 <div class="container">
                     <div class="row">
                         <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
-                            </li>
-                            <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
-                            </li>
+
+                            <c:catch>
+                                <c:choose>
+                                    <c:when test="${empty user}">
+                                        <li>
+                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
+                                        </li>
+                                        <li>
+                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
+                                        </li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li>
+                                            ${user.userId}
+                                        </li>
+                                        <li>
+                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/logout">로그아웃 &nbsp;&nbsp;&nbsp;</a></h5>
+                                        </li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:catch>
                         </ul>
                     </div>
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -90,15 +105,29 @@
                             </li>
                             <li><a>|</a></li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Follow</a>
+                                <a class="page-scroll" id="followLink" onclick="" href="${pageContext.request.contextPath}/contact">Follow</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Like</a>
+                                <a class="page-scroll" id="likeLink" onclick="" href="${pageContext.request.contextPath}/contact">Like</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">PlayList</a>
+                                <a class="page-scroll" id="playListLink" onclick="" href="${pageContext.request.contextPath}/contact">PlayList</a>
                             </li>
+                            <c:if test="${empty user}">
+                                <script>
+                                    const followLink = document.getElementById("followLink");
+                                    followLink.setAttribute("href","${pageContext.request.contextPath}/login");
+                                    followLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
 
+                                    const likeLink = document.getElementById("likeLink");
+                                    likeLink.setAttribute("href","${pageContext.request.contextPath}/login");
+                                    likeLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+
+                                    const playListLink = document.getElementById("playListLink");
+                                    playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
+                                    playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+                                </script>
+                            </c:if>
                             <li>
                                 <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

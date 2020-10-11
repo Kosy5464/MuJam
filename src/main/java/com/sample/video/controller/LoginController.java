@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -29,10 +30,28 @@ public class LoginController {
     public String signUp(Model model){
         return "login/signUp";
     }
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest req){
+        req.getSession().invalidate();
+        return "redirect:/main";
+    }
     @PostMapping("/submitSignUp")
     public String submitSignUp(UserDto user){
         userService.writeUser(user);
         return "redirect:/main";
+    }
+
+    @PostMapping("/idCheck")
+    @ResponseBody
+    public int idCheck(String userId){
+        System.out.println(userId);
+        UserDto user = userService.getUser(userId);
+        if(user == null){
+            return 0;
+        }
+        else{
+            return 1;
+        }
     }
     @PostMapping("/submitLogin")
     public String submitLogin(@RequestParam("userId") String userId,

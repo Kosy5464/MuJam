@@ -170,12 +170,14 @@
                                     <div class="form-group col-sm-4">
                                         <input type="button" name="checkIDbtn" id="checkIDbtn" tabindex="1" class="form-control" value="중복확인">
                                     </div>
+                                    <div id="idCheckMsg"></div>
                                     <div class="form-group col-sm-12">
                                         <input type="password" name="password" id="password2" tabindex="2" class="form-control" placeholder="Password">
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
                                     </div>
+                                    <div id="passwordCheckMsg"></div>
 
                                     <div class="form-group col-sm-12">
                                         <input type="text" name="name" id="username2" tabindex="1" class="form-control" placeholder="Username" value="">
@@ -269,4 +271,55 @@
 <script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+    $('#checkIDbtn').click(function () {
+        console.log("hi1");
+        let userId = $('#userId').val();
+        $.ajax({
+            type:'POST',
+            url: '${pageContext.request.contextPath}/idCheck',
+            data:{userId : userId},
+            success:function(data) {
+                console.log(data + "data입니다.")
+                if(userId == "" && data == '0') {
+                    $("#idCheckMsg").css("color", "red");
+                    $("#idCheckMsg").text("아이디를 입력해주세요.");
+                }else if (data == '0') {
+                    $("#idCheckMsg").css("color", "blue");
+                    $("#idCheckMsg").text("아이디 사용 가능");
+                }else if(data == '1') {
+                    $("#idCheckMsg").css("color", "red");
+                    $("#idCheckMsg").text("이미 사용중인 아이디입니다.");
+                }
+            },
+            error:function(e) {
+                error = e;
+                log(e);
+                log("실패");
+            }
+        })
+    });
+
+    $("#confirm-password").blur(function () {
+        if($("#password2").val()!=$("#confirm-password").val()) {
+            if($("#confirm-password").val()!="") {
+                $("#passwordCheckMsg").text("비밀번호가 일치하지 않습니다.");
+                $("#passwordCheckMsg").css("color", "red");
+            } else {
+                $("#passwordCheckMsg").text("");
+            }
+        }
+        else{
+            if($("#confirm-password").val()!=""){
+                $("#passwordCheckMsg").text("비밀번호가 일치합니다.");
+                $("#passwordCheckMsg").css("color", "blue");
+            }
+            else{
+                $("#passwordCheckMsg").text("");
+            }
+        }
+    })
+</script>
+
 </html>
