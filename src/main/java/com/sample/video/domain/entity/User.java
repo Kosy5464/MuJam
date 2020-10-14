@@ -31,4 +31,6 @@ public class User extends TimeEntity{
     private String phoneNumber;
 
     private String name;
+
+    private String nickname;
 }

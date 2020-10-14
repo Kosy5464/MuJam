@@ -23,7 +23,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserDto getUser(String userId){
+    public UserDto getUserByUserId(String userId){
         Optional<User> userWrapper = userRepository.findByUserId(userId);
         try {
             User user = userWrapper.get();
@@ -36,6 +36,51 @@ public class UserService {
                     .name(user.getName())
                     .password(user.getPassword())
                     .phoneNumber(user.getPhoneNumber())
+                    .nickname(user.getNickname())
+                    .build();
+            return userDto;
+        }catch(NoSuchElementException e) {
+            return null;
+        }
+    }
+
+    @Transactional
+    public UserDto getUserById(Long id){
+        Optional<User> userWrapper = userRepository.findById(id);
+        try {
+            User user = userWrapper.get();
+            UserDto userDto = UserDto.builder()
+                    .userId(user.getUserId())
+                    .createdAt(user.getCreatedAt())
+                    .emailAddress(user.getEmailAddress())
+                    .homeAddress(user.getHomeAddress())
+                    .id(user.getId())
+                    .name(user.getName())
+                    .password(user.getPassword())
+                    .phoneNumber(user.getPhoneNumber())
+                    .nickname(user.getNickname())
+                    .build();
+            return userDto;
+        }catch(NoSuchElementException e) {
+            return null;
+        }
+    }
+
+    @Transactional
+    public UserDto getUserByNickname(String nickname){
+        Optional<User> userWrapper = userRepository.findByNickname(nickname);
+        try {
+            User user = userWrapper.get();
+            UserDto userDto = UserDto.builder()
+                    .userId(user.getUserId())
+                    .createdAt(user.getCreatedAt())
+                    .emailAddress(user.getEmailAddress())
+                    .homeAddress(user.getHomeAddress())
+                    .id(user.getId())
+                    .name(user.getName())
+                    .password(user.getPassword())
+                    .phoneNumber(user.getPhoneNumber())
+                    .nickname(user.getNickname())
                     .build();
             return userDto;
         }catch(NoSuchElementException e) {

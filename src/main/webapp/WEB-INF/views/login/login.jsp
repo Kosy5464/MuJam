@@ -179,6 +179,15 @@
                                     </div>
                                     <div id="passwordCheckMsg"></div>
 
+
+                                    <div class="form-group col-sm-8">
+                                        <input type="text" name="nickname" id="nickname" tabindex="1" class="form-control" placeholder="nickname" value="">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <input type="button" name="checkNicknamebtn" id="checkNicknamebtn" tabindex="1" class="form-control" value="중복확인">
+                                    </div>
+                                    <div id="nicknameCheckMsg"></div>
+
                                     <div class="form-group col-sm-12">
                                         <input type="text" name="name" id="username2" tabindex="1" class="form-control" placeholder="Username" value="">
                                     </div>
@@ -300,6 +309,34 @@
             }
         })
     });
+
+    $('#checkNicknamebtn').click(function () {
+            console.log("hi1");
+            let nickname = $('#nickname').val();
+            $.ajax({
+                type:'POST',
+                url: '${pageContext.request.contextPath}/nicknameCheck',
+                data:{nickname : nickname},
+                success:function(data) {
+                    console.log(data + "data입니다.")
+                    if(nickname == "" && data == '0') {
+                        $("#nicknameCheckMsg").css("color", "red");
+                        $("#nicknameCheckMsg").text("닉네임을 입력해주세요.");
+                    }else if (data == '0') {
+                        $("#nicknameCheckMsg").css("color", "blue");
+                        $("#nicknameCheckMsg").text("닉네임 사용 가능");
+                    }else if(data == '1') {
+                        $("#nicknameCheckMsg").css("color", "red");
+                        $("#nicknameCheckMsg").text("이미 사용중인 닉네임입니다.");
+                    }
+                },
+                error:function(e) {
+                    error = e;
+                    console.log(e);
+                    console.log("실패");
+                }
+            })
+        });
 
     $("#confirm-password").blur(function () {
         if($("#password2").val()!=$("#confirm-password").val()) {

@@ -1,18 +1,23 @@
 package com.sample.video.controller;
 
+import com.sample.video.dto.UserDto;
 import com.sample.video.dto.VideoDto;
+import com.sample.video.service.UserService;
 import com.sample.video.service.VideoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class MainController {
     private VideoService videoService;
+    private UserService userService;
 
-    public MainController(VideoService videoService){
+    public MainController(VideoService videoService, UserService userService){
+        this.userService = userService;
         this.videoService = videoService;
     }
 
@@ -23,8 +28,22 @@ public class MainController {
 
     @GetMapping("/main")
     public String hello(Model model){
-        List<VideoDto> videoList = videoService.getVideoList();
+        List<VideoDto> videoList = videoService.getVideoListByIdDesc();
+        List<VideoDto> videoListViewCount = videoService.getVideoListByViewcountDesc();
+        List<UserDto> userList = new ArrayList();
+        List<UserDto> userListViewCount = new ArrayList();
+        for(VideoDto video : videoList){
+            Long id = video.getSingerId();
+            userList.add(userService.getUserById(id));
+        }
+        for(VideoDto video : videoListViewCount){
+            Long id = video.getSingerId();
+            userListViewCount.add(userService.getUserById(id));
+        }
+        model.addAttribute("userList", userList);
+        model.addAttribute("userListViewCount", userListViewCount);
         model.addAttribute("videoList",videoList);
+        model.addAttribute("videoListViewCount",videoListViewCount);
         
         return "main/main";
     }

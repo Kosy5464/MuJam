@@ -26,7 +26,7 @@ public class VideoController {
 
     @GetMapping("/videolist")
     public String videolist(Model model){
-        List<VideoDto> videoDtoList = videoService.getVideoList();
+        List<VideoDto> videoDtoList = videoService.getVideoListByIdDesc();
         model.addAttribute("videoList",videoDtoList);
         return "video/list";
     }
@@ -50,8 +50,9 @@ public class VideoController {
     public String upload(@RequestParam("title") String title, @RequestParam("content") String content,
                          @RequestParam("genre1") String genre1, @RequestParam("genre2") String genre2,
                          @RequestParam("video_upload") MultipartFile videoFile,
+                         @RequestParam("singerId") long singerId,
                          @RequestParam("thumbnail_upload") MultipartFile thumbnailFile){
-        VideoDto videoDto = videoService.uploadVideo(title,content,genre1,genre2,videoFile,thumbnailFile);
+        VideoDto videoDto = videoService.uploadVideo(title,content,genre1,genre2,videoFile,thumbnailFile,singerId);
 
         videoService.writeVideo(videoDto);
         return "redirect:/main";

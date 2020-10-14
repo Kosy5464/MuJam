@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface VideoRepository extends JpaRepository<Video, Long> {
     public List<Video> findAllByOrderByIdDesc();
+    public List<Video> findAllByOrderByViewcountDesc();
 }

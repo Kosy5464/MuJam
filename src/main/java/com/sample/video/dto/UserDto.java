@@ -20,6 +20,7 @@ public class UserDto {
     private String phoneNumber;
     private String password;
     private LocalDateTime createdAt;
+    private String nickname;
 
     public User toEntity() {
         User build = User.builder()
@@ -30,6 +31,7 @@ public class UserDto {
                 .name(name)
                 .password(password)
                 .phoneNumber(phoneNumber)
+                .nickname(nickname)
                 .build();
         return build;
     }

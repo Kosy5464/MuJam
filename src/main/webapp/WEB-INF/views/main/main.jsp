@@ -113,21 +113,7 @@
                             <li>
                                 <a class="page-scroll" id="playListLink" onclick="" href="${pageContext.request.contextPath}/contact">PlayList</a>
                             </li>
-                            <c:if test="${empty user}">
-                                <script>
-                                    const followLink = document.getElementById("followLink");
-                                    followLink.setAttribute("href","${pageContext.request.contextPath}/login");
-                                    followLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
 
-                                    const likeLink = document.getElementById("likeLink");
-                                    likeLink.setAttribute("href","${pageContext.request.contextPath}/login");
-                                    likeLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
-
-                                    const playListLink = document.getElementById("playListLink");
-                                    playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
-                                    playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
-                                </script>
-                            </c:if>
                             <li>
                                 <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -149,12 +135,31 @@
                         <div class="intro-lead-in">We're looking for a singer-songwriter!</div>
                         <div class="intro-heading">Show people your music!</div>
                     </div>
-                    <a href="${pageContext.request.contextPath}/videoUpload" class="btn btn-lg btn-1">Upload Video</a>
+                    <a id="uploadVideoLink" href="${pageContext.request.contextPath}/videoUpload" class="btn btn-lg btn-1" >Upload Video</a>
                     <!--<a href="${pageContext.request.contextPath}/contact" class="btn btn-2">Contact Us</a>-->
                 </div>
             </div>
         </div>
     </div>
+    <c:if test="${empty user}">
+        <script>
+        const followLink = document.getElementById("followLink");
+        followLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        followLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+
+        const likeLink = document.getElementById("likeLink");
+        likeLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        likeLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+
+        const playListLink = document.getElementById("playListLink");
+        playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+
+        const uploadVideoLink = document.getElementById("uploadVideoLink");
+        uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        uploadVideoLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+        </script>
+        </c:if>
 </header>
 <!-- Header -->
 <!-- /////////////////////////////////////////Content -->
@@ -185,7 +190,7 @@
                             <div class="video-wrapper">
                                 <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-                            <div>${videoList[0].title}</div>
+                            <div>${videoList[0].title} - ${userList[0].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
@@ -193,7 +198,7 @@
                             <div class="video-wrapper">
                                 <video class="video-preview" poster="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" width="300" height="150" src="${pageContext.request.contextPath}../resources/${videoList[1].storedLocation}" controls onmouseout="this.pause()" onmouseover="this.play()" ></video>
                             </div>
-                            <div>${videoList[1].title}</div>
+                            <div>${videoList[1].title} - ${userList[1].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
@@ -201,7 +206,7 @@
                             <div class="video-wrapper">
                                 <iframe src="${pageContext.request.contextPath}../resources/${videoList[2].storedLocation}" controls></iframe>
                             </div>
-                            <div>${videoList[2].title}</div>
+                            <div>${videoList[2].title} - ${userList[2].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
@@ -212,7 +217,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[3].title}</div>
+                            <div>${videoList[3].title} - ${userList[3].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[3].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
@@ -223,7 +228,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[4].title}</div>
+                            <div>${videoList[4].title} - ${userList[4].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[4].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
@@ -234,7 +239,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[5].title}</div>
+                            <div>${videoList[5].title} - ${userList[5].name}</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[5].id}" class="link"><span>Click Me</span></a>
                         </div>
                     </div>
@@ -390,57 +395,69 @@
                     <div class="tab tab-1 flex flex-3 active">
                         <!-- Video Thumbnail -->
                         <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div>내 마음이 움찔했던 순간 - 규현</div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div>호랑수월가 - 나래</div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe src="${pageContext.request.contextPath}../resources/video/greeny.mp4" controls></iframe>
-                            </div>
-                            <div>그린테스터 - 그린이</div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic04.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[0].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
+                            <div>${videoListViewCount[0].title} - ${userListViewCount[0].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[0].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[1].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
+                            <div>${videoListViewCount[1].title} - ${userListViewCount[1].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[1].id}" class="link"><span>Click Me</span></a>
                         </div>
                         <!-- Video Thumbnail -->
                         <div class="video col">
                             <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[2].thumbnailStoredLocation}" alt="" />
                                 <div class="arrow">
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <a href="${pageContext.request.contextPath}/generic" class="link"><span>Click Me</span></a>
+                            <div>${videoListViewCount[2].title} - ${userListViewCount[2].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[2].id}" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[3].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <div>${videoListViewCount[3].title} - ${userListViewCount[3].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[3].id}" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[4].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <div>${videoListViewCount[4].title} - ${userListViewCount[4].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[4].id}" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoListViewCount[5].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <div>${videoListViewCount[5].title} - ${userListViewCount[5].name}</div>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[5].id}" class="link"><span>Click Me</span></a>
                         </div>
                     </div>
                     <!-- Tab 2 -->

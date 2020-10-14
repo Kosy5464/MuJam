@@ -45,7 +45,7 @@ public class LoginController {
     @ResponseBody
     public int idCheck(String userId){
         System.out.println(userId);
-        UserDto user = userService.getUser(userId);
+        UserDto user = userService.getUserByUserId(userId);
         if(user == null){
             return 0;
         }
@@ -53,11 +53,25 @@ public class LoginController {
             return 1;
         }
     }
+
+    @PostMapping("/nicknameCheck")
+    @ResponseBody
+    public int nicknameCheck(String nickname){
+        System.out.println(nickname);
+        UserDto user = userService.getUserByNickname(nickname);
+        if(user == null){
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
+
     @PostMapping("/submitLogin")
     public String submitLogin(@RequestParam("userId") String userId,
                               @RequestParam("password") String password,
                               HttpServletRequest req){
-        UserDto user = userService.getUser(userId);
+        UserDto user = userService.getUserByUserId(userId);
         HttpSession session = req.getSession();
         //존재하지 않는 id
         if(user == null){
