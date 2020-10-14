@@ -8,8 +8,8 @@ CREATE TABLE `user` (
   `home_address` varchar(200) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `user_id` varchar(100) NOT NULL,
+  `nickname` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `user_id_UNIQUE` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-alter table video add viewcount bigint not null default '0'; 
+  UNIQUE KEY `user_id_UNIQUE` (`user_id`),
+  UNIQUE KEY `nickname_UNIQUE` (`nickname`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

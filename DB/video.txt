@@ -13,3 +13,4 @@ CREATE TABLE `video` (
   `thumbnail_file_name` varchar(200) CHARACTER SET armscii8 COLLATE armscii8_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+alter table video add viewcount bigint not null default '0'; 
