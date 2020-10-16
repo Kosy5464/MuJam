@@ -46,9 +46,9 @@
 
 </head>
 <body>
-
+<jsp:include page="../main/header.jsp"></jsp:include>
 <!-- Navigation -->
-<header id="page-top">
+<%--<header id="page-top">
     <div class="wrap-header">
         <div class="container">
             <nav class="navbar navbar-default navbar-fixed-top">
@@ -160,7 +160,7 @@
         uploadVideoLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
         </script>
         </c:if>
-</header>
+</header>--%>
 <!-- Header -->
 <!-- /////////////////////////////////////////Content -->
 <div id="page-content">

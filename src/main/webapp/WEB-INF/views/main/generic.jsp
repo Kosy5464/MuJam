@@ -27,20 +27,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 </head>
 <body class="subpage">
 
-<!-- Header -->
-<header id="header">
-    <h1><a href="#">Broadcast <span>by TEMPLATED</span></a></h1>
-    <a href="#menu">Menu</a>
-</header>
-
-<!-- Nav -->
-<nav id="menu">
-    <ul class="links">
-        <li><a href="${pageContext.request.contextPath}/main">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/generic">Generic</a></li>
-        <li><a href="${pageContext.request.contextPath}/elements">Elements</a></li>
-    </ul>
-</nav>
+<jsp:include page="../main/header.jsp"></jsp:include>
 
 <!-- Main -->
 <div id="main">

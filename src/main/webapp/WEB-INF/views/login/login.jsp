@@ -34,74 +34,8 @@
 </head>
 <body>
 <!-- Navigation -->
-<header id="page-top">
-    <div class="wrap-header">
-        <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="row">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
-                            </li>
-                            <li>
-                                <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header page-scroll">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand page-scroll" href="${pageContext.request.contextPath}/main">MuJam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/main">NEW</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/single">HOT</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/gallery">Musician</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Backstage</a>
-                            </li>
-                            <li><a>|</a></li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}contact">Follow</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Like</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">PlayList</a>
-                            </li>
-                            <li>
-                                <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                                           aria-label="Search">
-                                    <i class="fas fa-search" aria-hidden="true"></i>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-
-        </div>
-    </div>
-</header>
+<jsp:include page="../main/header.jsp"></jsp:include>
+<!-- header 끝 -->
 <div id="page-content">
     <br>
     <div class="container">
