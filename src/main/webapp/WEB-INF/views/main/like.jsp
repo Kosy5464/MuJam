@@ -42,11 +42,134 @@
 <div id="page-content">
     <br>
     <div class="container">
-        <div id="main-content">
+        <div id="main-content" >
+            <h2 style="color: black">MY LIKE</h2>
+            <div id="aside"class="col-sm-4">
+                <div class="video col">
+                    <div class="video-wrapper">
+                        <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-block">전체 영상 플레이</div>
+                    <a href="generic.html" class="link"><span>Click Me</span></a>
+                </div>
+                <hr color="gray">
+                <button class="btn-danger"><i class="far fa-user" style="font-size: 20px"></i>&nbsp;&nbsp;&nbsp;계정정보(아이디)</button>
+            </div>
+            <div id="section" class="col-sm-8">
+                <div class="table-wrapper" style="overflow: auto; height: 500px; background-color: ghostwhite">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>제제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        </tbody>
 
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <hr color="gray">
+                <h3 style="color: black">추천 music</h3>
+                <div class="tabs">
+
+                    <!-- Tab 1 -->
+                    <div class="tab tab-1 flex flex-4 active">
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>내 마음이 움찔했던 순간 - 규현</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>호랑수월가 - 나래</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe src="${pageContext.request.contextPath}../resources/video/greeny.mp4" controls></iframe>
+                            </div>
+                            <div>그린테스터 - 그린이</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic04.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div>&nbsp;</div>
     </div>
+
 </div>
+
 
 <!-- /////////////////////////////////////////Footer -->
 
