@@ -42,10 +42,318 @@
 <div id="page-content">
     <br>
     <div class="container">
-        <div id="main-content">
+        <div id="main-content" >
+            <br>
+            <div class="container">
+                <h3 style="color:black;">요즘 뜨는 Musician</h3>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
 
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="item">
+                            <!--  <img src="images/2.jpg" alt="Chicago" style="width:100%;">
+                              <div class="carousel-caption">
+                                  <h3>Chicago</h3>
+                                  <p>Thank you, Chicago!</p>
+                              </div>-->
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+
+
+                        <div class="item">
+                            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                        </div>
+
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <hr  color="gray">
+                    <h3 style="color: black">HOT Musician</h3>
+                    <div class="tab tab-1 flex flex-3 active">
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>내 마음이 움찔했던 순간 - 규현</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>호랑수월가 - 나래</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe src="video/greeny.mp4" controls></iframe>
+                            </div>
+                            <div>그린테스터 - 그린이</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-sm-6">
+                    <hr  color="gray">
+                    <h3 style="color: black">NEW Musician</h3>
+                    <div class="tab tab-1 flex flex-3 active">
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>내 마음이 움찔했던 순간 - 규현</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>호랑수월가 - 나래</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="video-wrapper">
+                                <iframe src="video/greeny.mp4" controls></iframe>
+                            </div>
+                            <div>그린테스터 - 그린이</div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <!-- Video Thumbnail -->
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/images/pic05.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                        <div class="video col">
+                            <div class="image fit">
+                                <img src="images/pic06.jpg" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
+                            </div>
+                            <a href="generic.html" class="link"><span>Click Me</span></a>
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination ">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
+
     </div>
+
 </div>
 
 <!-- /////////////////////////////////////////Footer -->
