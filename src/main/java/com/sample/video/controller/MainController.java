@@ -48,6 +48,21 @@ public class MainController {
         return "main/main";
     }
 
+    @GetMapping("/new")
+    public String NEW(Model model){ return "main/NEW"; }
+    @GetMapping("/hot")
+    public String HOT(Model model){ return "main/HOT"; }
+    @GetMapping("/playList")
+    public String playList(Model model){ return "main/playList"; }
+    @GetMapping("/like")
+    public String like(Model model){ return "main/like"; }
+    @GetMapping("/follow")
+    public String follow(Model model){ return "main/follow"; }
+    @GetMapping("/musician")
+    public String musician(Model model){ return "main/musician"; }
+    @GetMapping("/backstage")
+    public String backstage(Model model){ return "main/backstage"; }
+
     @GetMapping("/contact")
     public String contact(Model model){
         return "main/contact";

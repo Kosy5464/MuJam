@@ -92,26 +92,26 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                         <ul class="nav navbar-nav">
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/main">NEW</a>
+                                <a class="page-scroll" href="${pageContext.request.contextPath}/new">NEW</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/single">HOT</a>
+                                <a class="page-scroll" href="${pageContext.request.contextPath}/hot">HOT</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/gallery">Musician</a>
+                                <a class="page-scroll" href="${pageContext.request.contextPath}/musician">Musician</a>
                             </li>
                             <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/contact">Backstage</a>
+                                <a class="page-scroll" href="${pageContext.request.contextPath}/backstage">Backstage</a>
                             </li>
                             <li><a>|</a></li>
                             <li>
-                                <a class="page-scroll" id="followLink" onclick="" href="${pageContext.request.contextPath}/contact">Follow</a>
+                                <a class="page-scroll" id="followLink" onclick="" href="${pageContext.request.contextPath}/follow">Follow</a>
                             </li>
                             <li>
-                                <a class="page-scroll" id="likeLink" onclick="" href="${pageContext.request.contextPath}/contact">Like</a>
+                                <a class="page-scroll" id="likeLink" onclick="" href="${pageContext.request.contextPath}/like">Like</a>
                             </li>
                             <li>
-                                <a class="page-scroll" id="playListLink" onclick="" href="${pageContext.request.contextPath}/contact">PlayList</a>
+                                <a class="page-scroll" id="playListLink" onclick="" href="${pageContext.request.contextPath}/playList">PlayList</a>
                             </li>
 
                             <li>
