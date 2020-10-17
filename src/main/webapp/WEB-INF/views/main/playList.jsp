@@ -42,11 +42,90 @@
 <div id="page-content">
     <br>
     <div class="container">
-        <div id="main-content">
+        <div id="main-content" >
+            <h2 style="color: black">MY PLAYLIST</h2>
+            <div id="aside"class="col-sm-4">
+                <div class="video col">
+                    <div class="video-wrapper">
+                        <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-block">전체 영상 플레이</div>
+                    <a href="generic.html" class="link"><span>Click Me</span></a>
+                </div>
+                <hr color="gray">
+                <button class="btn-danger"><i class="far fa-user" style="font-size: 20px"></i>&nbsp;&nbsp;&nbsp;계정정보(아이디)</button>
+            </div>
+            <div id="section" class="col-sm-8">
+                <div class="table-wrapper" style="overflow: auto; height: 500px; background-color: ghostwhite">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>제제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>
+                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
+                            </td>
+                            <td>
+                                제목제목메목메몸게몸ㄱ모메멤고<br>
+                                뮤지션
+                            </td>
+                        </tr>
+                        </tbody>
 
+                    </table>
+                </div>
+            </div>
+            <div>&nbsp;</div>
         </div>
     </div>
+
 </div>
+
 
 <!-- /////////////////////////////////////////Footer -->
 
