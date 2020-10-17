@@ -15,6 +15,7 @@
 
     <!-- Custom CSS -->
     <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
+
     <!--다른 템플릿-->
     <link href="${pageContext.request.contextPath}../resources/css/main.css" rel="stylesheet"/>
     <!-- Custom Fonts -->

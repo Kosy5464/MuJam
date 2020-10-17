@@ -42,11 +42,131 @@
 <div id="page-content">
     <br>
     <div class="container">
-        <div id="main-content">
+        <div id="main-content" >
+            <h2 style="color: black">My Follow</h2>
+            <div class="row" style="overflow-y: auto;  height: 180px;">
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/1.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">그린뮤직</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/pic11.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">고셜밴드</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/2.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">태호LEE듬</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/3.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">이철행어커커</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/4.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">핫도그귀여워</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/5.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">심심한쌍둥이</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/7.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">새콤달콤</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-header-container">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/10.jpg" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">마이쮸</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr  color="gray">
+            <h3 style="color: black">Recent Updates</h3>
+            <div class="tabs">
 
+                <!-- Tab 1 -->
+                <div class="tab tab-1 flex flex-4 active">
+                    <!-- Video Thumbnail -->
+                    <div class="video col">
+                        <div class="video-wrapper">
+                            <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div>내 마음이 움찔했던 순간 - 규현</div>
+                        <a href="generic.html" class="link"><span>Click Me</span></a>
+                    </div>
+                    <!-- Video Thumbnail -->
+                    <div class="video col">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div>호랑수월가 - 나래</div>
+                        <a href="generic.html" class="link"><span>Click Me</span></a>
+                    </div>
+                    <!-- Video Thumbnail -->
+                    <div class="video col">
+                        <div class="video-wrapper">
+                            <iframe src="${pageContext.request.contextPath}../resources/video/greeny.mp4" controls></iframe>
+                        </div>
+                        <div>그린테스터 - 그린이</div>
+                        <a href="generic.html" class="link"><span>Click Me</span></a>
+                    </div>
+                    <!-- Video Thumbnail -->
+                    <div class="video col">
+                        <div class="image fit">
+                            <img src="${pageContext.request.contextPath}../resources/images/pic04.jpg" alt="" />
+                            <div class="arrow">
+                                <div class="icon fa-play"></div>
+                            </div>
+                        </div>
+                        <a href="generic.html" class="link"><span>Click Me</span></a>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </div>
+
 </div>
+
+
 
 <!-- /////////////////////////////////////////Footer -->
 
@@ -55,7 +175,7 @@
 
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/Thumbnail.js"></script>
+
 <!-- Bootstrap Core JavaScript -->
 <script src="${pageContext.request.contextPath}../resources/js/bootstrap.min.js"></script>
 
