@@ -1,7 +1,7 @@
 DROP TABLE user;
 CREATE TABLE `user` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `password` varchar(45) NOT NULL,
+  `password` varchar(200) NOT NULL,
   `name` varchar(45) NOT NULL,
   `email_address` varchar(100) NOT NULL,
   `phone_number` varchar(100) NOT NULL,
@@ -12,4 +12,4 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   UNIQUE KEY `nickname_UNIQUE` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
