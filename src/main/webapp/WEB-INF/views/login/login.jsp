@@ -59,7 +59,7 @@
                                 <form id="login-form" action="${pageContext.request.contextPath}/submitLogin" method="post" role="form" style="display: block;">
                                     <div class="form-group" style="text-align: left">
                                         <div class="radio-inline">
-                                            <input type="radio" class="radio" id="member" name="user">
+                                            <input type="radio" class="radio" id="member" name="user" required>
                                             <label class="control-label" for="member"style="color: black;font-weight: bold">일반회원</label>
                                         </div>
 
@@ -68,6 +68,7 @@
                                             <label class="control-label" for="musician"style="color: black;font-weight: bold">뮤지션</label>
                                         </div>
                                     </div>
+                                    <input type="hidden" id="userOrSinger" name="userOrSinger" value="">
                                     <div class="form-group">
                                         <input type="text" name="userId" id="userId2" tabindex="1" class="form-control" placeholder="Username" value="">
                                         <br>${msg1}
@@ -98,6 +99,8 @@
                                     </div>
                                 </form>
                                 <form id="register-form" action="${pageContext.request.contextPath}/submitSignUp" method="post" role="form" style="display: none;">
+                                    <a href="${pageContext.request.contextPath}/singerSignUp">가수회원가입</a>
+                                    <br>
                                     <div class="form-group col-sm-8">
                                         <input type="text" name="userId" id="userId" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
@@ -152,16 +155,11 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 <!-- /////////////////////////////////////////Footer -->
 
 <jsp:include page="../main/footer.jsp"></jsp:include>
 <!-- Footer -->
-
-
 
 <!-- jQuery -->
 <script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
@@ -189,6 +187,12 @@
 </body>
 
 <script type="text/javascript">
+    $('#member').click(function(){
+        $('#userOrSinger').val(1);
+    });
+    $('#musician').click(function(){
+        $('#userOrSinger').val(2);
+    });
     $('#checkIDbtn').click(function () {
         console.log("hi1");
         let userId = $('#userId').val();

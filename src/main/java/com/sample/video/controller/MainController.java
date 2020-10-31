@@ -1,7 +1,9 @@
 package com.sample.video.controller;
 
+import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
 import com.sample.video.dto.VideoDto;
+import com.sample.video.service.SingerService;
 import com.sample.video.service.UserService;
 import com.sample.video.service.VideoService;
 import org.springframework.stereotype.Controller;
@@ -15,10 +17,12 @@ import java.util.List;
 public class MainController {
     private VideoService videoService;
     private UserService userService;
+    private SingerService singerService;
 
-    public MainController(VideoService videoService, UserService userService){
+    public MainController(VideoService videoService, UserService userService, SingerService singerService){
         this.userService = userService;
         this.videoService = videoService;
+        this.singerService = singerService;
     }
 
     @GetMapping("/")
@@ -30,18 +34,18 @@ public class MainController {
     public String hello(Model model){
         List<VideoDto> videoList = videoService.getVideoListByIdDesc();
         List<VideoDto> videoListViewCount = videoService.getVideoListByViewcountDesc();
-        List<UserDto> userList = new ArrayList();
-        List<UserDto> userListViewCount = new ArrayList();
+        List<SingerDto> singerList = new ArrayList();
+        List<SingerDto> singerListViewCount = new ArrayList();
         for(VideoDto video : videoList){
             Long id = video.getSingerId();
-            userList.add(userService.getUserById(id));
+            singerList.add(singerService.getSingerById(id));
         }
         for(VideoDto video : videoListViewCount){
             Long id = video.getSingerId();
-            userListViewCount.add(userService.getUserById(id));
+            singerListViewCount.add(singerService.getSingerById(id));
         }
-        model.addAttribute("userList", userList);
-        model.addAttribute("userListViewCount", userListViewCount);
+        model.addAttribute("singerList", singerList);
+        model.addAttribute("singerListViewCount", singerListViewCount);
         model.addAttribute("videoList",videoList);
         model.addAttribute("videoListViewCount",videoListViewCount);
         

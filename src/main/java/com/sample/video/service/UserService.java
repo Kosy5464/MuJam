@@ -21,7 +21,6 @@ public class UserService {
     public void writeUser(UserDto user){
         userRepository.save(user.toEntity());
     }
-
     @Transactional
     public UserDto getUserByUserId(String userId){
         Optional<User> userWrapper = userRepository.findByUserId(userId);

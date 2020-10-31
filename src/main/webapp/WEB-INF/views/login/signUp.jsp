@@ -65,7 +65,7 @@
                                 <form id="login-form" action="${pageContext.request.contextPath}/submitLogin" method="post" role="form" style="display: none;">
                                     <div class="form-group" style="text-align: left">
                                         <div class="radio-inline">
-                                            <input type="radio" class="radio" id="member" name="user">
+                                            <input type="radio" class="radio" id="member" name="user" required>
                                             <label class="control-label" for="member"style="color: black;font-weight: bold">일반회원</label>
                                         </div>
 
@@ -104,6 +104,8 @@
                                     </div>
                                 </form>
                                 <form id="register-form" action="${pageContext.request.contextPath}/submitSignUp" method="post" role="form" style="display: block;">
+                                    <a href="${pageContext.request.contextPath}/singerSignUp">가수회원가입</a>
+                                    <br>
                                     <div class="form-group col-sm-8">
                                         <input type="text" name="userId" id="userId" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
@@ -189,6 +191,14 @@
 </body>
 
 <script type="text/javascript">
+    $('#member').click(function(){
+        $('#userOrSinger').val(1);
+    });
+
+    $('#musician').click(function(){
+        $('#userOrSinger').val(2);
+    });
+
     $('#checkIDbtn').click(function () {
         console.log("hi1");
         let userId = $('#userId').val();

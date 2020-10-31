@@ -77,7 +77,7 @@
                             <div class="video-wrapper">
                                 <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
-                            <div>${videoList[0].title} - ${userList[0].name}</div>
+                            <div>${videoList[0].title} - ${singerList[0].singerName}</div>
                             <div>조회수 ${videoList[0].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -86,7 +86,7 @@
                             <div class="video-wrapper">
                                 <video class="video-preview" poster="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" width="300" height="150" src="${pageContext.request.contextPath}../resources/${videoList[1].storedLocation}" controls onmouseout="this.pause()" onmouseover="this.play()" ></video>
                             </div>
-                            <div>${videoList[1].title} - ${userList[1].name}</div>
+                            <div>${videoList[1].title} - ${singerList[1].singerName}</div>
                             <div>조회수 ${videoList[1].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -95,7 +95,7 @@
                             <div class="video-wrapper">
                                 <iframe src="${pageContext.request.contextPath}../resources/${videoList[2].storedLocation}" controls></iframe>
                             </div>
-                            <div>${videoList[2].title} - ${userList[2].name}</div>
+                            <div>${videoList[2].title} - ${singerList[2].singerName}</div>
                             <div>조회수 ${videoList[2].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -107,7 +107,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[3].title} - ${userList[3].name}</div>
+                            <div>${videoList[3].title} - ${singerList[3].singerName}</div>
                             <div>조회수 ${videoList[3].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[3].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -119,7 +119,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[4].title} - ${userList[4].name}</div>
+                            <div>${videoList[4].title} - ${singerList[4].singerName}</div>
                             <div>조회수 ${videoList[4].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[4].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -131,7 +131,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoList[5].title} - ${userList[5].name}</div>
+                            <div>${videoList[5].title} - ${singerList[5].singerName}</div>
                             <div>조회수 ${videoList[5].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[5].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -294,7 +294,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[0].title} - ${userListViewCount[0].name}</div>
+                            <div>${videoListViewCount[0].title} - ${singerListViewCount[0].singerName}</div>
                             <div>조회수 ${videoListViewCount[0].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[0].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -306,7 +306,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[1].title} - ${userListViewCount[1].name}</div>
+                            <div>${videoListViewCount[1].title} - ${singerListViewCount[1].singerName}</div>
                             <div>조회수 ${videoListViewCount[1].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[1].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -318,7 +318,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[2].title} - ${userListViewCount[2].name}</div>
+                            <div>${videoListViewCount[2].title} - ${singerListViewCount[2].singerName}</div>
                             <div>조회수 ${videoListViewCount[2].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[2].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -330,7 +330,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[3].title} - ${userListViewCount[3].name}</div>
+                            <div>${videoListViewCount[3].title} - ${singerListViewCount[3].singerName}</div>
                             <div>조회수 ${videoListViewCount[3].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[3].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -342,7 +342,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[4].title} - ${userListViewCount[4].name}</div>
+                            <div>${videoListViewCount[4].title} - ${singerListViewCount[4].singerName}</div>
                             <div>조회수 ${videoListViewCount[4].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[4].id}" class="link"><span>Click Me</span></a>
                         </div>
@@ -354,7 +354,7 @@
                                     <div class="icon fa-play"></div>
                                 </div>
                             </div>
-                            <div>${videoListViewCount[5].title} - ${userListViewCount[5].name}</div>
+                            <div>${videoListViewCount[5].title} - ${singerListViewCount[5].singerName}</div>
                             <div>조회수 ${videoListViewCount[5].viewcount}회</div>
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[5].id}" class="link"><span>Click Me</span></a>
                         </div>

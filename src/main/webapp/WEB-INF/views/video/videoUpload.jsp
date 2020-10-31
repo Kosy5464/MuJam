@@ -52,7 +52,7 @@
         <div id="main-content" class="col-md-12">
             <div id="upload_form">
                 <form name="form1" id="videoUploadForm" method="post" action="/videoUploadFile" enctype="multipart/form-data">
-                    <input type="hidden" id="singerId" name="singerId" value="${user.id}">
+                    <input type="hidden" id="singerId" name="singerId" value="${singer.id}">
                     <h2>Upload your video</h2>
                     <div class="row">
                         <label class="col-sm-5">

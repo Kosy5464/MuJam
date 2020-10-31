@@ -59,7 +59,7 @@
 
                             <c:catch>
                                 <c:choose>
-                                    <c:when test="${empty user}">
+                                    <c:when test="${empty user && empty singer}">
                                         <li>
                                             <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
                                         </li>
@@ -70,6 +70,7 @@
                                     <c:otherwise>
                                         <li>
                                                 ${user.userId}
+                                                ${singer.singerId}
                                         </li>
                                         <li>
                                             <h5><a class="page-scroll" href="${pageContext.request.contextPath}/logout">로그아웃 &nbsp;&nbsp;&nbsp;</a></h5>
@@ -142,7 +143,7 @@
             </div>
         </div>
     </div>
-    <c:if test="${empty user}">
+    <c:if test="${empty user && empty singer}">
         <script>
             const followLink = document.getElementById("followLink");
             followLink.setAttribute("href","${pageContext.request.contextPath}/login");
@@ -155,11 +156,15 @@
             const playListLink = document.getElementById("playListLink");
             playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
             playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
-
-            const uploadVideoLink = document.getElementById("uploadVideoLink");
-            uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/login");
-            uploadVideoLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
         </script>
+    </c:if>
+
+    <c:if test="${empty singer}">
+            <script>
+                const uploadVideoLink = document.getElementById("uploadVideoLink");
+                uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/login");
+                uploadVideoLink.setAttribute("onclick","alert('가수로그인이 필요합니다.')");
+            </script>
     </c:if>
 </header>
 <!-- Header -->
