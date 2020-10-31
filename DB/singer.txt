@@ -1,0 +1,23 @@
+DROP TABLE singer;
+CREATE TABLE `singer` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `password` varchar(200) NOT NULL,
+  `singer_name` varchar(45) NOT NULL,
+  `email_address` varchar(100) NOT NULL,
+  `phone_number` varchar(100) NOT NULL,
+  `home_address` varchar(200) DEFAULT NULL,
+  `singer_id` varchar(45) NOT NULL,
+  `genre1` varchar(45) NOT NULL,
+  `genre2` varchar(45) NOT NULL,
+  `profile_image_name` varchar(200) DEFAULT NULL,
+  `profile_image_stored_location` varchar(200) DEFAULT NULL,
+  `description` varchar(500) NOT NULL,
+  `followers` varchar(2000) DEFAULT NULL,
+  `playlist` varchar(2000) DEFAULT NULL,
+  `instagram_account` varchar(200) DEFAULT NULL,
+  `youtube_channel` varchar(200) DEFAULT NULL,
+  `like_video_list` varchar(2000) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `singer_id_UNIQUE` (`singer_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
