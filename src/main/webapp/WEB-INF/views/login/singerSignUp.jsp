@@ -99,7 +99,10 @@
                                         <input type="text" name="homeAddress" id="homeAddress" tabindex="1" class="form-control" placeholder="Home Address" value="">
                                     </div>
                                     </div>
-                                    <input type="file" name="profileImage" id="profileImage" accept="image/*">
+                                    <div class="form-group col-sm-12">
+                                        <div>프로필사진등록</div>
+                                        <input type="file" name="profileImage" id="profileImage" accept="image/*" tabindex="1" class="form-control">
+                                    </div>
                                     <div class="form-group col-sm-12">
                                         <input type="text" name="genre1" id="genre1" tabindex="1" class="form-control" placeholder="genre1" value="">
                                     </div>

@@ -104,8 +104,10 @@
                                     </div>
                                 </form>
                                 <form id="register-form" action="${pageContext.request.contextPath}/submitSignUp" method="post" role="form" style="display: block;">
-                                    <a href="${pageContext.request.contextPath}/singerSignUp">가수회원가입</a>
-                                    <br>
+                                    <div>
+                                        <button type="button" onclick="location.href='${pageContext.request.contextPath}/singerSignUp'">가수회원가입</button>
+                                        <br>
+                                    </div>
                                     <div class="form-group col-sm-8">
                                         <input type="text" name="userId" id="userId" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
