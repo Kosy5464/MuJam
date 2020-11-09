@@ -33,4 +33,10 @@ public class User extends TimeEntity{
     private String name;
 
     private String nickname;
+
+    private String following;
+
+    private String playlist;
+
+    private String likeVideoList;
 }

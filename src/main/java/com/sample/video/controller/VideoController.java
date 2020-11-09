@@ -1,6 +1,8 @@
 package com.sample.video.controller;
 
+import com.sample.video.dto.ReplyDto;
 import com.sample.video.dto.VideoDto;
+import com.sample.video.service.ReplyService;
 import com.sample.video.service.VideoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import java.util.List;
 public class VideoController {
 
     private VideoService videoService;
+    private ReplyService replyService;
 
     public VideoController(VideoService videoService){
         this.videoService = videoService;
@@ -55,6 +58,14 @@ public class VideoController {
         VideoDto videoDto = videoService.uploadVideo(title,content,genre1,genre2,videoFile,thumbnailFile,singerId);
 
         videoService.writeVideo(videoDto);
+        return "redirect:/main";
+    }
+    @PostMapping("/replyUpload")
+    public String repUpload(@RequestParam("comments") String comments){
+
+        ReplyDto replyDto = replyService.uploadReply(comments);
+        replyService.writeReply(replyDto);
+
         return "redirect:/main";
     }
 }
