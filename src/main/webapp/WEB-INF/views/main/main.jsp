@@ -74,8 +74,11 @@
                     <div class="tab tab-1 flex flex-3 active">
                         <!-- Video Thumbnail -->
                         <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe width="275" height="155" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
                             </div>
                             <div>${videoList[0].title} - ${singerList[0].singerName}</div>
                             <div>조회수 ${videoList[0].viewcount}회</div>
@@ -83,8 +86,11 @@
                         </div>
                         <!-- Video Thumbnail -->
                         <div class="video col">
-                            <div class="video-wrapper">
-                                <video class="video-preview" poster="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" width="300" height="150" src="${pageContext.request.contextPath}../resources/${videoList[1].storedLocation}" controls onmouseout="this.pause()" onmouseover="this.play()" ></video>
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[1].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
                             </div>
                             <div>${videoList[1].title} - ${singerList[1].singerName}</div>
                             <div>조회수 ${videoList[1].viewcount}회</div>
@@ -92,8 +98,11 @@
                         </div>
                         <!-- Video Thumbnail -->
                         <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe src="${pageContext.request.contextPath}../resources/${videoList[2].storedLocation}" controls></iframe>
+                            <div class="image fit">
+                                <img src="${pageContext.request.contextPath}../resources/${videoList[2].thumbnailStoredLocation}" alt="" />
+                                <div class="arrow">
+                                    <div class="icon fa-play"></div>
+                                </div>
                             </div>
                             <div>${videoList[2].title} - ${singerList[2].singerName}</div>
                             <div>조회수 ${videoList[2].viewcount}회</div>

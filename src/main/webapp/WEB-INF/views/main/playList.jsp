@@ -59,62 +59,30 @@
                 <div class="table-wrapper" style="overflow: auto; height: 500px; background-color: ghostwhite">
                     <table>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>제제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>
-                                제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>
-                                제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>
-                                제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>
-                                <img src="${pageContext.request.contextPath}../resources/images/1.jpg" width="100" controls></img>
-                            </td>
-                            <td>
-                                제목제목메목메몸게몸ㄱ모메멤고<br>
-                                뮤지션
-                            </td>
-                        </tr>
+                        <c:forEach var="video" items="${playlist}" varStatus="status">
+                            <c:set var="count" value="${status.count}" />
+                            <tr>
+                                <td>${count}</td>
+                                <td>
+                                    <div class="video col">
+                                        <div class="image fit">
+                                            <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" width="100"/>
+                                            <div class="arrow">
+                                                <div class="icon fa-play"></div>
+                                            </div>
+                                        </div>
+                                        <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>
+                                    </div>
+                                </td>
+                                <td>${video.title}<br>
+                                    ${singerList[count-1].singerName}
+                                </td>
+                                <td>
+                                    <button type="button" id="playlistButton"
+                                    onclick="location.href='${pageContext.request.contextPath}/removePlaylist?userId=${user.id}&singerId=${singer.id}&videoId=${video.id}'">제거</button>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
 
                     </table>

@@ -45,78 +45,17 @@
         <div id="main-content" >
             <h2 style="color: black">My Follow</h2>
             <div class="row" style="overflow-y: auto;  height: 180px;">
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/1.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">그린뮤직</span>
+                <c:forEach var="singer" items="${followingList}" varStatus="status">
+                    <div class="profile-header-container">
+                        <div class="profile-header-img">
+                            <img class="img-circle" src="${pageContext.request.contextPath}../resources/${singer.profileImageStoredLocation}" />
+                            <!-- badge -->
+                            <div class="rank-label-container">
+                                <span class="label label-default rank-label">${singer.singerName}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/pic11.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">고셜밴드</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/2.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">태호LEE듬</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/3.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">이철행어커커</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/4.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">핫도그귀여워</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/5.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">심심한쌍둥이</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/7.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">새콤달콤</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="profile-header-container">
-                    <div class="profile-header-img">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/10.jpg" />
-                        <!-- badge -->
-                        <div class="rank-label-container">
-                            <span class="label label-default rank-label">마이쮸</span>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
             <hr  color="gray">
             <h3 style="color: black">Recent Updates</h3>

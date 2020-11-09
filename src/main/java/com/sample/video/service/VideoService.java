@@ -32,20 +32,7 @@ public class VideoService {
         Optional<Video> videoWrapper = videoRepository.findById(id);
         Video video = videoWrapper.get();
 
-        VideoDto videoDto = VideoDto.builder()
-                .id(video.getId())
-                .title(video.getTitle())
-                .content(video.getContent())
-                .createdAt(video.getCreatedAt())
-                .singerId(video.getSingerId())
-                .storedLocation(video.getStoredLocation())
-                .genre1(video.getGenre1())
-                .genre2(video.getGenre2())
-                .thumbnailStoredLocation(video.getThumbnailStoredLocation())
-                .videoFileName(video.getVideoFileName())
-                .thumbnailFileName(video.getThumbnailFileName())
-                .viewcount(video.getViewcount())
-                .build();
+        VideoDto videoDto = makeVideoDto(video);
 
         return videoDto;
     }
@@ -55,20 +42,7 @@ public class VideoService {
         List<VideoDto> videoDtoList = new ArrayList<>();
 
         for(Video video : videos){
-            VideoDto videoDto = VideoDto.builder()
-                    .id(video.getId())
-                    .title(video.getTitle())
-                    .content(video.getContent())
-                    .createdAt(video.getCreatedAt())
-                    .singerId(video.getSingerId())
-                    .storedLocation(video.getStoredLocation())
-                    .genre1(video.getGenre1())
-                    .genre2(video.getGenre2())
-                    .thumbnailStoredLocation(video.getThumbnailStoredLocation())
-                    .videoFileName(video.getVideoFileName())
-                    .thumbnailFileName(video.getThumbnailFileName())
-                    .viewcount(video.getViewcount())
-                    .build();
+            VideoDto videoDto = makeVideoDto(video);
 
             videoDtoList.add(videoDto);
         }
@@ -82,20 +56,7 @@ public class VideoService {
         List<VideoDto> videoDtoList = new ArrayList<>();
 
         for(Video video : videos){
-            VideoDto videoDto = VideoDto.builder()
-                    .id(video.getId())
-                    .title(video.getTitle())
-                    .content(video.getContent())
-                    .createdAt(video.getCreatedAt())
-                    .singerId(video.getSingerId())
-                    .storedLocation(video.getStoredLocation())
-                    .genre1(video.getGenre1())
-                    .genre2(video.getGenre2())
-                    .thumbnailStoredLocation(video.getThumbnailStoredLocation())
-                    .videoFileName(video.getVideoFileName())
-                    .thumbnailFileName(video.getThumbnailFileName())
-                    .viewcount(video.getViewcount())
-                    .build();
+            VideoDto videoDto = makeVideoDto(video);
 
             videoDtoList.add(videoDto);
         }
@@ -139,6 +100,25 @@ public class VideoService {
         videoDto.setVideoFileName(videoName);
         videoDto.setThumbnailFileName(thumbnailName);
         videoDto.setViewcount(0l);
+        return videoDto;
+    }
+
+    public VideoDto makeVideoDto(Video video){
+        VideoDto videoDto = VideoDto.builder()
+                .id(video.getId())
+                .title(video.getTitle())
+                .content(video.getContent())
+                .createdAt(video.getCreatedAt())
+                .singerId(video.getSingerId())
+                .storedLocation(video.getStoredLocation())
+                .genre1(video.getGenre1())
+                .genre2(video.getGenre2())
+                .thumbnailStoredLocation(video.getThumbnailStoredLocation())
+                .videoFileName(video.getVideoFileName())
+                .thumbnailFileName(video.getThumbnailFileName())
+                .viewcount(video.getViewcount())
+                .build();
+
         return videoDto;
     }
 }

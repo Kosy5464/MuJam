@@ -61,7 +61,7 @@ public class LoginController {
         String password = singer.getPassword();
         password = securityUtil.encryptSHA256(password);
         singer.setPassword(password);
-        singerService.writeSinger(singer, singerProfileFile);
+        singerService.createSinger(singer, singerProfileFile);
         return "redirect:/main";
     }
     @PostMapping("/idCheck")
@@ -69,20 +69,8 @@ public class LoginController {
     public int idCheck(String userId){
         System.out.println(userId);
         UserDto user = userService.getUserByUserId(userId);
-        if(user == null){
-            return 0;
-        }
-        else{
-            return 1;
-        }
-    }
-
-    @PostMapping("/singerIdCheck")
-    @ResponseBody
-    public int singerIdCheck(String singerId){
-        System.out.println(singerId);
-        SingerDto singer = singerService.getSingerBySingerId(singerId);
-        if(singer == null){
+        SingerDto singer = singerService.getSingerBySingerId(userId);
+        if(user == null && singer == null){
             return 0;
         }
         else{
@@ -95,7 +83,8 @@ public class LoginController {
     public int nicknameCheck(String nickname){
         System.out.println(nickname);
         UserDto user = userService.getUserByNickname(nickname);
-        if(user == null){
+        SingerDto singer =singerService.getSingerBySingerName(nickname);
+        if(user == null && singer == null){
             return 0;
         }
         else{
@@ -103,18 +92,6 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/singerNameCheck")
-    @ResponseBody
-    public int singerNameCheck(String singerName){
-        System.out.println(singerName);
-        SingerDto singer = singerService.getSingerBySingerName(singerName);
-        if(singer == null){
-            return 0;
-        }
-        else{
-            return 1;
-        }
-    }
     @PostMapping("/submitLogin")
     public String submitLogin(@RequestParam("userId") String userId,
                               @RequestParam("password") String password,
