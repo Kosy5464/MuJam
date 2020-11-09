@@ -5,8 +5,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @NoArgsConstructor
@@ -31,8 +33,4 @@ public class User extends TimeEntity{
     private String name;
 
     private String nickname;
-
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-//    private List<Reply> replyList;
-
 }

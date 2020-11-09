@@ -40,7 +40,7 @@ public class Singer extends TimeEntity{
 
     private String description;
 
-    private String followers;
+    private String following;
 
     private String playlist;
 

@@ -64,7 +64,7 @@
                             <div class="col-lg-12">
                                 <form id="register-form" action="${pageContext.request.contextPath}/submitSingerSignUp" method="post" role="form" style="display: block;" enctype="multipart/form-data">
                                     <div class="form-group col-sm-8">
-                                        <input type="text" name="singerId" id="singerId" tabindex="1" class="form-control" placeholder="SingerID" value="">
+                                        <input type="text" name="singerId" id="singerId" tabindex="1" class="form-control" placeholder="UserID" value="">
                                     </div>
                                     <div class="form-group col-sm-4">
                                         <input type="button" name="checkIDbtn" id="checkIDbtn" tabindex="1" class="form-control" value="중복확인">
@@ -82,9 +82,9 @@
                                         <input type="text" name="singerName" id="singerName" tabindex="1" class="form-control" placeholder="singerName" value="">
                                     </div>
                                     <div class="form-group col-sm-4">
-                                        <input type="button" name="checkSingerNamebtn" id="checkSingerNamebtn" tabindex="1" class="form-control" value="중복확인">
+                                        <input type="button" name="checkNicknamebtn" id="checkNicknamebtn" tabindex="1" class="form-control" value="중복확인">
                                     </div>
-                                    <div id="singerNameCheckMsg"></div>
+                                    <div id="nicknameCheckMsg"></div>
 
                                     <div class="form-group col-sm-12">
                                         <input type="email" name="emailAddress" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
@@ -168,12 +168,11 @@
 <script type="text/javascript">
     $('#checkIDbtn').click(function () {
         console.log("hi1");
-        let singerId = $('#singerId').val();
-        console.log(singerId);
+        let userId = $('#singerId').val();
         $.ajax({
             type:'POST',
-            url: '${pageContext.request.contextPath}/singerIdCheck',
-            data:{singerId : singerId},
+            url: '${pageContext.request.contextPath}/idCheck',
+            data:{userId : userId},
             success:function(data) {
                 console.log(data + "data입니다.")
                 if(singerId == "" && data == '0') {
@@ -195,24 +194,24 @@
         })
     });
 
-    $('#checkSingerNamebtn').click(function () {
+    $('#checkNicknamebtn').click(function () {
             console.log("hi1");
-            let singerName = $('#singerName').val();
+            let nickname = $('#singerName').val();
             $.ajax({
                 type:'POST',
-                url: '${pageContext.request.contextPath}/singerNameCheck',
-                data:{singerName : singerName},
+                url: '${pageContext.request.contextPath}/nicknameCheck',
+                data:{nickname : nickname},
                 success:function(data) {
                     console.log(data + "data입니다.")
-                    if(singerName == "" && data == '0') {
-                        $("#singerNameCheckMsg").css("color", "red");
-                        $("#singerNameCheckMsg").text("가수명을 입력해주세요.");
+                    if(nickname == "" && data == '0') {
+                        $("#nicknameCheckMsg").css("color", "red");
+                        $("#nicknameCheckMsg").text("닉네임을 입력해주세요.");
                     }else if (data == '0') {
-                        $("#singerNameCheckMsg").css("color", "blue");
-                        $("#singerNameCheckMsg").text("가수명 사용 가능");
+                        $("#nicknameCheckMsg").css("color", "blue");
+                        $("#nicknameCheckMsg").text("닉네임 사용 가능");
                     }else if(data == '1') {
-                        $("#singerNameCheckMsg").css("color", "red");
-                        $("#singerNameCheckMsg").text("이미 사용중인 가수명입니다.");
+                        $("#nicknameCheckMsg").css("color", "red");
+                        $("#nicknameCheckMsg").text("이미 사용중인 닉네임입니다.");
                     }
                 },
                 error:function(e) {
@@ -222,6 +221,7 @@
                 }
             })
         });
+
     $("#confirm-password").blur(function () {
         if($("#password").val()!=$("#confirm-password").val()) {
             if($("#confirm-password").val()!="") {

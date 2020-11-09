@@ -21,6 +21,9 @@ public class UserDto {
     private String password;
     private LocalDateTime createdAt;
     private String nickname;
+    private String following;
+    private String playlist;
+    private String likeVideoList;
 
     public User toEntity() {
         User build = User.builder()
@@ -32,6 +35,9 @@ public class UserDto {
                 .password(password)
                 .phoneNumber(phoneNumber)
                 .nickname(nickname)
+                .following(following)
+                .likeVideoList(likeVideoList)
+                .playlist(playlist)
                 .build();
         return build;
     }

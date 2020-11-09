@@ -24,7 +24,7 @@ public class SingerDto {
     private String profileImageName;
     private String profileImageStoredLocation;
     private String description;
-    private String followers;
+    private String following;
     private String playlist;
     private LocalDateTime createdAt;
     private String instagramAccount;
@@ -36,7 +36,7 @@ public class SingerDto {
                 .description(description)
                 .singerName(singerName)
                 .emailAddress(emailAddress)
-                .followers(followers)
+                .following(following)
                 .genre1(genre1)
                 .genre2(genre2)
                 .homeAddress(homeAddress)
