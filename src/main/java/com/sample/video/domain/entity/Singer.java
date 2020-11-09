@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -51,5 +49,8 @@ public class Singer extends TimeEntity{
     private String youtubeChannel;
 
     private String likeVideoList;
+
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "singer")
+//    private List<Reply> replyList;
 
 }
