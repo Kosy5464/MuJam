@@ -177,7 +177,6 @@ public class VideoController {
         }
         return "redirect:/like";
     }
-
     @GetMapping("/removePlaylist")
     public String removePlayist(Long userId, Long videoId, Long singerId, HttpServletRequest req){
         HttpSession session = req.getSession();
@@ -189,7 +188,6 @@ public class VideoController {
         }
         return "redirect:/playList";
     }
-
     @PostMapping("/videoUploadFile")
     public String upload(@RequestParam("title") String title, @RequestParam("content") String content,
                          @RequestParam("genre1") String genre1, @RequestParam("genre2") String genre2,
@@ -201,4 +199,6 @@ public class VideoController {
         videoService.writeVideo(videoDto);
         return "redirect:/main";
     }
+
+
 }

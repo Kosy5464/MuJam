@@ -76,6 +76,15 @@
             <button type="button" id="playListButton" onclick=""></button>
             <button type="button" id="likeListButton" onclick=""></button>
             </div>
+            <form name="form2" id="replyUploadForm" method="post" action="/replyUpload" enctype="multipart/form-data">
+                <label>
+                    <span>댓글</span>
+                    <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>
+                </label>
+<%--                <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">--%>
+
+                <input class="sendButton" type="submit" name="Submit" value="Submit">
+            </form>
         </div>
     </section>
 </div>

@@ -9,7 +9,10 @@ CREATE TABLE `user` (
   `created_at` datetime NOT NULL,
   `user_id` varchar(100) NOT NULL,
   `nickname` varchar(45) NOT NULL,
+  `following` varchar(2000) DEFAULT NULL,
+  `playlist` varchar(2000) DEFAULT NULL,
+  `like_video_list` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   UNIQUE KEY `nickname_UNIQUE` (`nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
