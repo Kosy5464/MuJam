@@ -36,23 +36,15 @@ public class ReplyService {
     }
 
     @Transactional
-    public ReplyDto getReplyByVideoId(Long videoId){
-        Optional<Reply> replyWrapper = replyRepository.findByVideoId(videoId);
+    public List<ReplyDto> getReplyByVideoId(Long videoId){
+        List<Reply> replyWrapper = replyRepository.findAllByVideoId(videoId);
+        List<ReplyDto> replyDtos = new ArrayList();
         try {
-            Reply reply = replyWrapper.get();
-            ReplyDto replyDto = ReplyDto.builder()
-                    .replyId(reply.getReplyId())
-               .videoId(reply.getVideoId())
-//                    .userId(reply.getUserId())
-                    .singerId(reply.getSingerId())
-                    .comment(reply.getComment())
-                    .classNo(reply.getClassNo())
-                    .groupId(reply.getGroupId())
-                    .createdAt(reply.getCreatedAt())
-                    .updatedAt(reply.getUpdatedAt())
-                    .deletedAt(reply.getDeletedAt())
-                    .build();
-            return replyDto;
+            for(Reply reply : replyWrapper ){
+                ReplyDto replyDto = makeReplyDto(reply);
+                replyDtos.add(replyDto);
+            }
+            return replyDtos;
         }catch(NoSuchElementException e) {
             return null;
         }
@@ -62,9 +54,23 @@ public class ReplyService {
     public ReplyDto uploadReply(String comments){
         ReplyDto replyDto = new ReplyDto();
         replyDto.setComment(comments);
-//      replyDto.setVideoId();
+
         return replyDto;
     }
-
+    public ReplyDto makeReplyDto(Reply reply){
+        ReplyDto replyDto = ReplyDto.builder()
+                .singerId(reply.getSingerId())
+                .userId(reply.getUserId())
+                .groupId(reply.getGroupId())
+                .replyId(reply.getReplyId())
+                .deletedAt(reply.getDeletedAt())
+                .updatedAt(reply.getUpdatedAt())
+                .createdAt(reply.getUpdatedAt())
+                .classNo(reply.getClassNo())
+                .comment(reply.getComment())
+                .videoId(reply.getVideoId())
+                .build();
+        return replyDto;
+    }
 
 }

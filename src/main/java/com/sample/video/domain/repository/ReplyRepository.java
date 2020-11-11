@@ -10,5 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface ReplyRepository extends JpaRepository<Reply, Long> {
-    public Optional<Reply> findByVideoId(Long videoId);
+    public List<Reply> findAllByVideoId(Long videoId);
 }
+//

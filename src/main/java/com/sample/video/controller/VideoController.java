@@ -1,10 +1,10 @@
 package com.sample.video.controller;
 
-import com.sample.video.domain.entity.Singer;
-import com.sample.video.domain.entity.User;
+import com.sample.video.dto.ReplyDto;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
 import com.sample.video.dto.VideoDto;
+import com.sample.video.service.ReplyService;
 import com.sample.video.service.SingerService;
 import com.sample.video.service.UserService;
 import com.sample.video.service.VideoService;
@@ -26,6 +26,7 @@ public class VideoController {
     private VideoService videoService;
     private SingerService singerService;
     private UserService userService;
+    private ReplyService replyService;
     public VideoController(VideoService videoService, SingerService singerService,
                            UserService userService){
         this.videoService = videoService;
@@ -170,13 +171,14 @@ public class VideoController {
     public String removeListList(Long userId, Long videoId, Long singerId, HttpServletRequest req){
         HttpSession session = req.getSession();
         if(session.getAttribute("singer") == null){
-           userService.removeLikeList(userId,videoId);
+            userService.removeLikeList(userId,videoId);
         }
         else{
             singerService.removeLikeList(singerId,videoId);
         }
         return "redirect:/like";
     }
+
     @GetMapping("/removePlaylist")
     public String removePlayist(Long userId, Long videoId, Long singerId, HttpServletRequest req){
         HttpSession session = req.getSession();
@@ -188,6 +190,7 @@ public class VideoController {
         }
         return "redirect:/playList";
     }
+
     @PostMapping("/videoUploadFile")
     public String upload(@RequestParam("title") String title, @RequestParam("content") String content,
                          @RequestParam("genre1") String genre1, @RequestParam("genre2") String genre2,
@@ -200,5 +203,12 @@ public class VideoController {
         return "redirect:/main";
     }
 
+    @PostMapping("/replyUpload")
+    public String repUpload(@RequestParam("comments") String comments){
 
+        ReplyDto replyDto = replyService.uploadReply(comments);
+        replyService.writeReply(replyDto);
+
+        return "redirect:/main";
+    }
 }
