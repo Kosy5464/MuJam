@@ -162,7 +162,7 @@
     <c:if test="${empty singer}">
             <script>
                 const uploadVideoLink = document.getElementById("uploadVideoLink");
-                uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/loginㅠ");
+                uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/login");
                 uploadVideoLink.setAttribute("onclick","alert('가수로그인이 필요합니다.')");
             </script>
     </c:if>

@@ -31,7 +31,7 @@ public class ReplyDto {
     public Reply toEntity(){
         Reply build = Reply.builder()
                 .replyId(replyId)
-//                .userId(userId)
+                .userId(userId)
                .singerId(singerId)
                 .videoId(videoId)
                 .comment(comment)

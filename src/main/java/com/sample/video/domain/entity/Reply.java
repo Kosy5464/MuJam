@@ -17,11 +17,11 @@ public class Reply extends TimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long replyId;
 
-//    private long userId;
+    private long userId;
 
-       private long singerId;
+    private long singerId;
 
-   private long videoId;
+    private long videoId;
 
     private String comment;
 
@@ -34,11 +34,15 @@ public class Reply extends TimeEntity {
 
     private LocalDateTime deletedAt;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
 //    @ManyToOne
 //    private Singer singer;
+
+
+//    @ManyToOne
+//    private Video video;
 
 }

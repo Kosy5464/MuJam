@@ -6,14 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>MuJam</title>
 
@@ -26,7 +26,8 @@
     <link href="${pageContext.request.contextPath}../resources/css/main.css" rel="stylesheet"/>
 
     <!-- Custom Fonts -->
-    <link href="${pageContext.request.contextPath}../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
@@ -38,6 +39,7 @@
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath}../resources/js/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath}../resources/js/respond.min.js"></script>
+
     <![endif]-->
 </head>
 <body>
@@ -58,7 +60,9 @@
             </header>-->
             <div class="video">
                 <div class="video-wrapper">
-                    <iframe width="560" height="315" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315"
+                            src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}"
+                            frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div id="most" class="tab-pane fade in active">
                     <div class="post">
@@ -70,21 +74,49 @@
                             <p>장르 2 ${videoDto.genre2}</p>
                         </div>
                     </div>
-            </div>
-            <p>내용 ${videoDto.content}</p>
-            <button type="button" id="followButton" onclick=""></button>
-            <button type="button" id="playListButton" onclick=""></button>
-            <button type="button" id="likeListButton" onclick=""></button>
-            </div>
-            <form name="form2" id="replyUploadForm" method="post" action="/replyUpload" enctype="multipart/form-data">
-                <label>
-                    <span>댓글</span>
-                    <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>
-                </label>
-<%--                <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">--%>
+                </div>
+                <p>내용 ${videoDto.content}</p>
+                <button type="button" id="followButton" onclick=""></button>
+                <button type="button" id="playListButton" onclick=""></button>
+                <button type="button" id="likeListButton" onclick=""></button>
+                <form name="form2" id="replyUploadForm" method="post" action="/replyUpload"
+                      enctype="multipart/form-data">
+                    <label>
+                        <span>댓글</span>
+                        <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>
+                    </label>
+                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">
+                    <c:catch>
+                        <c:choose>
+                            <c:when test="${empty user && empty singer}">
+                                <input type="button" id="replyButton" value="Submit"></input>
+                            </c:when>
+                            <c:otherwise>
+                                <input id="replyButton" class="sendButton" type="submit" name="Submit" value="Submit">
+                            </c:otherwise>
+                        </c:choose>
+                    </c:catch>
 
-                <input class="sendButton" type="submit" name="Submit" value="Submit">
-            </form>
+                </form>
+
+                <div id="main-content">
+                    <h2 style="color: black">댓글</h2>
+                    <div class="row" style="overflow-y: auto;  height: 100%;">
+                        <c:forEach var="reply" items="${replyDto}" varStatus="status">
+                        <span>${reply.comment}</span>
+                        <c:choose>
+                            <c:when test="${empty reply.userId}">
+                            <span>${reply.singerId}</span>
+                              </c:when>
+                            <c:when test="${empty reply.singerId}">
+                                <span>${reply.userId}</span>
+                            </c:when>
+                        </c:choose>
+                    </c:forEach>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </div>
@@ -93,7 +125,6 @@
 
 <jsp:include page="../main/footer.jsp"></jsp:include>
 <!-- Footer -->
-
 
 
 <!-- jQuery -->
@@ -117,242 +148,243 @@
 <script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
 </body>
-    <c:if test="${empty user && empty singer}">
-        <script>
-            const followButton = document.getElementById("followButton");
-            followButton.setAttribute("onclick","location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
+<c:if test="${empty user && empty singer}">
+    <script>
+        const uploadReplyLink = document.getElementById("replyButton");
+        uploadReplyLink.setAttribute("href", "${pageContext.request.contextPath}/login");
+        uploadReplyLink.setAttribute("onclick", "alert('로그인이 필요합니다.')");
+    </script>
+</c:if>
+<c:if test="${empty user && empty singer}">
+    <script>
+        const followButton = document.getElementById("followButton");
+        followButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
 
-            const likeListButton = document.getElementById("likeListButton");
-            likeListButton.setAttribute("onclick","location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
+        const likeListButton = document.getElementById("likeListButton");
+        likeListButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
 
-            const playListButton = document.getElementById("playListButton");
-            playListButton.setAttribute("onclick","location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
-        </script>
-    </c:if>
-    <c:if test="${follow == 0}">
-        <script>
-            $('#followButton').html('FOLLOW');
-        </script>
-    </c:if>
-    <c:if test="${follow == 1}">
-        <script>
-            $('#followButton').html('FOLLOW 취소');
-        </script>
-    </c:if>
+        const playListButton = document.getElementById("playListButton");
+        playListButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
+    </script>
+</c:if>
+<c:if test="${follow == 0}">
+    <script>
+        $('#followButton').html('FOLLOW');
+    </script>
+</c:if>
+<c:if test="${follow == 1}">
+    <script>
+        $('#followButton').html('FOLLOW 취소');
+    </script>
+</c:if>
 
-    <c:if test="${like == 0}">
-        <script>
-            $('#likeListButton').html('좋아요');
-        </script>
-    </c:if>
-    <c:if test="${like == 1}">
-        <script>
-            $('#likeListButton').html('좋아요 취소');
-        </script>
-    </c:if>
+<c:if test="${like == 0}">
+    <script>
+        $('#likeListButton').html('좋아요');
+    </script>
+</c:if>
+<c:if test="${like == 1}">
+    <script>
+        $('#likeListButton').html('좋아요 취소');
+    </script>
+</c:if>
 
-    <c:if test="${play == 0}">
-        <script>
-            $('#playListButton').html('플레이리스트 추가');
-        </script>
-    </c:if>
-    <c:if test="${play == 1}">
-        <script>
-            $('#playListButton').html('플레이리스트 제거');
-        </script>
-    </c:if>
+<c:if test="${play == 0}">
+    <script>
+        $('#playListButton').html('플레이리스트 추가');
+    </script>
+</c:if>
+<c:if test="${play == 1}">
+    <script>
+        $('#playListButton').html('플레이리스트 제거');
+    </script>
+</c:if>
 
-    <c:if test="${not empty user}">
-        <script type="text/javascript">
-            $('#followButton').click(function(){
-                let userId = ${user.id};
-                let singerId = ${singerDto.id};
-                if($('#followButton').html() == 'FOLLOW'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userAddFollowing',
-                        data: {userId : userId, singerId : singerId},
-                        success:function(data){
-                            $('#followButton').html('FOLLOW 취소');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userRemoveFollowing',
-                        data: {userId : userId, singerId : singerId},
-                        success:function(data){
-                            $('#followButton').html('FOLLOW');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
+<c:if test="${not empty user}">
+    <script type="text/javascript">
+        $('#followButton').click(function () {
+            let userId = ${user.id};
+            let singerId = ${singerDto.id};
+            if ($('#followButton').html() == 'FOLLOW') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userAddFollowing',
+                    data: {userId: userId, singerId: singerId},
+                    success: function (data) {
+                        $('#followButton').html('FOLLOW 취소');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userRemoveFollowing',
+                    data: {userId: userId, singerId: singerId},
+                    success: function (data) {
+                        $('#followButton').html('FOLLOW');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
 
-            $('#likeListButton').click(function(){
-                let userId = ${user.id};
-                let videoId = ${videoDto.id};
-                if($('#likeListButton').html() == '좋아요'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userAddLikeList',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#likeListButton').html('좋아요 취소');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userRemoveLikeList',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#likeListButton').html('좋아요');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
+        $('#likeListButton').click(function () {
+            let userId = ${user.id};
+            let videoId = ${videoDto.id};
+            if ($('#likeListButton').html() == '좋아요') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userAddLikeList',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#likeListButton').html('좋아요 취소');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userRemoveLikeList',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#likeListButton').html('좋아요');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
 
-            $('#playListButton').click(function(){
-                let userId = ${user.id};
-                let videoId = ${videoDto.id};
-                if($('#playListButton').html() == '플레이리스트 추가'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userAddPlaylist',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#playListButton').html('플레이리스트 제거');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/userRemovePlaylist',
-                        data: {userId : userId,videoId : videoId},
-                        success:function(data){
-                            $('#playListButton').html('플레이리스트 추가');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
-        </script>
-    </c:if>
+        $('#playListButton').click(function () {
+            let userId = ${user.id};
+            let videoId = ${videoDto.id};
+            if ($('#playListButton').html() == '플레이리스트 추가') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userAddPlaylist',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#playListButton').html('플레이리스트 제거');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/userRemovePlaylist',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#playListButton').html('플레이리스트 추가');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
+    </script>
+</c:if>
 
-    <c:if test="${not empty singer}">
-        <script type="text/javascript">
-            $('#followButton').click(function(){
-                let userId = ${singer.id};
-                let singerId = ${singerDto.id};
-                if($('#followButton').html() == 'FOLLOW'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerAddFollowing',
-                        data: {userId : userId, singerId : singerId},
-                        success:function(data){
-                            $('#followButton').html('FOLLOW 취소');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerRemoveFollowing',
-                        data: {userId : userId, singerId : singerId},
-                        success:function(data){
-                            $('#followButton').html('FOLLOW');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
+<c:if test="${not empty singer}">
+    <script type="text/javascript">
+        $('#followButton').click(function () {
+            let userId = ${singer.id};
+            let singerId = ${singerDto.id};
+            if ($('#followButton').html() == 'FOLLOW') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerAddFollowing',
+                    data: {userId: userId, singerId: singerId},
+                    success: function (data) {
+                        $('#followButton').html('FOLLOW 취소');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerRemoveFollowing',
+                    data: {userId: userId, singerId: singerId},
+                    success: function (data) {
+                        $('#followButton').html('FOLLOW');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
 
-            $('#likeListButton').click(function(){
-                let userId = ${singer.id};
-                let videoId = ${videoDto.id};
-                if($('#likeListButton').html() == '좋아요'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerAddLikeList',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#likeListButton').html('좋아요 취소');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerRemoveLikeList',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#likeListButton').html('좋아요');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
+        $('#likeListButton').click(function () {
+            let userId = ${singer.id};
+            let videoId = ${videoDto.id};
+            if ($('#likeListButton').html() == '좋아요') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerAddLikeList',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#likeListButton').html('좋아요 취소');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerRemoveLikeList',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#likeListButton').html('좋아요');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
 
-            $('#playListButton').click(function(){
-                let userId = ${singer.id};
-                let videoId = ${videoDto.id};
-                if($('#playListButton').html() == '플레이리스트 추가'){
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerAddPlaylist',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#playListButton').html('플레이리스트 제거');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-                else{
-                    $.ajax({
-                        type:'POST',
-                        url:'${pageContext.request.contextPath}/singerRemovePlaylist',
-                        data: {userId : userId, videoId : videoId},
-                        success:function(data){
-                            $('#playListButton').html('플레이리스트 추가');
-                        },
-                        error:function(e){
-                            console.log('실패!');
-                        }
-                    })
-                }
-            });
-        </script>
-    </c:if>
+        $('#playListButton').click(function () {
+            let userId = ${singer.id};
+            let videoId = ${videoDto.id};
+            if ($('#playListButton').html() == '플레이리스트 추가') {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerAddPlaylist',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#playListButton').html('플레이리스트 제거');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '${pageContext.request.contextPath}/singerRemovePlaylist',
+                    data: {userId: userId, videoId: videoId},
+                    success: function (data) {
+                        $('#playListButton').html('플레이리스트 추가');
+                    },
+                    error: function (e) {
+                        console.log('실패!');
+                    }
+                })
+            }
+        });
+    </script>
+</c:if>
 </html>
