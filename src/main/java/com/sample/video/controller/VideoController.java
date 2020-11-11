@@ -214,12 +214,12 @@ public class VideoController {
         SingerDto singer = (SingerDto)session.getAttribute("singer");
         UserDto user = (UserDto)session.getAttribute("user");
 
-        if(user == null && singer == null){
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("message", "로그인 해주세요");
-
-        }
-        else if(singer == null && user != null){
+//        if(user == null && singer == null){
+//            ModelAndView modelAndView = new ModelAndView();
+//            modelAndView.addObject("message", "로그인 해주세요");
+//
+//        }
+        if(singer == null && user != null){
             ReplyDto replyDto = replyService.uploadReply(comments);
             replyDto.setUserId(user.getId());
             replyDto.setVideoId(videoId);
