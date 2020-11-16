@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -28,7 +29,7 @@ public class VideoController {
     private UserService userService;
     private ReplyService replyService;
     public VideoController(VideoService videoService, SingerService singerService,
-                           UserService userService, ReplyService replyService){
+                           UserService userService,ReplyService replyService){
         this.videoService = videoService;
         this.singerService = singerService;
         this.userService = userService;
@@ -64,6 +65,7 @@ public class VideoController {
         }
         VideoDto videoDto = videoService.getVideo(id);
         SingerDto singerDto = singerService.getSingerById(videoDto.getSingerId());
+        List<ReplyDto> replyDtoList = replyService.getReplyByVideoId(id);
         if(followingList.contains(singerDto.getId())){
             model.addAttribute("follow",1);
         }
@@ -88,6 +90,7 @@ public class VideoController {
         videoDto.setViewcount(videoDto.getViewcount()+1);
         model.addAttribute("videoDto",videoDto);
         model.addAttribute("singerDto", singerDto);
+        model.addAttribute("replyDto", replyDtoList);
         videoService.writeVideo(videoDto);
         return "video/videoPlay";
     }
@@ -205,10 +208,30 @@ public class VideoController {
     }
 
     @PostMapping("/replyUpload")
-    public String repUpload(@RequestParam("comments") String comments){
+    public String repUpload(@RequestParam("comments") String comments, @RequestParam("videoId") Long videoId, HttpServletRequest req){
 
-        ReplyDto replyDto = replyService.uploadReply(comments);
-        replyService.writeReply(replyDto);
+        HttpSession session = req.getSession();
+        SingerDto singer = (SingerDto)session.getAttribute("singer");
+        UserDto user = (UserDto)session.getAttribute("user");
+
+        if(user == null && singer == null){
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("message", "로그인 해주세요");
+
+        }
+        else if(singer == null && user != null){
+            ReplyDto replyDto = replyService.uploadReply(comments);
+            replyDto.setUserId(user.getId());
+            replyDto.setVideoId(videoId);
+            replyService.writeReply(replyDto);
+        }
+        else if(user == null && singer != null){
+            ReplyDto replyDto = replyService.uploadReply(comments);
+            replyDto.setSingerId(singer.getId());
+            replyDto.setVideoId(videoId);
+            replyService.writeReply(replyDto);
+        }
+
 
         return "redirect:/main";
     }
