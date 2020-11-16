@@ -28,10 +28,11 @@ public class VideoController {
     private UserService userService;
     private ReplyService replyService;
     public VideoController(VideoService videoService, SingerService singerService,
-                           UserService userService){
+                           UserService userService, ReplyService replyService){
         this.videoService = videoService;
         this.singerService = singerService;
         this.userService = userService;
+        this.replyService = replyService;
     }
 
 

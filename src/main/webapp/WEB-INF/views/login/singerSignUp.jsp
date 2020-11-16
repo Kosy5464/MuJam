@@ -101,7 +101,10 @@
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <div>프로필사진등록</div>
-                                        <input type="file" name="profileImage" id="profileImage" accept="image/*" tabindex="1" class="form-control">
+                                        <input type="button" name="defaultImage" id="defaultImage" tabindex="1" class="form-control" value="기본이미지사용">
+                                        <input type="button" name="getImage" id="getImage" tabindex="1" class="form-control" value="사진불러오기">
+                                        <input type="file" name="profileImage" id="profileImage" accept="image/*" tabindex="1" class="form-control" style="display:none">
+                                        <input type="hidden" name="imageCheck" id="imageCheck" value=1>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <input type="text" name="genre1" id="genre1" tabindex="1" class="form-control" placeholder="genre1" value="">
@@ -240,6 +243,14 @@
                 $("#passwordCheckMsg").text("");
             }
         }
+    })
+    $("#defaultImage").click(function(){
+        $("#profileImage").hide();
+        $("#imageCheck").val(1);
+    })
+    $("#getImage").click(function(){
+        $("#profileImage").show();
+        $("#imageCheck").val(2);
     })
 </script>
 </html>

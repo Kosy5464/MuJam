@@ -45,23 +45,26 @@ public class LoginController {
         return "redirect:/main";
     }
     @PostMapping("/submitSignUp")
-    public String submitSignUp(UserDto user){
+    public String submitSignUp(UserDto user,
+                               @RequestParam(value = "profileImage", required = false) MultipartFile userProfileFile,
+                               int imageCheck){
         SecurityUtil securityUtil = new SecurityUtil();
         String password = user.getPassword();
         password = securityUtil.encryptSHA256(password);
         user.setPassword(password);
-        userService.writeUser(user);
+        userService.createUser(user, userProfileFile, imageCheck);
         return "redirect:/main";
     }
-    @PostMapping("submitSingerSignUp")
+    @PostMapping("/submitSingerSignUp")
     public String submitSingerSignUp(SingerDto singer,
-                                     @RequestParam("profileImage") MultipartFile singerProfileFile
-                                     ){
+                                     @RequestParam(value = "profileImage", required = false) MultipartFile singerProfileFile,
+                                     int imageCheck){
         SecurityUtil securityUtil = new SecurityUtil();
         String password = singer.getPassword();
         password = securityUtil.encryptSHA256(password);
         singer.setPassword(password);
-        singerService.createSinger(singer, singerProfileFile);
+        System.out.println(singerProfileFile.getName());
+        singerService.createSinger(singer, singerProfileFile, imageCheck);
         return "redirect:/main";
     }
     @PostMapping("/idCheck")

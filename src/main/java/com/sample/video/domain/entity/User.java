@@ -39,4 +39,8 @@ public class User extends TimeEntity{
     private String playlist;
 
     private String likeVideoList;
+
+    private String profileImageName;
+
+    private String profileImageStoredLocation;
 }

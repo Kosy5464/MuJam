@@ -38,23 +38,28 @@ public class SingerService {
         singerRepository.save(singerDto.toEntity());
     }
     @Transactional
-    public void createSinger(SingerDto singerDto, MultipartFile singerProfileFile){
-        String profileName = singerProfileFile.getOriginalFilename();
-        System.out.println(profileName);
-        String profileExtension = profileName.split("[.]")[1];
+    public void createSinger(SingerDto singerDto, MultipartFile singerProfileFile, int imageCheck){
         long index = 1;
+        String profileName = "";
+        String uploadProfileName = "";
         if(!getSingerListByIdDesc().isEmpty()) {
             index = getSingerListByIdDesc().get(0).getId() + 1;
         }
-        System.out.println(index);
-        String uploadProfileName = profileName.split("[.]")[0]+"_uploadProfileImage"+Long.toString(index)+"."+profileExtension;
-        try{
-            //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
-            //본인 profileImage 경로로 바꾸기
-            singerProfileFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
-
-        } catch(IllegalStateException | IOException e){
-            e.printStackTrace();
+        if(imageCheck == 1) {
+            profileName = "default.jpg";
+            uploadProfileName = "default.jpg";
+        }
+        else{
+            profileName = singerProfileFile.getOriginalFilename();
+            String profileExtension = profileName.split("[.]")[1];
+            uploadProfileName = profileName.split("[.]")[0]+"_uploadProfileImage"+Long.toString(index)+"."+profileExtension;
+            try{
+                //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
+                //본인 profileImage 경로로 바꾸기
+                singerProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+            } catch(IllegalStateException | IOException e){
+                e.printStackTrace();
+            }
         }
         singerDto.setProfileImageName(profileName);
         singerDto.setProfileImageStoredLocation("upload/profileImage/"+uploadProfileName);

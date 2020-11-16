@@ -62,7 +62,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="${pageContext.request.contextPath}/submitLogin" method="post" role="form" style="display: none;">
+                                <form id="login-form" action="${pageContext.request.contextPath}/submitLogin" method="post" role="form" style="display: none;" enctype="multipart/form-data">
                                     <div class="form-group" style="text-align: left">
                                         <div class="radio-inline">
                                             <input type="radio" class="radio" id="member" name="user" required>
@@ -145,6 +145,13 @@
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <input type="text" name="homeAddress" id="homeAddress" tabindex="1" class="form-control" placeholder="Home Address" value="">
+                                    </div>
+                                    <div class="form-group col-sm-12">
+                                        <div>프로필사진등록</div>
+                                        <input type="button" name="defaultImage" id="defaultImage" tabindex="1" class="form-control" value="기본이미지사용">
+                                        <input type="button" name="getImage" id="getImage" tabindex="1" class="form-control" value="사진불러오기">
+                                        <input type="file" name="profileImage" id="profileImage" accept="image/*" tabindex="1" class="form-control" style="display:none">
+                                        <input type="hidden" name="imageCheck" id="imageCheck" value=1>
                                     </div>
                                     <div class="form-group">
                                         <div class="row">
@@ -275,6 +282,14 @@
                 $("#passwordCheckMsg").text("");
             }
         }
+    })
+    $("#defaultImage").click(function(){
+        $("#profileImage").hide();
+        $("#imageCheck").val(1);
+    })
+    $("#getImage").click(function(){
+        $("#profileImage").show();
+        $("#imageCheck").val(2);
     })
 </script>
 </html>

@@ -24,9 +24,13 @@ public class UserDto {
     private String following;
     private String playlist;
     private String likeVideoList;
+    private String profileImageName;
+    private String profileImageStoredLocation;
 
     public User toEntity() {
         User build = User.builder()
+                .profileImageStoredLocation(profileImageStoredLocation)
+                .profileImageName(profileImageName)
                 .emailAddress(emailAddress)
                 .homeAddress(homeAddress)
                 .id(id)
