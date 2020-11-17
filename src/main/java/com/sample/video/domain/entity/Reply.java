@@ -23,6 +23,8 @@ public class Reply extends TimeEntity {
 
     private long videoId;
 
+    private long likeCount;
+
     private String comment;
 
     private long classNo;

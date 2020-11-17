@@ -35,6 +35,7 @@ public class ReplyService {
         replyRepository.save(reply.toEntity());
     }
 
+
     @Transactional
     public List<ReplyDto> getReplyByVideoId(Long videoId){
         List<Reply> replyWrapper = replyRepository.findAllByVideoId(videoId);
@@ -63,6 +64,7 @@ public class ReplyService {
                 .userId(reply.getUserId())
                 .groupId(reply.getGroupId())
                 .replyId(reply.getReplyId())
+                .likeCount(reply.getLikeCount())
                 .deletedAt(reply.getDeletedAt())
                 .updatedAt(reply.getUpdatedAt())
                 .createdAt(reply.getUpdatedAt())

@@ -1,5 +1,6 @@
 package com.sample.video.controller;
 
+import com.sample.video.domain.entity.User;
 import com.sample.video.dto.ReplyDto;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
@@ -53,6 +54,7 @@ public class VideoController {
         ArrayList<Long> followingList = new ArrayList();
         ArrayList<Long> likeList = new ArrayList();
         ArrayList<Long> playList = new ArrayList();
+
         if(singer == null && user != null){
             followingList = userService.getFollowingList(user.getId());
             likeList = userService.getLikeList(user.getId());
@@ -66,6 +68,8 @@ public class VideoController {
         VideoDto videoDto = videoService.getVideo(id);
         SingerDto singerDto = singerService.getSingerById(videoDto.getSingerId());
         List<ReplyDto> replyDtoList = replyService.getReplyByVideoId(id);
+        List<UserDto> userDtoList = userService.findAllUser();
+        List<SingerDto> singerDtoList = singerService.getSingerListByIdDesc();
         if(followingList.contains(singerDto.getId())){
             model.addAttribute("follow",1);
         }
@@ -90,7 +94,9 @@ public class VideoController {
         videoDto.setViewcount(videoDto.getViewcount()+1);
         model.addAttribute("videoDto",videoDto);
         model.addAttribute("singerDto", singerDto);
-        model.addAttribute("replyDto", replyDtoList);
+        model.addAttribute("replyDtoList", replyDtoList);
+        model.addAttribute("userDtoList", userDtoList);
+        model.addAttribute("singerDtoList", singerDtoList);
         videoService.writeVideo(videoDto);
         return "video/videoPlay";
     }
@@ -214,12 +220,7 @@ public class VideoController {
         SingerDto singer = (SingerDto)session.getAttribute("singer");
         UserDto user = (UserDto)session.getAttribute("user");
 
-        if(user == null && singer == null){
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("message", "로그인 해주세요");
-
-        }
-        else if(singer == null && user != null){
+        if(singer == null && user != null){
             ReplyDto replyDto = replyService.uploadReply(comments);
             replyDto.setUserId(user.getId());
             replyDto.setVideoId(videoId);
@@ -229,6 +230,36 @@ public class VideoController {
             ReplyDto replyDto = replyService.uploadReply(comments);
             replyDto.setSingerId(singer.getId());
             replyDto.setVideoId(videoId);
+            replyService.writeReply(replyDto);
+        }
+
+
+        return "redirect:/main";
+    }
+    @PostMapping("/replyUpload2")
+    public String repUpload2(@RequestParam("comments") String comments, @RequestParam("videoId") Long videoId,
+                             @RequestParam("groupId") Long groupId, HttpServletRequest req){
+
+        HttpSession session = req.getSession();
+        SingerDto singer = (SingerDto)session.getAttribute("singer");
+        UserDto user = (UserDto)session.getAttribute("user");
+
+
+        if(singer == null && user != null){
+            ReplyDto replyDto = replyService.uploadReply(comments);
+            replyDto.setUserId(user.getId());
+            replyDto.setVideoId(videoId);
+            replyDto.setGroupId(groupId);
+            replyDto.setClassNo(1);
+            replyService.writeReply(replyDto);
+
+        }
+        else if(user == null && singer != null){
+            ReplyDto replyDto = replyService.uploadReply(comments);
+            replyDto.setSingerId(singer.getId());
+            replyDto.setVideoId(videoId);
+            replyDto.setGroupId(groupId);
+            replyDto.setClassNo(1);
             replyService.writeReply(replyDto);
         }
 

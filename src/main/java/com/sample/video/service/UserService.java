@@ -1,16 +1,13 @@
 package com.sample.video.service;
 
-import com.sample.video.domain.entity.Singer;
+import com.sample.video.domain.entity.Reply;
 import com.sample.video.domain.entity.User;
 import com.sample.video.domain.repository.UserRepository;
-import com.sample.video.dto.SingerDto;
+import com.sample.video.dto.ReplyDto;
 import com.sample.video.dto.UserDto;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -27,45 +24,6 @@ public class UserService {
     @Transactional
     public void writeUser(UserDto user){
         userRepository.save(user.toEntity());
-    }
-
-    @Transactional
-    public List<UserDto> getUserListByIdDesc(){
-        List<User> users = userRepository.findAllByOrderByIdDesc();
-        List<UserDto> userDtos = new ArrayList();
-        for(User user : users){
-            UserDto userDto = makeUserDto(user);
-            userDtos.add(userDto);
-        }
-        return userDtos;
-    }
-    @Transactional
-    public void createUser(UserDto userDto, MultipartFile userProfileFile, int imageCheck){
-        long index = 1;
-        String profileName = "";
-        String uploadProfileName = "";
-        if(!getUserListByIdDesc().isEmpty()) {
-            index = getUserListByIdDesc().get(0).getId() + 1;
-        }
-        if(imageCheck == 1) {
-            profileName = "default.jpg";
-            uploadProfileName = "default.jpg";
-        }
-        else{
-            profileName = userProfileFile.getOriginalFilename();
-            String profileExtension = profileName.split("[.]")[1];
-            uploadProfileName = profileName.split("[.]")[0]+"_uploadProfileImageU"+Long.toString(index)+"."+profileExtension;
-            try{
-                //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
-                //본인 profileImage 경로로 바꾸기
-                userProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
-            } catch(IllegalStateException | IOException e){
-                e.printStackTrace();
-            }
-        }
-        userDto.setProfileImageName(profileName);
-        userDto.setProfileImageStoredLocation("upload/profileImage/"+uploadProfileName);
-        userRepository.save(userDto.toEntity());
     }
     @Transactional
     public UserDto getUserByUserId(String userId){
@@ -98,6 +56,21 @@ public class UserService {
             User user = userWrapper.get();
             UserDto userDto = makeUserDto(user);
             return userDto;
+        }catch(NoSuchElementException e) {
+            return null;
+        }
+    }
+
+    @Transactional
+    public List<UserDto> findAllUser(){
+        List<User> userWrapper = userRepository.findAllByOrderByIdAsc();
+        List<UserDto> userDtos = new ArrayList();
+        try {
+            for(User user : userWrapper ){
+                UserDto userDto = makeUserDto(user);
+                userDtos.add(userDto);
+            }
+            return userDtos;
         }catch(NoSuchElementException e) {
             return null;
         }
@@ -233,8 +206,6 @@ public class UserService {
     }
     public UserDto makeUserDto(User user){
         UserDto userDto = UserDto.builder()
-                .profileImageName(user.getProfileImageName())
-                .profileImageStoredLocation(user.getProfileImageStoredLocation())
                 .userId(user.getUserId())
                 .createdAt(user.getCreatedAt())
                 .emailAddress(user.getEmailAddress())

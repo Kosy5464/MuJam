@@ -21,6 +21,7 @@ public class ReplyDto {
     private long videoId;
     private long userId;
     private long singerId;
+    private long likeCount;
     private String comment;
     private long classNo;
     private long groupId;
@@ -34,6 +35,7 @@ public class ReplyDto {
                 .userId(userId)
                .singerId(singerId)
                 .videoId(videoId)
+                .likeCount(likeCount)
                 .comment(comment)
                 .classNo(classNo)
                 .groupId(groupId)
@@ -43,4 +45,5 @@ public class ReplyDto {
 
         return build;
     }
+
 }
