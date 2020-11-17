@@ -3,15 +3,13 @@ CREATE TABLE `reply` (
   `reply_id` bigint NOT NULL AUTO_INCREMENT,
   `video_id` bigint,
   `user_id` bigint,
-  `singer_id` bigint,  
+  `singer_id` bigint,
+  `like_count` bigint,
   `comment` varchar(1000) NOT NULL,
   `class_no` bigint not null default '0',
-  `group_id` bigint ,
+  `group_id` bigint,
   `created_at` datetime NOT NULL,
   `updated_at` datetime,
   `deleted_at` datetime,
-  PRIMARY KEY (`reply_id`),
-  FOREIGN KEY (`user_id`) references user (id),
-  FOREIGN KEY (`video_id`) references video (id),
-  FOREIGN KEY (`singer_id`) references singer (id)
+  PRIMARY KEY (`reply_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
