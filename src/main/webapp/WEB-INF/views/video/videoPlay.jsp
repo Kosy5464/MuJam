@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.sample.video.domain.entity.User" %>
+<%@ page import="com.sample.video.dto.UserDto" %><%--
   Created by IntelliJ IDEA.
   User: chlee
   Date: 2020-09-29
@@ -193,88 +194,115 @@
                         </form>
                     </div>
                 </div>
-<%--                                <div id="disqus_thread"></div>--%>
-<%--                                <script>--%>
+                <%--                                <div id="disqus_thread"></div>--%>
+                <%--                                <script>--%>
 
-<%--                                    /**--%>
-<%--                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.--%>
-<%--                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/--%>
-<%--                                    /*--%>
-<%--                                    var disqus_config = function () {--%>
-<%--                                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable--%>
-<%--                                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable--%>
-<%--                                    };--%>
-<%--                                    */--%>
-<%--                                    (function() { // DON'T EDIT BELOW THIS LINE--%>
-<%--                                        var d = document, s = d.createElement('script');--%>
-<%--                                        s.src = 'https://web1-ctctwodayx.disqus.com/embed.js';--%>
-<%--                                        s.setAttribute('data-timestamp', +new Date());--%>
-<%--                                        (d.head || d.body).appendChild(s);--%>
-<%--                                    })();--%>
-<%--                                </script>--%>
-<%--                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>--%>
+                <%--                                    /**--%>
+                <%--                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.--%>
+                <%--                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/--%>
+                <%--                                    /*--%>
+                <%--                                    var disqus_config = function () {--%>
+                <%--                                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable--%>
+                <%--                                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable--%>
+                <%--                                    };--%>
+                <%--                                    */--%>
+                <%--                                    (function() { // DON'T EDIT BELOW THIS LINE--%>
+                <%--                                        var d = document, s = d.createElement('script');--%>
+                <%--                                        s.src = 'https://web1-ctctwodayx.disqus.com/embed.js';--%>
+                <%--                                        s.setAttribute('data-timestamp', +new Date());--%>
+                <%--                                        (d.head || d.body).appendChild(s);--%>
+                <%--                                    })();--%>
+                <%--                                </script>--%>
+                <%--                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>--%>
 
 
                 <br>
+                <
+
 
                 <div id="main-content">
-
                     <div class="col" style="overflow-y: auto;  height: 100%;">
-                        <%--                        <c:forEach var="user" items="${userDtoList}" varStatus="status">--%>
-                        <%--                            <c:forEach var="singer" items="${singerDtoList}" varStatus="status">--%>
-                        <c:forEach var="reply" items="${replyDtoList}" varStatus="status">
-                            <c:if test="${reply.groupId == 0 && reply.classNo == 0}">
-                                <span><h2>${reply.comment}</h2></span>
-                                <c:choose>
-                                    <c:when test="${reply.userId == 0}">
-                                        <span><h2>작성자 : ${reply.singerId}</h2></span>
-                                    </c:when>
-                                    <c:when test="${reply.singerId == 0 }">
-                                        <span><h2>작성자 : ${reply.userId}</h2></span>
-                                    </c:when>
-                                </c:choose>
-<%--                                <button id="rereply" onclick = "dis()" name="rereply" value="rereply">대댓글달기</button>--%>
-                                <form name="form3" id="replyUploadForm2" action="/replyUpload2" method="post"
-                                      enctype="multipart/form-data" >
-                                    <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
-                                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
-                                    <input type="hidden" id="groupId" name="groupId" value="${reply.replyId}"/>
-                                    <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
-                                    <textarea rows="content" name="comments" id="comments"
-                                              placeholder="댓글을 입력하세요"></textarea>
-
-                                    <c:catch>
-                                        <c:choose>
-                                            <c:when test="${empty user && empty singer}">
-                                                <input type="button" id="replyButton2" value="Submit"></input>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <input id="replyButton" class="sendButton" type="submit" name="Submit"
-                                                       value="Submit">
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:catch>
-                                </form>
-                            </c:if>
-                            <c:forEach var="replys" items="${replyDtoList}" varStatus="status">
-                                <c:if test="${replys.groupId == reply.replyId}">
-                                    <span><h2 style="color : black">${replys.comment}</h2></span>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <c:forEach var="reply" items="${replyDtoList}" varStatus="status">
+                                <c:if test="${reply.groupId == 0 && reply.classNo == 0}">
+                                <td><span><h2>${reply.comment}</h2></span></td>
+                                <td>
                                     <c:choose>
-                                        <c:when test="${replys.userId == 0}">
-                                            <span><h2 style="color : black">작성자 : ${reply.singerId}</h2></span>
-                                        </c:when>
-                                        <c:when test="${replys.singerId == 0}">
-                                            <span><h2 style="color : black">작성자 : ${reply.userId}</h2></span>
-                                        </c:when>
-                                    </c:choose>
+                                    <c:when test="${reply.userId == userDtoList[status.index].id}">
+                                    <span><h2>작성자 : ${userDtoList[status.index].nickname}</h2></span>
+                                <td><img width="100" height="105"
+                                         src="${pageContext.request.contextPath}../resources/${userDtoList[status.index].profileImageStoredLocation}"
+                                         frameborder="0" allowfullscreen></img></td>
+                                </c:when>
+                                <c:when test="${reply.singerId == singerDtoList[status.index].id}">
+                                    <span><h2>작성자 : ${singerDtoList[status.index].singerName}</h2></span>
+                                    <img width="100" height="105"
+                                         src="${pageContext.request.contextPath}../resources/${singerDtoList[status.index].profileImageStoredLocation}"
+                                         frameborder="0" allowfullscreen></img></td>
+                                </c:when>
+                                </c:choose>
+                                </td>
+                                <td>
+
+                                        <%--                                <button id="rereply" onclick = "dis()" name="rereply" value="rereply">대댓글달기</button>--%>
+                                    <form name="form3" id="replyUploadForm2" action="/replyUpload2" method="post"
+                                          enctype="multipart/form-data">
+                                        <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
+                                        <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
+                                        <input type="hidden" id="groupId" name="groupId" value="${reply.replyId}"/>
+                                        <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
+                                        <textarea rows="content" name="comments" id="comments"
+                                                  placeholder="댓글을 입력하세요"></textarea>
+
+
+                                        <c:catch>
+                                            <c:choose>
+                                                <c:when test="${empty user && empty singer}">
+                                                    <input type="button" id="replyButton2" value="Submit"></input>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <input id="replyButton" class="sendButton" type="submit"
+                                                           name="Submit"
+                                                           value="Submit">
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:catch>
+                                    </form>
+                                    </c:if>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <c:forEach var="replys" items="${replyDtoList}" varStatus="status">
+                                <c:if test="${replys.groupId == reply.replyId}">
+                                <td><span><h2 style="color : black">${replys.comment}</h2></span></td>
+                                <td>
+                                    <c:choose>
+                                    <c:when test="${reply.userId == userDtoList[status.index].id}">
+                                    <span><h2
+                                            style="color : black">작성자 : ${userDtoList[status.index].nickname}</h2></span>
+                                <td><img width="100" height="105"
+                                         src="${pageContext.request.contextPath}../resources/${userDtoList[status.index].profileImageStoredLocation}"
+                                         frameborder="0" allowfullscreen></img></td>
+                                </c:when>
+                                <c:when test="${reply.singerId == singerDtoList[status.index].id}">
+                                <span><h2
+                                        style="color : black">작성자 : ${singerDtoList[status.index].singerName}</h2></span>
+                                <td><img width="100" height="105"
+                                         src="${pageContext.request.contextPath}../resources/${singerDtoList[status.index].profileImageStoredLocation}"
+                                         frameborder="0" allowfullscreen></img></td>
+                                </c:when>
+                                </c:choose>
+                                </td>
                                 </c:if>
+                                </c:forEach>
+                            </tbody>
+                            </tr>
+
                             </c:forEach>
-
-                            <h3>-----------------------------------------------------------------------------------</h3>
-
-                        </c:forEach>
-                        <%--                         </c:forEach>--%>
-                        <%--                        </c:forEach>--%>
+                        </table>
 
                     </div>
                 </div>
@@ -313,10 +341,10 @@
 
 <script>
 
-    function dis(){
-        if($('#replyUploadForm2').css('display') == 'none'){
+    function dis() {
+        if ($('#replyUploadForm2').css('display') == 'none') {
             $('#replyUploadForm2').show();
-        }else{
+        } else {
             $('#replyUploadForm2').hide();
         }
     }

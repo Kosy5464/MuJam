@@ -68,7 +68,8 @@ public class VideoController {
         VideoDto videoDto = videoService.getVideo(id);
         SingerDto singerDto = singerService.getSingerById(videoDto.getSingerId());
         List<ReplyDto> replyDtoList = replyService.getReplyByVideoId(id);
-        //List<UserDto> userDtoList = userService.findAllUser();
+        List<UserDto> userDtoList = userService.getUserListByIdDesc();
+        System.out.println(userDtoList.get(1));
         List<SingerDto> singerDtoList = singerService.getSingerListByIdDesc();
         if(followingList.contains(singerDto.getId())){
             model.addAttribute("follow",1);
@@ -95,7 +96,7 @@ public class VideoController {
         model.addAttribute("videoDto",videoDto);
         model.addAttribute("singerDto", singerDto);
         model.addAttribute("replyDtoList", replyDtoList);
-        //model.addAttribute("userDtoList", userDtoList);
+        model.addAttribute("userDtoList", userDtoList);
         model.addAttribute("singerDtoList", singerDtoList);
         videoService.writeVideo(videoDto);
         return "video/videoPlay";
