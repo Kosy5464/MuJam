@@ -12,5 +12,6 @@ public interface SingerRepository extends JpaRepository<Singer, Long> {
     public List<Singer> findAllByOrderByIdDesc();
     public Optional<Singer> findBySingerId(String singerId);
     public Optional<Singer> findBySingerName(String singerName);
+    public List<Singer> findBySingerNameContaining(String searchTarget);
 }
 //test2

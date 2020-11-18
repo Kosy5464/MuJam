@@ -10,5 +10,6 @@ import java.util.List;
 public interface VideoRepository extends JpaRepository<Video, Long> {
     public List<Video> findAllByOrderByIdDesc();
     public List<Video> findAllByOrderByViewcountDesc();
+    public List<Video> findByTitleContaining(String searchTarget);
 }
 //test4

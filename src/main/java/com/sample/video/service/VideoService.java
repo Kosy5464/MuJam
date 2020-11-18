@@ -49,7 +49,18 @@
 
             return videoDtoList;
         }
+        @Transactional
+        public List<VideoDto> getVideoResultList(String searchTarget){
+            List<Video> videos = videoRepository.findByTitleContaining(searchTarget);
+            List<VideoDto> videoResultList = new ArrayList();
 
+            for(Video video : videos){
+                VideoDto videoDto = makeVideoDto(video);
+                videoResultList.add(videoDto);
+            }
+
+            return videoResultList;
+        }
         @Transactional
         public List<VideoDto> getVideoListByViewcountDesc(){
             List<Video> videos = videoRepository.findAllByOrderByViewcountDesc();
@@ -82,8 +93,8 @@
             String uploadThumbnailName = thumbnailName.split("[.]")[0]+"_uploadThumbnail"+Long.toString(index)+"."+thumbnailExtension;
             try{
                 //본인 uploadvideo, thumbnail 경로로 바꾸기
-                videoFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/video/"+uploadVideoName));
-                thumbnailFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/thumbnail/"+uploadThumbnailName));
+                videoFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/video/"+uploadVideoName));
+                thumbnailFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/thumbnail/"+uploadThumbnailName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
