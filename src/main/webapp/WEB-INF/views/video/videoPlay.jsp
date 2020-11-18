@@ -17,6 +17,78 @@
 
     <title>MuJam</title>
 
+    <style>
+        /* 글 내용의 경계선 표시 */
+        .content {
+            border: 1px dotted #cecece;
+        }
+
+        /* 글 내용안에 있는 이미지의 크기 제한 */
+        .content img {
+            max-width: 100%;
+        }
+
+        /* 댓글에 관련된 css */
+        .comments ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        .comments ul li {
+            border-top: 1px solid #888; /* li 의 윗쪽 경계선 */
+        }
+
+        .comments dt {
+            margin-top: 5px;
+        }
+
+        .comments dd {
+            margin-left: 26px;
+        }
+
+        .comments form textarea, .comments form button {
+            float: left;
+        }
+
+        .comments li {
+            clear: left;
+        }
+
+        .comments form textarea {
+            width: 85%;
+            height: 100px;
+        }
+
+        .comments form button {
+            width: 15%;
+            height: 100px;
+        }
+
+        /* 댓글에 댓글을 다는 폼과 수정폼을 일단 숨긴다. */
+        .comment form {
+            display: none;
+        }
+
+        .comment {
+            position: relative;
+        }
+
+        .comment .reply_icon {
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 10px;
+            left: 30px;
+        }
+
+        .comments .user-img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}../resources/css/bootstrap.min.css" rel="stylesheet">
 
@@ -79,40 +151,131 @@
                 <button type="button" id="followButton" onclick=""></button>
                 <button type="button" id="playListButton" onclick=""></button>
                 <button type="button" id="likeListButton" onclick=""></button>
-                <form name="form2" id="replyUploadForm" method="post" action="/replyUpload"
-                      enctype="multipart/form-data">
-                    <label>
-                        <span>댓글</span>
-                        <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>
-                    </label>
-                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">
-                    <c:catch>
-                        <c:choose>
-                            <c:when test="${empty user && empty singer}">
-                                <input type="button" id="replyButton" value="Submit"></input>
-                            </c:when>
-                            <c:otherwise>
-                                <input id="replyButton" class="sendButton" type="submit" name="Submit" value="Submit">
-                            </c:otherwise>
-                        </c:choose>
-                    </c:catch>
+                <%--                <form name="form2" id="replyUploadForm" method="post" action="/replyUpload"--%>
+                <%--                      enctype="multipart/form-data">--%>
+                <%--                    <label>--%>
+                <%--                        <span>댓글</span>--%>
+                <%--                        <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>--%>
+                <%--                    </label>--%>
+                <%--                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">--%>
+                <%--                    <c:catch>--%>
+                <%--                        <c:choose>--%>
+                <%--                            <c:when test="${empty user && empty singer}">--%>
+                <%--                                <input type="button" id="replyButton" value="Submit"></input>--%>
+                <%--                            </c:when>--%>
+                <%--                            <c:otherwise>--%>
+                <%--                                <input id="replyButton" class="sendButton" type="submit" name="Submit" value="Submit">--%>
+                <%--                            </c:otherwise>--%>
+                <%--                        </c:choose>--%>
+                <%--                    </c:catch>--%>
+                <%--                </form>--%>
+                <div>
+                    <!-- 원글에 댓글을 작성할 수 있는 폼 -->
+                    <div class="comment_form">
+                        <h2>댓글</h2>
+                        <form name="form3" id="replyUploadForm" action="/replyUpload" method="post"
+                              enctype="multipart/form-data">
+                            <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
+                            <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
+                            <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
+                            <textarea rows="content" name="comments" id="comments" placeholder="댓글을 입력하세요"></textarea>
+                            <c:catch>
+                                <c:choose>
+                                    <c:when test="${empty user && empty singer}">
+                                        <input type="button" id="replyButton" value="Submit"></input>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <input id="replyButton" class="sendButton" type="submit" name="Submit"
+                                               value="Submit">
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:catch>
+                        </form>
+                    </div>
+                </div>
+<%--                                <div id="disqus_thread"></div>--%>
+<%--                                <script>--%>
 
-                </form>
+<%--                                    /**--%>
+<%--                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.--%>
+<%--                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/--%>
+<%--                                    /*--%>
+<%--                                    var disqus_config = function () {--%>
+<%--                                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable--%>
+<%--                                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable--%>
+<%--                                    };--%>
+<%--                                    */--%>
+<%--                                    (function() { // DON'T EDIT BELOW THIS LINE--%>
+<%--                                        var d = document, s = d.createElement('script');--%>
+<%--                                        s.src = 'https://web1-ctctwodayx.disqus.com/embed.js';--%>
+<%--                                        s.setAttribute('data-timestamp', +new Date());--%>
+<%--                                        (d.head || d.body).appendChild(s);--%>
+<%--                                    })();--%>
+<%--                                </script>--%>
+<%--                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>--%>
+
+
+                <br>
 
                 <div id="main-content">
-                    <h2 style="color: black">댓글</h2>
-                    <div class="row" style="overflow-y: auto;  height: 100%;">
-                        <c:forEach var="reply" items="${replyDto}" varStatus="status">
-                        <span>${reply.comment}</span>
-                        <c:choose>
-                            <c:when test="${empty reply.userId}">
-                            <span>${reply.singerId}</span>
-                              </c:when>
-                            <c:when test="${empty reply.singerId}">
-                                <span>${reply.userId}</span>
-                            </c:when>
-                        </c:choose>
-                    </c:forEach>
+
+                    <div class="col" style="overflow-y: auto;  height: 100%;">
+                        <%--                        <c:forEach var="user" items="${userDtoList}" varStatus="status">--%>
+                        <%--                            <c:forEach var="singer" items="${singerDtoList}" varStatus="status">--%>
+                        <c:forEach var="reply" items="${replyDtoList}" varStatus="status">
+                            <c:if test="${reply.groupId == 0 && reply.classNo == 0}">
+                                <span><h2>${reply.comment}</h2></span>
+                                <c:choose>
+                                    <c:when test="${reply.userId == 0}">
+                                        <span><h2>작성자 : ${reply.singerId}</h2></span>
+                                    </c:when>
+                                    <c:when test="${reply.singerId == 0 }">
+                                        <span><h2>작성자 : ${reply.userId}</h2></span>
+                                    </c:when>
+                                </c:choose>
+<%--                                <button id="rereply" onclick = "dis()" name="rereply" value="rereply">대댓글달기</button>--%>
+                                <form name="form3" id="replyUploadForm2" action="/replyUpload2" method="post"
+                                      enctype="multipart/form-data" >
+                                    <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
+                                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
+                                    <input type="hidden" id="groupId" name="groupId" value="${reply.replyId}"/>
+                                    <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
+                                    <textarea rows="content" name="comments" id="comments"
+                                              placeholder="댓글을 입력하세요"></textarea>
+
+                                    <c:catch>
+                                        <c:choose>
+                                            <c:when test="${empty user && empty singer}">
+                                                <input type="button" id="replyButton2" value="Submit"></input>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <input id="replyButton" class="sendButton" type="submit" name="Submit"
+                                                       value="Submit">
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:catch>
+                                </form>
+                            </c:if>
+                            <c:forEach var="replys" items="${replyDtoList}" varStatus="status">
+                                <c:if test="${replys.groupId == reply.replyId}">
+                                    <span><h2 style="color : black">${replys.comment}</h2></span>
+                                    <c:choose>
+                                        <c:when test="${replys.userId == 0}">
+                                            <span><h2 style="color : black">작성자 : ${reply.singerId}</h2></span>
+                                        </c:when>
+                                        <c:when test="${replys.singerId == 0}">
+                                            <span><h2 style="color : black">작성자 : ${reply.userId}</h2></span>
+                                        </c:when>
+                                    </c:choose>
+                                </c:if>
+                            </c:forEach>
+
+                            <h3>-----------------------------------------------------------------------------------</h3>
+
+                        </c:forEach>
+                        <%--                         </c:forEach>--%>
+                        <%--                        </c:forEach>--%>
+
                     </div>
                 </div>
             </div>
@@ -147,12 +310,28 @@
 <script src="${pageContext.request.contextPath}../resources/js/skel.min.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
+
+<script>
+
+    function dis(){
+        if($('#replyUploadForm2').css('display') == 'none'){
+            $('#replyUploadForm2').show();
+        }else{
+            $('#replyUploadForm2').hide();
+        }
+    }
+</script>
 </body>
 <c:if test="${empty user && empty singer}">
     <script>
-        const uploadReplyLink = document.getElementById("replyButton");
-        uploadReplyLink.setAttribute("href", "${pageContext.request.contextPath}/login");
-        uploadReplyLink.setAttribute("onclick", "alert('로그인이 필요합니다.')");
+        const replyButton = document.getElementById("replyButton");
+        replyButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
+    </script>
+</c:if>
+<c:if test="${empty user && empty singer}">
+    <script>
+        const replyButton = document.getElementById("replyButton2");
+        replyButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
     </script>
 </c:if>
 <c:if test="${empty user && empty singer}">

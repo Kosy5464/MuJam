@@ -58,7 +58,7 @@ public class UserService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기
-                userProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                userProfileFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -67,6 +67,7 @@ public class UserService {
         userDto.setProfileImageStoredLocation("upload/profileImage/"+uploadProfileName);
         userRepository.save(userDto.toEntity());
     }
+
     @Transactional
     public UserDto getUserByUserId(String userId){
         Optional<User> userWrapper = userRepository.findByUserId(userId);
