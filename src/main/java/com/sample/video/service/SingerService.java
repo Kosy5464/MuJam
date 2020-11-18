@@ -1,9 +1,11 @@
 package com.sample.video.service;
 
 import com.sample.video.domain.entity.Singer;
+import com.sample.video.domain.entity.Video;
 import com.sample.video.domain.repository.SingerRepository;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
+import com.sample.video.dto.VideoDto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -64,6 +66,18 @@ public class SingerService {
         singerDto.setProfileImageName(profileName);
         singerDto.setProfileImageStoredLocation("upload/profileImage/"+uploadProfileName);
         singerRepository.save(singerDto.toEntity());
+    }
+    @Transactional
+    public List<SingerDto> getSingerResultList(String searchTarget){
+        List<Singer> singers = singerRepository.findBySingerNameContaining(searchTarget);
+        List<SingerDto> singerResultList = new ArrayList();
+
+        for(Singer singer : singers){
+            SingerDto singerDto = makeSingerDto(singer);
+            singerResultList.add(singerDto);
+        }
+
+        return singerResultList;
     }
 
     @Transactional
