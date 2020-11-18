@@ -15,3 +15,4 @@ public interface UserRepository extends JpaRepository<User,Long> {
     public Optional<User> findByNickname(String nickname);
     public List<User> findAllByOrderByIdAsc();
 }
+//test3
