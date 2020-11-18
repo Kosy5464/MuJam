@@ -12,4 +12,4 @@ import java.util.Optional;
 public interface ReplyRepository extends JpaRepository<Reply, Long> {
     public List<Reply> findAllByVideoId(Long videoId);
 }
-//
+//test1

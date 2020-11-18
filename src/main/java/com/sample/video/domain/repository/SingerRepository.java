@@ -13,3 +13,4 @@ public interface SingerRepository extends JpaRepository<Singer, Long> {
     public Optional<Singer> findBySingerId(String singerId);
     public Optional<Singer> findBySingerName(String singerName);
 }
+//test2
