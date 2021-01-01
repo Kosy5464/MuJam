@@ -58,7 +58,7 @@ public class UserService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기C:/Users/chlee/MuJam/build/resources/main/static/upload/
-                userProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                userProfileFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }

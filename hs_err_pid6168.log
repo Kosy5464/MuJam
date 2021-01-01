@@ -1,0 +1,42 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb94d5e573, pid=6168, tid=18368
+#
+# JRE version: Java(TM) SE Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x33e573]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED -XX:MaxMetaspaceSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=x-windows-949 -Duser.country=KR -Duser.language=ko -Duser.variant org.gradle.launcher.daemon.bootstrap.GradleDaemon 6.6.1
+
+Host: AMD Ryzen 3 2200U with Radeon Vega Mobile Gfx  , 4 cores, 3G,  Windows 10 , 64 bit Build 18362 (10.0.18362.1110)
+Time: Mon Nov  2 00:13:15 2020 ¢¥eCN©öI¡¾©ö C¡ÍA¨ª¨öA elapsed time: 4911 seconds (0d 1h 21m 51s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002a1c98af000):  JavaThread "Asynchronous log dispatcher for DefaultDaemonConnection: socket connection from /127.0.0.1:2870 to /127.0.0.1:3007" [_thread_in_vm, id=18368, stack(0x000000b924e00000,0x000000b924f00000)]
+
+Stack: [0x000000b924e00000,0x000000b924f00000],  sp=0x000000b924ef6bb0,  free space=986k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x33e573]
+V  [jvm.dll+0x5f89c2]
+V  [jvm.dll+0x33f06c]
+V  [jvm.dll+0x33f238]
+V  [jvm.dll+0x6cc026]
+V  [jvm.dll+0x6cd469]
+V  [jvm.dll+0x6cdc73]
+V  [jvm.dll+0x1b9cec]
+V  [jvm.dll+0x1bc73f]
+V  [jvm.dll+0x1b0c2e]
+V  [jvm.dll+0x4d3642]
+V  [jvm.dll+0x6ccdd9]
+V  [jvm.dll+0x3b49d0]

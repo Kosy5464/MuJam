@@ -18,6 +18,8 @@ public class Singer extends TimeEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String name;
+
     private String password;
 
     private String singerName;
@@ -30,9 +32,9 @@ public class Singer extends TimeEntity{
 
     private String singerId;
 
-    private String genre1;
+    private String genre;
 
-    private String genre2;
+    private String concept;
 
     private String profileImageName;
 

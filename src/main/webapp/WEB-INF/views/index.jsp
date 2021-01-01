@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<jsp:forward page="/main"/>
+<jsp:forward page="/intro"/>
 
 </body>
 </html>

@@ -53,6 +53,7 @@ public class SingerService {
         }
         else{
             profileName = singerProfileFile.getOriginalFilename();
+            System.out.println(profileName);
             String profileExtension = profileName.split("[.]")[1];
             uploadProfileName = profileName.split("[.]")[0]+"_uploadProfileImage"+Long.toString(index)+"."+profileExtension;
             try{
@@ -246,12 +247,13 @@ public class SingerService {
     public SingerDto makeSingerDto(Singer singer){
         SingerDto singerDto = SingerDto.builder()
                 .singerId(singer.getSingerId())
+                .name(singer.getName())
                 .singerName(singer.getSingerName())
                 .description(singer.getDescription())
                 .emailAddress(singer.getEmailAddress())
                 .following(singer.getFollowing())
-                .genre1(singer.getGenre1())
-                .genre2(singer.getGenre2())
+                .genre(singer.getGenre())
+                .concept(singer.getConcept())
                 .homeAddress(singer.getHomeAddress())
                 .id(singer.getId())
                 .instagramAccount(singer.getInstagramAccount())

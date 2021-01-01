@@ -22,12 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="아이디 중복확인 기능추가, 비밀번호 일치확인기능 추가,&#10;(메인화면에서만)like follow playlist 로그인 안돼있으면 알림창 띄우고 로그인페이지 이동추가, 로그인시 로그인,회원가입 대신 자기아이디,로그아웃 보이게끔 변경">
+    <list default="true" id="ea76ed33-5a85-4b5c-bef5-a5f05cbe24ca" name="Default Changelist" comment="검색기능 자동완성X">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sample/video/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sample/video/controller/VideoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sample/video/domain/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sample/video/domain/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sample/video/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sample/video/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sample/video/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sample/video/controller/MainController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,13 +79,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects/MuJam" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../workspace/MuJam" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -231,7 +231,70 @@
       <option name="project" value="LOCAL" />
       <updated>1601452562605</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1605661404369</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605661404369</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test">
+      <created>1605662040900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605662040900</updated>
+    </task>
+    <task id="LOCAL-00007" summary="pushtest">
+      <created>1605662551253</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605662551253</updated>
+    </task>
+    <task id="LOCAL-00008" summary="pushtest2">
+      <created>1605662710497</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605662710497</updated>
+    </task>
+    <task id="LOCAL-00009" summary="pushtest3">
+      <created>1605665279502</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605665279502</updated>
+    </task>
+    <task id="LOCAL-00010" summary="pushtest4">
+      <created>1605665574501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605665574501</updated>
+    </task>
+    <task id="LOCAL-00011" summary="pushtest5">
+      <created>1605665753215</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605665753215</updated>
+    </task>
+    <task id="LOCAL-00012" summary="pushtest5">
+      <created>1605666029802</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1605666029802</updated>
+    </task>
+    <task id="LOCAL-00013" summary="검색기능 자동완성X">
+      <created>1605689419320</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605689419320</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,66 +323,84 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test" />
     <MESSAGE value="업로드 화면 수정&#10;썸네일 부분(복붙)" />
     <MESSAGE value="업로드 화면 수정" />
     <MESSAGE value="업로드 오류 재수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="업로드 오류 재수정" />
+    <MESSAGE value="test" />
+    <MESSAGE value="pushtest" />
+    <MESSAGE value="pushtest2" />
+    <MESSAGE value="pushtest3" />
+    <MESSAGE value="pushtest4" />
+    <MESSAGE value="pushtest5" />
+    <MESSAGE value="검색기능 자동완성X" />
+    <option name="LAST_COMMIT_MESSAGE" value="검색기능 자동완성X" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="513" y="255" key="#Notifications" timestamp="1605665470390">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="513" y="255" key="#Notifications/0.0.1536.864@0.0.1536.864" timestamp="1605665470390" />
     <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601905416518">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="512" y="213" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1601905416518" />
+    <state x="423" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1609239062579">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="423" y="355" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.864@0.0.1536.864" timestamp="1609239062579" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600684214338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1600684214338" />
-    <state x="130" y="118" width="1350" height="678" key="DiffContextDialog" timestamp="1605621070814">
+    <state x="130" y="118" width="1350" height="678" key="DiffContextDialog" timestamp="1605689493730">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="130" y="118" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1605621070814" />
-    <state x="196" y="173" key="FileChooserDialogImpl" timestamp="1605621934910">
+    <state x="130" y="118" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1605689493730" />
+    <state x="857" y="211" key="FileChooserDialogImpl" timestamp="1609239689953">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="196" y="165" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1601373923581" />
-    <state x="196" y="173" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1605621934910" />
-    <state width="1493" height="275" key="GridCell.Tab.0.bottom" timestamp="1605625421469">
+    <state x="857" y="211" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1609239689953" />
+    <state width="723" height="177" key="GridCell.Tab.0.bottom" timestamp="1609253007553">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1493" height="275" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1605625421469" />
-    <state width="1493" height="275" key="GridCell.Tab.0.center" timestamp="1605625421469">
+    <state width="723" height="177" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1609253007553" />
+    <state width="723" height="177" key="GridCell.Tab.0.center" timestamp="1609253007552">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1493" height="275" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1605625421469" />
-    <state width="1493" height="275" key="GridCell.Tab.0.left" timestamp="1605625421469">
+    <state width="723" height="177" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1609253007552" />
+    <state width="723" height="177" key="GridCell.Tab.0.left" timestamp="1609253007552">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601950047761" />
-    <state width="1493" height="275" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1605625421469" />
-    <state width="1493" height="275" key="GridCell.Tab.0.right" timestamp="1605625421469">
+    <state width="723" height="177" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1609253007552" />
+    <state width="723" height="177" key="GridCell.Tab.0.right" timestamp="1609253007552">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1493" height="275" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1605625421469" />
-    <state width="1027" height="142" key="GridCell.Tab.1.bottom" timestamp="1601950047762">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="723" height="177" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1609253007552" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom" timestamp="1607495294094">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1027" height="142" key="GridCell.Tab.1.center" timestamp="1601950047762">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607495294094" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center" timestamp="1607495294094">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1027" height="142" key="GridCell.Tab.1.left" timestamp="1601950047762">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607495294094" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left" timestamp="1607495294094">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
-    <state width="1027" height="142" key="GridCell.Tab.1.right" timestamp="1601950047762">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1493" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607495294094" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right" timestamp="1607495294094">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1027" height="142" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1601950047762" />
+    <state width="1493" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607495294094" />
     <state width="1177" height="369" key="GridCell.Tab.2.bottom" timestamp="1601387075346">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -336,26 +417,45 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1177" height="369" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1601387075346" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1601904955012">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="147" y="68" key="MergeDialog" timestamp="1605666113707">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1601904955012" />
-    <state x="277" y="60" key="SettingsEditor" timestamp="1605619008296">
+    <state x="147" y="68" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1605666113707" />
+    <state x="406" y="192" key="MultipleFileMergeDialog" timestamp="1605666113715">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="406" y="192" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1605666113715" />
+    <state x="541" y="152" key="RollbackChangesDialog" timestamp="1609237801253">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="541" y="152" key="RollbackChangesDialog/0.0.1536.864@0.0.1536.864" timestamp="1609237801253" />
+    <state x="118" y="0" key="SettingsEditor" timestamp="1607494609245">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601559752971" />
-    <state x="277" y="60" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1605619008296" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1601452565745">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="118" y="0" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607494609245" />
+    <state x="328" y="134" key="Vcs.Push.Dialog.v2" timestamp="1605689513955">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1601452565745" />
-    <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601948827315">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="328" y="134" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1605689513955" />
+    <state x="581" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605666561136">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="581" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601948827315" />
+    <state x="581" y="341" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1605666561136" />
     <state x="476" y="10" width="584" height="804" key="find.popup" timestamp="1600687707089">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="476" y="10" width="584" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1600687707089" />
+    <state x="180" y="31" key="new project wizard" timestamp="1609239280957">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="180" y="31" key="new project wizard/0.0.1536.864@0.0.1536.864" timestamp="1609239280957" />
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1605681201995">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1605681201995" />
   </component>
 </project>
