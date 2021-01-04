@@ -7,8 +7,8 @@ CREATE TABLE `singer` (
   `phone_number` varchar(100) NOT NULL,
   `home_address` varchar(200) DEFAULT NULL,
   `singer_id` varchar(45) NOT NULL,
-  `genre1` varchar(45) NOT NULL,
-  `genre2` varchar(45) NOT NULL,
+  `genre` varchar(45) NOT NULL,
+  `concept` varchar(45) NOT NULL,
   `profile_image_name` varchar(200) DEFAULT NULL,
   `profile_image_stored_location` varchar(200) DEFAULT NULL,
   `description` varchar(500) NOT NULL,
@@ -18,6 +18,8 @@ CREATE TABLE `singer` (
   `youtube_channel` varchar(200) DEFAULT NULL,
   `like_video_list` varchar(2000) DEFAULT NULL,
   `created_at` datetime NOT NULL,
+  `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `singer_id_UNIQUE` (`singer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='	';
+
