@@ -14,13 +14,14 @@ import java.time.LocalDateTime;
 public class SingerDto {
     private long id;
     private String password;
+    private String name;
     private String singerName;
     private String emailAddress;
     private String phoneNumber;
     private String homeAddress;
     private String singerId;
-    private String genre1;
-    private String genre2;
+    private String genre;
+    private String concept;
     private String profileImageName;
     private String profileImageStoredLocation;
     private String description;
@@ -37,8 +38,9 @@ public class SingerDto {
                 .singerName(singerName)
                 .emailAddress(emailAddress)
                 .following(following)
-                .genre1(genre1)
-                .genre2(genre2)
+                .genre(genre)
+                .concept(concept)
+                .name(name)
                 .homeAddress(homeAddress)
                 .id(id)
                 .instagramAccount(instagramAccount)

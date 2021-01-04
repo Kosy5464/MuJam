@@ -35,6 +35,10 @@ public class MainController {
     public String home() {
         return "index";
     }
+    @GetMapping("/intro")
+    public String INTRO(Model model) {
+        return "main/intro";
+    }
 
     @GetMapping("/main")
     public String hello(Model model) {
