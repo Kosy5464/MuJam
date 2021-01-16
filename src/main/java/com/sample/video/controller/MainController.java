@@ -68,11 +68,33 @@ public class MainController {
 
     @GetMapping("/new")
     public String NEW(Model model) {
+
+
+        List<VideoDto> videoList = videoService.getVideoListByIdDesc();
+        List<SingerDto> singerList = new ArrayList();
+        for (VideoDto video : videoList) {
+            Long id = video.getSingerId();
+            singerList.add(singerService.getSingerById(id));
+        }
+        model.addAttribute("singerList", singerList);
+        model.addAttribute("videoList", videoList);
+
         return "main/NEW";
     }
 
     @GetMapping("/hot")
     public String HOT(Model model) {
+        List<VideoDto> videoListViewCount = videoService.getVideoListByViewcountDesc();
+        List<SingerDto> singerListViewCount = new ArrayList();
+
+        for (VideoDto video : videoListViewCount) {
+            Long id = video.getSingerId();
+            singerListViewCount.add(singerService.getSingerById(id));
+        }
+
+        model.addAttribute("singerListViewCount", singerListViewCount);
+        model.addAttribute("videoListViewCount", videoListViewCount);
+
         return "main/HOT";
     }
 
@@ -153,6 +175,9 @@ public class MainController {
 
     @GetMapping("/musician")
     public String musician(Model model) {
+        List<SingerDto> singerList = singerService.getSingerListByIdDesc();
+        model.addAttribute("singerList", singerList);
+
         return "main/musician";
     }
 

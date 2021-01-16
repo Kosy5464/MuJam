@@ -58,7 +58,7 @@ public class UserService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기C:/Users/chlee/MuJam/build/resources/main/static/upload/
-                userProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                userProfileFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/profileImage"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -158,6 +158,49 @@ public class UserService {
             }
         }
         return playList;
+
+    }
+    @Transactional
+    public ArrayList<Long> getlikeReplyList(Long id){
+        UserDto user = getUserById(id);
+        String likeReply = user.getLikeReplyList();
+        ArrayList<Long> likeReplyList = new ArrayList();
+        if(likeReply != null && !likeReply.equals("")){
+            String[] strArr = likeReply.split(",");
+            for(String str : strArr){
+                likeReplyList.add(Long.parseLong(str));
+            }
+        }
+        return likeReplyList;
+    }
+    @Transactional
+    public void addLikeReply(Long userId, Long replyId){
+        UserDto user = getUserById(userId);
+        String replyList = user.getLikeReplyList();
+        if(replyList == null){
+            replyList = "";
+        }
+        replyList = replyList + replyId + ",";
+        user.setLikeReplyList(replyList);
+        writeUser(user);
+    }
+    @Transactional
+    public void removeLikeReply(Long userId, Long replyId){
+        UserDto user = getUserById(userId);
+        ArrayList<Long> likeReplyArrayList = getlikeReplyList(userId);
+        for(int i = 0 ; i < likeReplyArrayList.size(); i++){
+            if(likeReplyArrayList.get(i) == replyId){
+                likeReplyArrayList.remove(i);
+                break;
+            }
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("");
+        for(long n : likeReplyArrayList){
+            sb.append(n+",");
+        }
+        user.setLikeReplyList(sb.toString());
+        writeUser(user);
     }
     @Transactional
     public void addFollowing(Long userId, Long singerId){
@@ -261,6 +304,7 @@ public class UserService {
                 .nickname(user.getNickname())
                 .following(user.getFollowing())
                 .likeVideoList(user.getLikeVideoList())
+                .likeReplyList(user.getLikeReplyList())
                 .playlist(user.getPlaylist())
                 .build();
         return userDto;

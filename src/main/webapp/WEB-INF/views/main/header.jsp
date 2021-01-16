@@ -10,188 +10,174 @@
 
     <title>MuJam</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}../resources/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Custom CSS -->
+    <title>MuJam</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}../resources/images/logo_M.png">
+    <!-- Custom Stylesheet -->
     <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
-
-    <!--다른 템플릿-->
-    <link href="${pageContext.request.contextPath}../resources/css/main.css" rel="stylesheet"/>
-    <!-- Custom Fonts -->
-    <link href="${pageContext.request.contextPath}../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="${pageContext.request.contextPath}../resources/js/html5shiv.js"></script>
-    <script src="${pageContext.request.contextPath}../resources/js/respond.min.js"></script>
-    <![endif]-->
-    <script>
-        const videos = document.querySelectorAll('.video-preview')
-        for (let i = 0; i < videos.length; i++) {
-            videos[i].addEventListener('mouseover', function() {
-                console.log('play')
-                videos[i].play()
-            })
-            videos[i].addEventListener('mouseout', function() {
-                console.log('pause')
-                videos[i].pause()
-                videos[i].currentTime = 0;
-            })
-        }
-    </script>
 
 </head>
 <body>
+<!--**********************************
+            Nav header start
+        ***********************************-->
+<div class="nav-header">
+    <div class="brand-logo">
+        <a href="${pageContext.request.contextPath}/main">
+            <b class="logo-abbr"><img src="${pageContext.request.contextPath}../resources/images/logo_M.png" alt=""> </b>
+            <span class="logo-compact"><img src="${pageContext.request.contextPath}../resources/images/logo-compact.png" alt=""></span>
+            <span class="brand-title">
+                        <img src="${pageContext.request.contextPath}../resources/images/logo_mujam.png" width="150" alt="">
+                    </span>
+        </a>
+    </div>
+</div>
+<!--**********************************
+    Nav header end
+***********************************-->
 
-<!-- Navigation -->
-<header id="page-top">
-    <div class="wrap-header">
-        <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="row">
-                        <ul class="nav navbar-nav navbar-right">
+<!--**********************************
+    Header start
+***********************************-->
+<div class="header">
+    <div class="header-content clearfix">
 
-                            <c:catch>
-                                <c:choose>
-                                    <c:when test="${empty user && empty singer}">
-                                        <li>
-                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/login">로그인&nbsp;&nbsp;&nbsp;</a></h5>
-                                        </li>
-                                        <li>
-                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/signUp">회원가입 &nbsp;&nbsp;&nbsp;</a></h5>
-                                        </li>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li>
-                                                ${user.userId}
-                                                ${singer.singerId}
-                                        </li>
-                                        <li>
-                                            <h5><a class="page-scroll" href="${pageContext.request.contextPath}/logout">로그아웃 &nbsp;&nbsp;&nbsp;</a></h5>
-                                        </li>
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:catch>
-                        </ul>
-                    </div>
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header page-scroll">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand page-scroll" href="${pageContext.request.contextPath}/main">MuJam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                    </div>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-                        <ul class="nav navbar-nav">
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/new">NEW</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/hot">HOT</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/musician">Musician</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" href="${pageContext.request.contextPath}/backstage">Backstage</a>
-                            </li>
-                            <li><a>|</a></li>
-                            <li>
-                                <a class="page-scroll" id="followLink" onclick="" href="${pageContext.request.contextPath}/follow">Follow</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" id="likeLink" onclick="" href="${pageContext.request.contextPath}/like">Like</a>
-                            </li>
-                            <li>
-                                <a class="page-scroll" id="playListLink" onclick="" href="${pageContext.request.contextPath}/playList">PlayList</a>
-                            </li>
-
-                            <li>
-                                <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2"
-                                name="searchForm" id="searchForm" method="get" action="/searchResult">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                                           id="searchTarget" name="searchTarget" aria-label="Search">
-                                    <button type="submit" class="fas fa-search" aria-hidden="true"></button>
-                                    <%-- <i class="fas fa-search" aria-hidden="true"></i> --%>
-                                </form>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-text">
-                        <div class="intro-lead-in">We're looking for a singer-songwriter!</div>
-                        <div class="intro-heading">Show people your music!</div>
-                    </div>
-                    <a id="uploadVideoLink" href="${pageContext.request.contextPath}/videoUpload" class="btn btn-lg btn-1" >Upload Video</a>
-                    <!--<a href="${pageContext.request.contextPath}/contact" class="btn btn-2">Contact Us</a>-->
-                </div>
+        <div class="nav-control">
+            <div class="hamburger">
+                <span class="toggle-icon"><i class="icon-menu"></i></span>
             </div>
         </div>
+        <!--<div class="header-left">
+        </div>-->
+        <div class="header-right">
+            <ul class="clearfix">
+                <li class="icons">
+                    <div class="search"> <input type="search" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
+                </li>
+                <!--<li class="icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1">
+                                <i class="mdi mdi-magnify"></i>
+                            </span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Search.." aria-label="SearchBox">
+                        <div class="drop-down  d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                </li>-->
+                <c:catch>
+                    <c:choose>
+                        <c:when test="${empty user && empty singer}">
+                            <li class="icons">
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/login'">로그인</button>
+                            </li>
+                            <li class="icons">
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/signUp'">회원가입</button>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="icons">
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
+                            </li>
+                            <li class="icons">
+                                    ${user.userId}
+                                    ${singer.singerId}
+                            </li>
+
+                        </c:otherwise>
+                    </c:choose>
+                </c:catch>
+                <li class="icons dropdown d-none d-md-flex">
+                    <a href="javascript:void(0)" class="list-group"  data-toggle="dropdown">
+                        <i class="fa fa-ellipsis-v f-s-14" aria-hidden="true"></i>
+                    </a>
+                    <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                        <div class="dropdown-content-body">
+                            <ul>
+                                <li><a href="">이용약관</a></li>
+                                <li><a href="">이벤트</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-    <c:if test="${empty user && empty singer}">
-        <script>
-            const followLink = document.getElementById("followLink");
-            followLink.setAttribute("href","${pageContext.request.contextPath}/login");
-            followLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+</div>
+<!--**********************************
+    Header end ti-comment-alt
+***********************************-->
+<!--**********************************
+    Sidebar start
+***********************************-->
+<div class="nk-sidebar">
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <li class="nav-label">Public</li>
+            <li>
+                <a  aria-expanded="false" href="${pageContext.request.contextPath}/new">
+                    <i class="icon-star menu-icon"></i><span class="nav-text">NEW Music</span>
+                </a>
+            </li>
+            <li>
+                <a  aria-expanded="false" href="${pageContext.request.contextPath}/hot">
+                    <i class="icon-fire menu-icon"></i><span class="nav-text">HOT Music</span>
+                </a>
+            </li>
+            <li>
+                <a  aria-expanded="false" href="${pageContext.request.contextPath}/musician">
+                    <i class="icon-people menu-icon"></i><span class="nav-text">MUSICIAN</span>
+                </a>
+            </li>
+            <li>
+                <a  aria-expanded="false" href="${pageContext.request.contextPath}/backstage">
+                    <i class="icon-diamond menu-icon"></i><span class="nav-text">BACKSTAGE</span>
+                </a>
+            </li>
+            <li class="nav-label"><hr/></li>
+            <li class="nav-label">User</li>
+            <li>
+                <a  aria-expanded="false" id="likeLink" onclick="" href="${pageContext.request.contextPath}/like">
+                    <i class="icon-like menu-icon"></i><span class="nav-text">LIKE</span>
+                </a>
+            </li>
+            <li>
+                <a  aria-expanded="false" id="followLink" onclick="" href="${pageContext.request.contextPath}/follow">
+                    <i class="icon-heart menu-icon"></i><span class="nav-text">FOLLOW</span>
+                </a>
+            </li>
+            <li>
+                <a  aria-expanded="false" href="${pageContext.request.contextPath}/playList">
+                    <i class="icon-playlist menu-icon"></i><span class="nav-text">My PlayList</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-            const likeLink = document.getElementById("likeLink");
-            likeLink.setAttribute("href","${pageContext.request.contextPath}/login");
-            likeLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
-
-            const playListLink = document.getElementById("playListLink");
-            playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
-            playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
-        </script>
-    </c:if>
-
-    <c:if test="${empty singer}">
-            <script>
-                const uploadVideoLink = document.getElementById("uploadVideoLink");
-                uploadVideoLink.setAttribute("href","${pageContext.request.contextPath}/login");
-                uploadVideoLink.setAttribute("onclick","alert('가수로그인이 필요합니다.')");
-            </script>
-    </c:if>
-</header>
-<!-- Header -->
-
-
-
-<!-- jQuery -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/agency.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.easing.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/classie.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/cbpAnimatedHeader.js"></script>
-
-<!--다른 템플릿-->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/jquery.scrolly.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/skel.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
 </body>
+<!-- jQuery -->
+<c:if test="${empty user && empty singer}">
+    <script>
+        const followLink = document.getElementById("followLink");
+        followLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        followLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
 
+        const likeLink = document.getElementById("likeLink");
+        likeLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        likeLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+
+        const playListLink = document.getElementById("playListLink");
+        playListLink.setAttribute("href","${pageContext.request.contextPath}/login");
+        playListLink.setAttribute("onclick","alert('로그인창으로 이동합니다.')");
+    </script>
+</c:if>
+<script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
 </html>

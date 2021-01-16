@@ -27,7 +27,7 @@ public class ReplyDto {
     private long groupId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
+    private long deletedAt;
 
     public Reply toEntity(){
         Reply build = Reply.builder()

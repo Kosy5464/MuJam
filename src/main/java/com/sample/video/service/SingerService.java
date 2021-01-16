@@ -58,7 +58,7 @@ public class SingerService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기
-                singerProfileFile.transferTo(new File("C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                singerProfileFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -153,6 +153,19 @@ public class SingerService {
             }
         }
         return playList;
+    }
+    @Transactional
+    public ArrayList<Long> getlikeReplyList(Long id){
+        SingerDto singer = getSingerById(id);
+        String likeReply = singer.getFollowing();
+        ArrayList<Long> likeReplyList = new ArrayList();
+        if(likeReply != null && !likeReply.equals("")){
+            String[] strArr = likeReply.split(",");
+            for(String str : strArr){
+                likeReplyList.add(Long.parseLong(str));
+            }
+        }
+        return likeReplyList;
     }
 
     @Transactional
@@ -256,6 +269,7 @@ public class SingerService {
                 .id(singer.getId())
                 .instagramAccount(singer.getInstagramAccount())
                 .likeVideoList(singer.getLikeVideoList())
+                .likeReplyList(singer.getLikeReplyList())
                 .password(singer.getPassword())
                 .phoneNumber(singer.getPhoneNumber())
                 .playlist(singer.getPlaylist())

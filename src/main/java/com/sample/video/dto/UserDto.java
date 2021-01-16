@@ -24,6 +24,7 @@ public class UserDto {
     private String following;
     private String playlist;
     private String likeVideoList;
+    private String likeReplyList;
     private String profileImageName;
     private String profileImageStoredLocation;
 
@@ -41,6 +42,7 @@ public class UserDto {
                 .nickname(nickname)
                 .following(following)
                 .likeVideoList(likeVideoList)
+                .likeReplyList(likeReplyList)
                 .playlist(playlist)
                 .build();
         return build;

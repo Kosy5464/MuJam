@@ -34,7 +34,7 @@ public class Reply extends TimeEntity {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    private LocalDateTime deletedAt;
+    private long deletedAt;
 
 //    @ManyToOne
 //    @JoinColumn(name = "user_id")

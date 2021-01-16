@@ -30,6 +30,7 @@ public class SingerDto {
     private String instagramAccount;
     private String youtubeChannel;
     private String likeVideoList;
+    private String likeReplyList;
 
     public Singer toEntity(){
         Singer build = Singer.builder()
@@ -43,6 +44,7 @@ public class SingerDto {
                 .id(id)
                 .instagramAccount(instagramAccount)
                 .likeVideoList(likeVideoList)
+                .likeReplyList(likeReplyList)
                 .password(password)
                 .phoneNumber(phoneNumber)
                 .playlist(playlist)

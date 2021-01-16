@@ -1,5 +1,6 @@
 package com.sample.video.controller;
 
+import com.sample.video.domain.entity.Reply;
 import com.sample.video.domain.entity.User;
 import com.sample.video.dto.ReplyDto;
 import com.sample.video.dto.SingerDto;
@@ -54,16 +55,21 @@ public class VideoController {
         ArrayList<Long> followingList = new ArrayList();
         ArrayList<Long> likeList = new ArrayList();
         ArrayList<Long> playList = new ArrayList();
+        ArrayList<Long> likeReplyList = new ArrayList();
+
 
         if(singer == null && user != null){
             followingList = userService.getFollowingList(user.getId());
             likeList = userService.getLikeList(user.getId());
             playList = userService.getPlaylist(user.getId());
+            likeReplyList = userService.getlikeReplyList(user.getId());
         }
         else if(user == null && singer != null){
             followingList = singerService.getFollowingList(singer.getId());
             likeList = singerService.getLikeList(singer.getId());
             playList = singerService.getPlaylist(singer.getId());
+            likeReplyList = singerService.getlikeReplyList(singer.getId());
+
         }
         VideoDto videoDto = videoService.getVideo(id);
         SingerDto singerDto = singerService.getSingerById(videoDto.getSingerId());
@@ -98,12 +104,34 @@ public class VideoController {
         model.addAttribute("replyDtoList", replyDtoList);
         model.addAttribute("userDtoList", userDtoList);
         model.addAttribute("singerDtoList", singerDtoList);
+        model.addAttribute("likeReplyList",likeReplyList);
+
         videoService.writeVideo(videoDto);
         return "video/videoPlay";
     }
     @GetMapping("/videoUpload")
     public String upload(){
         return "video/videoUpload";
+    }
+
+    @PostMapping("/addLikeReply")
+    @ResponseBody
+    public void addLikeReply(long userId, long replyId){
+        userService.addLikeReply(userId, replyId);
+        ReplyDto reply = replyService.getReplyByReplyId(replyId);
+        reply.setLikeCount(reply.getLikeCount()+1);
+        replyService.writeReply(reply);
+    }
+
+    @PostMapping("/removeLikeReply")
+    @ResponseBody
+    public void removeLikeReply(long userId, long replyId){
+        userService.removeLikeReply(userId, replyId);
+        ReplyDto reply = replyService.getReplyByReplyId(replyId);
+        reply.setLikeCount(reply.getLikeCount()-1);
+        replyService.writeReply(reply);
+
+
     }
 
     @PostMapping("/userAddFollowing")
@@ -176,6 +204,12 @@ public class VideoController {
     @ResponseBody
     public void singerRemovePlaylist(long userId, long videoId){
         singerService.removePlaylist(userId, videoId);
+    }
+
+    @PostMapping("/removeReply")
+    @ResponseBody
+    public void removeVideoReply(long replyId, long videoId){
+        replyService.removeReply(replyId,videoId);
     }
 
     @GetMapping("/removeLikeList")

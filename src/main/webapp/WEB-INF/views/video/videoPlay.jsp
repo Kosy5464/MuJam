@@ -1,23 +1,18 @@
-<%@ page import="com.sample.video.domain.entity.User" %>
-<%@ page import="com.sample.video.dto.UserDto" %><%--
-  Created by IntelliJ IDEA.
-  User: chlee
-  Date: 2020-09-29
-  Time: 오전 11:49
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <title>MuJam</title>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MuJaM</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}../resources/images/logo_M.png">
+    <!-- Custom Stylesheet -->
+    <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
     <style>
         /* 글 내용의 경계선 표시 */
         .content {
@@ -89,266 +84,198 @@
             border-radius: 50%;
         }
     </style>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}../resources/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="${pageContext.request.contextPath}../resources/css/style2.css" rel="stylesheet">
-
-    <link href="${pageContext.request.contextPath}../resources/css/main.css" rel="stylesheet"/>
-
-    <!-- Custom Fonts -->
-    <link href="${pageContext.request.contextPath}../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-
-    <!-- bootstrap template // 특정 기능을 위해 뽑아옴//지금은 없지롱 -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="${pageContext.request.contextPath}../resources/js/html5shiv.js"></script>
-    <script src="${pageContext.request.contextPath}../resources/js/respond.min.js"></script>
-
-    <![endif]-->
 </head>
+<!--*******************
+       Preloader start
+   ********************-->
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </svg>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
 <body>
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+    <jsp:include page="../main/header.jsp"></jsp:include>
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    <div class="content-body">
+        <!-- row -->
 
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-xl-12">
 
-<jsp:include page="../main/header.jsp"></jsp:include>
-<!-- /////////////////////////////////////////Content -->
-
-<!-- Main -->
-<div id="page-content">
-
-    <!-- One -->
-    <section class="wrapper style1">
-        <div class="inner">
-            <!--<header class="align-center">
-                <h2>영상 ${videoDto.title}</h2>
-                <p>가수이름 ${singerDto.singerName}</p>
-            </header>-->
-            <div class="video">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315"
-                            src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}"
-                            frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div id="most" class="tab-pane fade in active">
-                    <div class="post">
-                        <div class="wrapper">
-                            <h5>조회수 ${videoDto.viewcount}</h5>
-                            <p>제목 ${videoDto.title}</p>
-                            <h3>가수 ${singerDto.singerName}</h3>
-                            <p>장르 1 ${videoDto.genre1}</p>
-                            <p>장르 2 ${videoDto.genre2}</p>
+                    <div class="card">
+                        <iframe width="100%" height="538" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="card-body">
+                            <div class="row">
+                                <h2 class="col-sm-9">${videoDto.title}</h2>
+                                <div class="col-sm-3 col">
+                                    <h5 class="card-text">장르 1 : ${videoDto.genre1}</h5>
+                                    <h5 class="card-text">장르 2 : ${videoDto.genre2}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card-text col-sm-2"><small class="text-muted">조회수 : ${videoDto.viewcount}</small></div>
+                                <div class="col-sm-2"><button class="btn btn-danger p-0 mr-3" id="likeListButton" onclick="">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;300&nbsp;</button></div>
+                            </div><br>
+                            <div class="media align-items-center mb-4">
+                                <img class="mr-3" src="${pageContext.request.contextPath}../resources/${singerDto.profileImageStoredLocation}" width="50" height="50" alt="">
+                                <div class="media-body">
+                                    <h4 class="mb-0">${singerDto.singerName}</h4>
+                                </div>
+                            </div>
+                            <p class="card-text">${videoDto.content}</p>
                         </div>
-                    </div>
-                </div>
-                <p>내용 ${videoDto.content}</p>
-                <button type="button" id="followButton" onclick=""></button>
-                <button type="button" id="playListButton" onclick=""></button>
-                <button type="button" id="likeListButton" onclick=""></button>
-                <%--                <form name="form2" id="replyUploadForm" method="post" action="/replyUpload"--%>
-                <%--                      enctype="multipart/form-data">--%>
-                <%--                    <label>--%>
-                <%--                        <span>댓글</span>--%>
-                <%--                        <textarea name="comments" id="comments" placeholder="댓글을 입력하세요" style="resize:none;"></textarea>--%>
-                <%--                    </label>--%>
-                <%--                    <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}">--%>
-                <%--                    <c:catch>--%>
-                <%--                        <c:choose>--%>
-                <%--                            <c:when test="${empty user && empty singer}">--%>
-                <%--                                <input type="button" id="replyButton" value="Submit"></input>--%>
-                <%--                            </c:when>--%>
-                <%--                            <c:otherwise>--%>
-                <%--                                <input id="replyButton" class="sendButton" type="submit" name="Submit" value="Submit">--%>
-                <%--                            </c:otherwise>--%>
-                <%--                        </c:choose>--%>
-                <%--                    </c:catch>--%>
-                <%--                </form>--%>
-                <div>
-                    <!-- 원글에 댓글을 작성할 수 있는 폼 -->
-                    <div class="comment_form">
-                        <h2>댓글</h2>
-                        <form name="form3" id="replyUploadForm" action="/replyUpload" method="post"
-                              enctype="multipart/form-data">
-                            <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
-                            <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
-                            <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
-                            <textarea rows="content" name="comments" id="comments" placeholder="댓글을 입력하세요"></textarea>
-                            <c:catch>
-                                <c:choose>
-                                    <c:when test="${empty user && empty singer}">
-                                        <input type="button" id="replyButton" value="Submit"></input>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <input id="replyButton" class="sendButton" type="submit" name="Submit"
-                                               value="Submit">
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:catch>
-                        </form>
-                    </div>
-                </div>
-                <%--                                <div id="disqus_thread"></div>--%>
-                <%--                                <script>--%>
+                        <hr class="hr">
+                        <div class="card-body">
+                            <div class="media media-reply">
+                                <img class="mr-3 circle-rounded" src="${pageContext.request.contextPath}../resources/images/avatar/2.jpg" width="50" height="50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <h5 class="mb-sm-0">핫도그</h5><br>
+                                    <div class="row">
+                                        <div class="col-sm-11">
+                                            <textarea class="form-control" name="textarea" cols="30" rows="2" placeholder="댓글 입력하기.."></textarea>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="media media-reply">
+                                <img class="mr-3 circle-rounded" src="${pageContext.request.contextPath}../resources/images/avatar/2.jpg" width="50" height="50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <div class="d-sm-flex justify-content-between mb-2">
+                                        <h5 class="mb-sm-0">핫도그<small class="text-muted ml-3">about 3 days ago</small></h5>
+                                        <div class="media-reply__link">
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-up"></i></button>
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-down"></i></button>
+                                            <button class="btn btn-transparent text-dark font-weight-bold p-0 ml-2">답글</button>
+                                        </div>
+                                    </div>
 
-                <%--                                    /**--%>
-                <%--                                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.--%>
-                <%--                                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/--%>
-                <%--                                    /*--%>
-                <%--                                    var disqus_config = function () {--%>
-                <%--                                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable--%>
-                <%--                                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable--%>
-                <%--                                    };--%>
-                <%--                                    */--%>
-                <%--                                    (function() { // DON'T EDIT BELOW THIS LINE--%>
-                <%--                                        var d = document, s = d.createElement('script');--%>
-                <%--                                        s.src = 'https://web1-ctctwodayx.disqus.com/embed.js';--%>
-                <%--                                        s.setAttribute('data-timestamp', +new Date());--%>
-                <%--                                        (d.head || d.body).appendChild(s);--%>
-                <%--                                    })();--%>
-                <%--                                </script>--%>
-                <%--                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>--%>
+                                    <p>노래가 너무 좋은거 같아요!</p>
 
 
-                <br>
-                <
+                                    <div class="media mt-3">
+                                        <img class="mr-3 circle-rounded circle-rounded" src="${pageContext.request.contextPath}../resources/images/avatar/4.jpg" width="50" height="50" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <div class="d-sm-flex justify-content-between mb-2">
+                                                <h5 class="mb-sm-0">김케찹<small class="text-muted ml-3">about 3 days ago</small></h5>
+                                                <div class="media-reply__link">
+                                                    <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-up"></i></button>
+                                                    <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-down"></i></button>
+                                                    <button class="btn btn-transparent p-0 ml-3 font-weight-bold">답글</button>
+                                                </div>
+                                            </div>
+                                            <p>맞아요, 노래 너무너무 좋아용~!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="media media-reply">
+                                <img class="mr-3 circle-rounded" src="${pageContext.request.contextPath}../resources/images/avatar/3.jpg" width="50" height="50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <div class="d-sm-flex justify-content-between mb-2">
+                                        <h5 class="mb-sm-0">그린이<small class="text-muted ml-3">about 3 days ago</small></h5>
+                                        <div class="media-reply__link">
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-up"></i></button>
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-down"></i></button>
+                                            <button class="btn btn-transparent p-0 ml-3 font-weight-bold">답글</button>
+                                        </div>
+                                    </div>
 
-                <div id="main-content">
-                    <div class="col" style="overflow-y: auto;  height: 100%;">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <c:forEach var="reply" items="${replyDtoList}" varStatus="status">
-                                <c:if test="${reply.groupId == 0 && reply.classNo == 0}">
-                                <td><span><h2>${reply.comment}</h2></span></td>
-                                <td>
-                                    <c:choose>
-                                    <c:when test="${reply.userId == userDtoList[status.index].id}">
-                                    <span><h2>작성자 : ${userDtoList[status.index].nickname}</h2></span>
-                                <td><img width="100" height="105"
-                                         src="${pageContext.request.contextPath}../resources/${userDtoList[status.index].profileImageStoredLocation}"
-                                         frameborder="0" allowfullscreen></img></td>
-                                </c:when>
-                                <c:when test="${reply.singerId == singerDtoList[status.index].id}">
-                                    <span><h2>작성자 : ${singerDtoList[status.index].singerName}</h2></span>
-                                    <img width="100" height="105"
-                                         src="${pageContext.request.contextPath}../resources/${singerDtoList[status.index].profileImageStoredLocation}"
-                                         frameborder="0" allowfullscreen></img></td>
-                                </c:when>
-                                </c:choose>
-                                </td>
-                                <td>
+                                    <p>친구한테 추천해줘야겠어요~! 잘 듣고 갑니당!</p>
+                                </div>
+                            </div>
 
-                                        <%--                                <button id="rereply" onclick = "dis()" name="rereply" value="rereply">대댓글달기</button>--%>
-                                    <form name="form3" id="replyUploadForm2" action="/replyUpload2" method="post"
-                                          enctype="multipart/form-data">
-                                        <!-- 댓글의 그룹번호는 원글의 글번호가 된다. -->
-                                        <input type="hidden" id="videoId" name="videoId" value="${videoDto.id}"/>
-                                        <input type="hidden" id="groupId" name="groupId" value="${reply.replyId}"/>
-                                        <!-- 댓글의 대상자는 원글의 작성자가 된다. -->
-                                        <textarea rows="content" name="comments" id="comments"
-                                                  placeholder="댓글을 입력하세요"></textarea>
+                            <div class="media media-reply">
+                                <img class="mr-3 circle-rounded" src="${pageContext.request.contextPath}../resources/images/avatar/6.jpg" width="50" height="50" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <div class="d-sm-flex justify-content-between mb-2">
+                                        <h5 class="mb-sm-0">박산타<small class="text-muted ml-3">about 3 days ago</small></h5>
+                                        <div class="media-reply__link">
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-up"></i></button>
+                                            <button class="btn btn-transparent p-0 mr-3"><i class="fa fa-thumbs-down"></i></button>
+                                            <button class="btn btn-transparent p-0 ml-3 font-weight-bold">답글</button>
+                                        </div>
+                                    </div>
 
-
-                                        <c:catch>
-                                            <c:choose>
-                                                <c:when test="${empty user && empty singer}">
-                                                    <input type="button" id="replyButton2" value="Submit"></input>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <input id="replyButton" class="sendButton" type="submit"
-                                                           name="Submit"
-                                                           value="Submit">
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </c:catch>
-                                    </form>
-                                    </c:if>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <c:forEach var="replys" items="${replyDtoList}" varStatus="status">
-                                <c:if test="${replys.groupId == reply.replyId}">
-                                <td><span><h2 style="color : black">${replys.comment}</h2></span></td>
-                                <td>
-                                    <c:choose>
-                                    <c:when test="${reply.userId == userDtoList[status.index].id}">
-                                    <span><h2
-                                            style="color : black">작성자 : ${userDtoList[status.index].nickname}</h2></span>
-                                <td><img width="100" height="105"
-                                         src="${pageContext.request.contextPath}../resources/${userDtoList[status.index].profileImageStoredLocation}"
-                                         frameborder="0" allowfullscreen></img></td>
-                                </c:when>
-                                <c:when test="${reply.singerId == singerDtoList[status.index].id}">
-                                <span><h2
-                                        style="color : black">작성자 : ${singerDtoList[status.index].singerName}</h2></span>
-                                <td><img width="100" height="105"
-                                         src="${pageContext.request.contextPath}../resources/${singerDtoList[status.index].profileImageStoredLocation}"
-                                         frameborder="0" allowfullscreen></img></td>
-                                </c:when>
-                                </c:choose>
-                                </td>
-                                </c:if>
-                                </c:forEach>
-                            </tbody>
-                            </tr>
-
-                            </c:forEach>
-                        </table>
-
+                                    <p>썰매 운전할 때 듣기 좋겠어요. 좋아요 꾹!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="hr"><br>
+                        <h3 style="text-align: center;">같은 Genre 추천 영상</h3>
+                        <br>
+                        <div class="card-deck">
+                            <div class="card">
+                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="card-body">
+                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
+                                    <p class="card-text"></p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>
+                            </div>
+                        </div><br>
                     </div>
                 </div>
             </div>
-
         </div>
-    </section>
+        <!-- #/ container -->
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+
+    <jsp:include page="../main/footer.jsp"></jsp:include>
 </div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+<!--**********************************
+       Scripts
+   ***********************************-->
+<script src="${pageContext.request.contextPath}../resources/plugins/common/common.min.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/custom.min.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/settings.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/gleek.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/styleSwitcher.js"></script>
 
-<!-- /////////////////////////////////////////Footer -->
-
-<jsp:include page="../main/footer.jsp"></jsp:include>
-<!-- Footer -->
-
-
-<!-- jQuery -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/agency.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.easing.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/classie.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/cbpAnimatedHeader.js"></script>
-
-<!--다른 템플릿-->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/jquery.scrolly.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/skel.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
-
-<script>
-
-    function dis() {
-        if ($('#replyUploadForm2').css('display') == 'none') {
-            $('#replyUploadForm2').show();
-        } else {
-            $('#replyUploadForm2').hide();
-        }
-    }
-</script>
 </body>
 <c:if test="${empty user && empty singer}">
     <script>
@@ -358,8 +285,8 @@
 </c:if>
 <c:if test="${empty user && empty singer}">
     <script>
-        const replyButton = document.getElementById("replyButton2");
-        replyButton.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
+        const replyButton2 = document.getElementById("replyButton2");
+        replyButton2.setAttribute("onclick", "location.href='${pageContext.request.contextPath}/login'; alert('로그인창으로 이동합니다.')");
     </script>
 </c:if>
 <c:if test="${empty user && empty singer}">

@@ -50,6 +50,8 @@ public class Singer extends TimeEntity{
 
     private String likeVideoList;
 
+    private String likeReplyList;
+
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "singer")
 //    private List<Reply> replyList;
 

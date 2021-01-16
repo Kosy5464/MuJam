@@ -1,6 +1,7 @@
 package com.sample.video.domain.repository;
 
 import com.sample.video.domain.entity.Reply;
+import com.sample.video.domain.entity.Singer;
 import com.sample.video.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,5 +12,7 @@ import java.util.Optional;
 @Repository
 public interface ReplyRepository extends JpaRepository<Reply, Long> {
     public List<Reply> findAllByVideoId(Long videoId);
+    public List<Reply> findAllByReplyIdAndVideoId(Long replyId, Long videoId);
+    public Optional<Reply> findByReplyId(Long replyId);
 }
 //test1

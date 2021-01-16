@@ -3,9 +3,9 @@
 spring:
   #mysql 연결
   datasource:
-    url: jdbc:mysql://localhost:3306/videoSample?allowPublicKeyRetrieval=true&useSSL=false&useUniCode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/video?allowPublicKeyRetrieval=true&useSSL=false&useUniCode=true&serverTimezone=Asia/Seoul
     username : root
-    password : root
+    password : MySQL
 
   #jpa 적용 sql문 보이게 설정
   jpa:
@@ -24,5 +24,4 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-
 

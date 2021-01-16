@@ -10,158 +10,93 @@
 
     <title>MuJam</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="${pageContext.request.contextPath}../resources/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}../resources/images/logo_M.png">
+    <!-- Custom Stylesheet -->
+    <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="${pageContext.request.contextPath}../resources/css/style2.css" rel="stylesheet">
 
-    <link href="${pageContext.request.contextPath}../resources/css/main.css" rel="stylesheet"/>
-
-    <!-- Custom Fonts -->
-    <link href="${pageContext.request.contextPath}../resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
-
-    <!-- bootstrap template // 특정 기능을 위해 뽑아옴//지금은 없지롱 -->
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="${pageContext.request.contextPath}../resources/js/html5shiv.js"></script>
-    <script src="${pageContext.request.contextPath}../resources/js/respond.min.js"></script>
-    <![endif]-->
 </head>
+
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </svg>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
 <body>
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+    <jsp:include page="header.jsp"></jsp:include>
 
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    <div class="content-body">
 
-<jsp:include page="../main/header.jsp"></jsp:include>
-<!-- Header -->
-<!-- /////////////////////////////////////////Content -->
-<div id="page-content">
-    <br>
-    <div class="container">
-        <div id="main-content" >
-            <h2 style="color: black">MY LIKE</h2>
-            <div id="aside"class="col-sm-4">
-                <div class="video col">
-                    <div class="video-wrapper">
-                        <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="text-block">전체 영상 플레이</div>
-                    <a href="generic.html" class="link"><span>Click Me</span></a>
-                </div>
-                <hr color="gray">
-                <button class="btn-danger"><i class="far fa-user" style="font-size: 20px"></i>&nbsp;&nbsp;&nbsp;계정정보(아이디)</button>
-            </div>
-            <div id="section" class="col-sm-8">
-                <div class="table-wrapper" style="overflow: auto; height: 500px; background-color: ghostwhite">
-                    <table>
-                        <tbody>
-                        <c:forEach var="video" items="${likeList}" varStatus="status">
-                            <c:set var="count" value="${status.count}" />
-                            <tr>
-                                <td>${count}</td>
-                                <td>
-                                    <div class="video col">
-                                        <div class="image fit">
-                                            <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
-                                            <div class="arrow">
-                                                <div class="icon fa-play"></div>
-                                            </div>
-                                        </div>
-                                        <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>
-                                    </div>
-                                </td>
-                                <td>${video.title}<br>
-                                    ${singerList[count-1].singerName}
-                                </td>
-                                <td>
-                                    <button type="button" id="likeListButton"
-                                    onclick="location.href='${pageContext.request.contextPath}/removeLikeList?userId=${user.id}&singerId=${singer.id}&videoId=${video.id}'">제거</button>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <hr color="gray">
-                <h3 style="color: black">추천 music</h3>
-                <div class="tabs">
-
-                    <!-- Tab 1 -->
-                    <div class="tab tab-1 flex flex-4 active">
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe width="275" height="155" src="https://www.youtube.com/embed/3HKnF5ahGdg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div>내 마음이 움찔했던 순간 - 규현</div>
-                            <a href="generic.html" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/Fc-H3AaQGTs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div>호랑수월가 - 나래</div>
-                            <a href="generic.html" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="video-wrapper">
-                                <iframe src="${pageContext.request.contextPath}../resources/video/greeny.mp4" controls></iframe>
-                            </div>
-                            <div>그린테스터 - 그린이</div>
-                            <a href="generic.html" class="link"><span>Click Me</span></a>
-                        </div>
-                        <!-- Video Thumbnail -->
-                        <div class="video col">
-                            <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/images/pic04.jpg" alt="" />
-                                <div class="arrow">
-                                    <div class="icon fa-play"></div>
-                                </div>
-                            </div>
-                            <a href="generic.html" class="link"><span>Click Me</span></a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row page-titles mx-0">
+            <div class="col p-md-0">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">USER</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">like</a></li>
+                </ol>
             </div>
         </div>
-        <div>&nbsp;</div>
+        <!-- row -->
+        <div class="row page-titles"><h1>LIKE</h1></div><hr class="hr1"/>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-12 m-b-30">
+
+                    <div class="card-deck">
+
+                        <c:forEach var="video" items="${likeList}" varStatus="status">
+                        <c:set var="count" value="${status.count}" />
+
+                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
+                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
+                            </a>
+                            <div class="card-footer">
+                                <small class="text-muted">${video.createdAt}</small>
+                            </div>
+
+
+                        </c:forEach>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- #/ container -->
     </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
 
+
+    <jsp:include page="footer.jsp"></jsp:include>
 </div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
 
+<!--**********************************
+    Scripts
+***********************************-->
+<script src="${pageContext.request.contextPath}../resources/plugins/common/common.min.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/custom.min.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/settings.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/gleek.js"></script>
+<script src="${pageContext.request.contextPath}../resources/js/styleSwitcher.js"></script>
 
-<!-- /////////////////////////////////////////Footer -->
-
-<jsp:include page="../main/footer.jsp"></jsp:include>
-<!-- Footer -->
-
-<!-- jQuery -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery-1.11.3.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/Thumbnail.js"></script>
-<!-- Bootstrap Core JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/agency.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.easing.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/classie.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/cbpAnimatedHeader.js"></script>
-
-<!--다른 템플릿-->
-<script src="${pageContext.request.contextPath}../resources/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/jquery.scrolly.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/skel.min.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/util.js"></script>
-<script src="${pageContext.request.contextPath}../resources/js/main.js"></script>
 </body>
 </html>

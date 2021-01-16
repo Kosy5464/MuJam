@@ -39,6 +39,10 @@ public class LoginController {
     public String singerSignUp(Model model){
         return "login/singerSignUp";
     }
+    @GetMapping("/userSignUp")
+    public String userSignUp(Model model){
+        return "login/userSignUp";
+    }
     @GetMapping("/logout")
     public String logout(HttpServletRequest req){
         req.getSession().invalidate();
@@ -46,7 +50,7 @@ public class LoginController {
     }
     @PostMapping("/submitSignUp")
     public String submitSignUp(UserDto user,
-                               @RequestParam(value = "profileImage", required = false) MultipartFile userProfileFile,
+                               @RequestParam(value = "image", required = false) MultipartFile userProfileFile,
                                int imageCheck){
         SecurityUtil securityUtil = new SecurityUtil();
         String password = user.getPassword();
@@ -57,7 +61,7 @@ public class LoginController {
     }
     @PostMapping("/submitSingerSignUp")
     public String submitSingerSignUp(SingerDto singer,
-                                     @RequestParam(value = "profileImage", required = false) MultipartFile singerProfileFile,
+                                     @RequestParam(value = "image", required = false) MultipartFile singerProfileFile,
                                      int imageCheck){
         SecurityUtil securityUtil = new SecurityUtil();
         String password = singer.getPassword();
