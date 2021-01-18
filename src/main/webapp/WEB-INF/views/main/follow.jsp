@@ -51,154 +51,16 @@
         <div class="row page-titles"><h1>FOLLOW</h1></div><hr class="hr1"/>
         <div class="container-fluid">
             <div  class="follow_row profileScroll">
-                <div class="profile-header-img">
-                    <a  href="">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/profile.png"/>
-                    </a>
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">건우 gunwoo</span>
-                        <div style="padding-top:5px; font-size:small">힙합, 재즈</div>
+                <c:forEach var="singer" items="${followingList}" varStatus="status">
+                    <div class="profile-header-img">
+                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/${singer.profileImageStoredLocation}" />
+                        <!-- badge -->
+                        <div class="rank-label-container">
+                            <span class="label label-default rank-label">${singer.singerName}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="profile-header-img">
-                    <a  href="">
-                        <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/2.jpg" />
-                    </a>
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">소울킹(SoulKing)</span>
-                        <div style="padding-top:5px; font-size:small">R&B, 발라드</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/3.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">Nokksi</span>
-                        <div style="padding-top:5px; font-size:small">어쿠스틱</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/4.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">7raum</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/5.jpg"  />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">이날치</span>
-                        <div style="padding-top:5px; font-size:small">국악 뺴앰!</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/6.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">김민수</span>
-                        <div style="padding-top:5px; font-size:small">어쿠스틱 밴드</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/7.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">핫도그</span>
-                        <div style="padding-top:5px; font-size:small">귀여워어어어</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/8.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">다주라밴드</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/9.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">Nell</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/cover.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">이수근수근</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/profile.png" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">호도도롱롱</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/1.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">안됩니다!</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/4.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">7raum</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/5.jpg"  />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">이날치</span>
-                        <div style="padding-top:5px; font-size:small">국악 뺴앰!</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/6.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">김민수</span>
-                        <div style="padding-top:5px; font-size:small">어쿠스틱 밴드</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/7.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">핫도그</span>
-                        <div style="padding-top:5px; font-size:small">귀여워어어어</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/8.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">다주라밴드</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
-                <div class="profile-header-img">
-                    <img class="img-circle" src="${pageContext.request.contextPath}../resources/images/profile/9.jpg" />
-                    <!-- badge -->
-                    <div class="rank-label-container">
-                        <span class="label label-default rank-label">Nell</span>
-                        <div style="padding-top:5px; font-size:small">동요, 발라드, 재즈</div>
-                    </div>
-                </div>
+                </c:forEach>
+
             </div>
             <br><br>
             <h2>RECENT UPDATES</h2>
