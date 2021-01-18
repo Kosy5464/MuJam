@@ -126,7 +126,7 @@
                                             <h5 class="card-text">장르 2 : ${videoDto.genre2}</h5>
                                         </div>
                                         <!--My PlayList 추가 버튼-->
-                                        <button class="btn btn-outline-light btn-sm">리스트 추가&nbsp;<i class="fa fa-list"></i></button>
+                                        <button class="btn btn-outline-light btn-sm" id="playListButton">리스트 추가&nbsp;<i class="fa fa-list"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                 <div class="media-body">
                                     <h4 class="mb-0">${singerDto.singerName}</h4>&nbsp;&nbsp; &nbsp;&nbsp;
                                     <!--팔로우 버튼-->
-                                    <button class="btn btn-outline-info btn-sm">팔로우</button>
+                                    <button class="btn btn-outline-info btn-sm" id="followButton">팔로우</button>
                                 </div>
                             </div>
                             <p class="card-text">${videoDto.content}</p>
