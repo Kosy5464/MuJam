@@ -118,16 +118,10 @@
                         <iframe width="100%" height="538" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="card-body">
                             <div class="row">
-                                <h2 class="col-sm-8">${videoDto.title}</h2>
-                                <div class="col-sm-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h5 class="card-text">장르 1 : ${videoDto.genre1}</h5>
-                                            <h5 class="card-text">장르 2 : ${videoDto.genre2}</h5>
-                                        </div>
-                                        <!--My PlayList 추가 버튼-->
-                                        <button class="btn btn-outline-light btn-sm">리스트 추가&nbsp;<i class="fa fa-list"></i></button>
-                                    </div>
+                                <h2 class="col-sm-9">${videoDto.title}</h2>
+                                <div class="col-sm-3 col">
+                                    <h5 class="card-text">장르 1 : ${videoDto.genre1}</h5>
+                                    <h5 class="card-text">장르 2 : ${videoDto.genre2}</h5>
                                 </div>
                             </div>
                             <div class="row">
@@ -137,9 +131,7 @@
                             <div class="media align-items-center mb-4">
                                 <img class="mr-3" src="${pageContext.request.contextPath}../resources/${singerDto.profileImageStoredLocation}" width="50" height="50" alt="">
                                 <div class="media-body">
-                                    <h4 class="mb-0">${singerDto.singerName}</h4>&nbsp;&nbsp; &nbsp;&nbsp;
-                                    <!--팔로우 버튼-->
-                                    <button class="btn btn-outline-info btn-sm">팔로우</button>
+                                    <h4 class="mb-0">${singerDto.singerName}</h4>
                                 </div>
                             </div>
                             <p class="card-text">${videoDto.content}</p>
