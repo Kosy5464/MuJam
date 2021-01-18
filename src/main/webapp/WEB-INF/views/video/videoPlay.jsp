@@ -115,7 +115,7 @@
                 <div class="col-lg-12 col-xl-12">
 
                     <div class="card">
-                        <iframe width="100%" height="538" src="${pageContext.request.contextPath}../resources/${videoDto.storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="538" src="${videoDto.storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="card-body">
                             <div class="row">
                                 <h2 class="col-sm-8">${videoDto.title}</h2>

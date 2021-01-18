@@ -56,10 +56,9 @@
                 <div class="col-12 m-b-30">
 
                     <div class="card-deck">
-
                         <c:forEach var="video" items="${likeList}" varStatus="status">
                         <c:set var="count" value="${status.count}" />
-
+                            <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
                                 <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
                             </a>
@@ -67,9 +66,8 @@
                                 <small class="text-muted">${video.createdAt}</small>
                             </div>
 
-
+                            </div>
                         </c:forEach>
-
                     </div>
 
                 </div>
