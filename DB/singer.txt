@@ -17,6 +17,7 @@ CREATE TABLE `singer` (
   `instagram_account` varchar(200) DEFAULT NULL,
   `youtube_channel` varchar(200) DEFAULT NULL,
   `like_video_list` varchar(2000) DEFAULT NULL,
+  `like_reply_list` varchar(2000) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `singer_id_UNIQUE` (`singer_id`)
