@@ -19,7 +19,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}../resources/images/logo_M.png">
     <!-- Custom Stylesheet -->
-    <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}../resources/css/style.css?ver=1" rel="stylesheet">
 
 </head>
 <body>
@@ -57,7 +57,9 @@
         <div class="header-right">
             <ul class="clearfix">
                 <li class="icons">
-                    <div class="search"> <input type="search" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
+                    <div class="search">
+                        <input type="search" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-2x fa-search"></i> </a>
+                    </div>
                 </li>
 
                 <c:catch>

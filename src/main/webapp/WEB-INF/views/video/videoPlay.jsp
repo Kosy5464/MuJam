@@ -125,21 +125,22 @@
                                             <h5 class="card-text">장르 1 : ${videoDto.genre1}</h5>
                                             <h5 class="card-text">장르 2 : ${videoDto.genre2}</h5>
                                         </div>
-                                        <!--My PlayList 추가 버튼-->
-                                        <button class="btn btn-outline-light btn-sm" id="playListButton">리스트 추가&nbsp;<i class="fa fa-list"></i></button>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="card-text col-sm-2"><small class="text-muted">조회수 : ${videoDto.viewcount}</small></div>
-                                <div class="col-sm-2"><button class="btn btn-danger p-0 mr-3" id="likeListButton" onclick="">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;300&nbsp;</button></div>
+                                <div class="card-text col-sm-2"><small class="text-muted">조회수 ${videoDto.viewcount}회 · ${videoDto.createdAt}</small></div>
+                                <div class="row col-sm-3">
+                                    <div class="col-sm-5"><button class="btn btn-outline-danger p-0 mr-3" id="likeListButton" onclick="">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.viewcount}&nbsp;</button></div>
+                                    &nbsp;
+                                    <div><button class="btn btn-outline-light p-0 mr-3" id="playListButton">&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;</button></div>
+                                </div>
                             </div><br>
                             <div class="media align-items-center mb-4">
                                 <img class="mr-3" src="${pageContext.request.contextPath}../resources/${singerDto.profileImageStoredLocation}" width="50" height="50" alt="">
-                                <div class="media-body">
-                                    <h4 class="mb-0">${singerDto.singerName}</h4>&nbsp;&nbsp; &nbsp;&nbsp;
-                                    <!--팔로우 버튼-->
-                                    <button class="btn btn-outline-info btn-sm" id="followButton">팔로우</button>
+                                <div class="media-body row">
+                                    <div class=""><h4 class="mb-0">${singerDto.singerName}</h4> </div>
+                                    <div class="col-sm-2"><button class="btn btn-outline-info btn-sm" id="followButton">팔로우</button></div>
                                 </div>
                             </div>
                             <p class="card-text">${videoDto.content}</p>
@@ -322,23 +323,23 @@
 
 <c:if test="${like == 0}">
     <script>
-        $('#likeListButton').html('좋아요');
+        $('#likeListButton').html('&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
     </script>
 </c:if>
 <c:if test="${like == 1}">
     <script>
-        $('#likeListButton').html('좋아요 취소');
+        $('#likeListButton').html('&nbsp;좋아요 취소&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
     </script>
 </c:if>
 
 <c:if test="${play == 0}">
     <script>
-        $('#playListButton').html('플레이리스트 추가');
+        $('#playListButton').html('&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
     </script>
 </c:if>
 <c:if test="${play == 1}">
     <script>
-        $('#playListButton').html('플레이리스트 제거');
+        $('#playListButton').html('&nbsp;&nbsp;리스트 제거&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
     </script>
 </c:if>
 
@@ -377,13 +378,14 @@
         $('#likeListButton').click(function () {
             let userId = ${user.id};
             let videoId = ${videoDto.id};
-            if ($('#likeListButton').html() == '좋아요') {
+            if ($('#likeListButton').html() == '&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;') {
                 $.ajax({
                     type: 'POST',
                     url: '${pageContext.request.contextPath}/userAddLikeList',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#likeListButton').html('좋아요 취소');
+                        $('#likeListButton').html('&nbsp;좋아요 취소&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
+
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -395,7 +397,7 @@
                     url: '${pageContext.request.contextPath}/userRemoveLikeList',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#likeListButton').html('좋아요');
+                        $('#likeListButton').html('&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -407,13 +409,13 @@
         $('#playListButton').click(function () {
             let userId = ${user.id};
             let videoId = ${videoDto.id};
-            if ($('#playListButton').html() == '플레이리스트 추가') {
+            if ($('#playListButton').html() == '&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;') {
                 $.ajax({
                     type: 'POST',
                     url: '${pageContext.request.contextPath}/userAddPlaylist',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#playListButton').html('플레이리스트 제거');
+                        $('#playListButton').html('&nbsp;&nbsp;리스트 제거&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -425,7 +427,7 @@
                     url: '${pageContext.request.contextPath}/userRemovePlaylist',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#playListButton').html('플레이리스트 추가');
+                        $('#playListButton').html('&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -471,13 +473,13 @@
         $('#likeListButton').click(function () {
             let userId = ${singer.id};
             let videoId = ${videoDto.id};
-            if ($('#likeListButton').html() == '좋아요') {
+            if ($('#likeListButton').html() == '&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;') {
                 $.ajax({
                     type: 'POST',
                     url: '${pageContext.request.contextPath}/singerAddLikeList',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#likeListButton').html('좋아요 취소');
+                        $('#likeListButton').html('&nbsp;좋아요 취소&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -489,7 +491,7 @@
                     url: '${pageContext.request.contextPath}/singerRemoveLikeList',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#likeListButton').html('좋아요');
+                        $('#likeListButton').html('&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -501,13 +503,13 @@
         $('#playListButton').click(function () {
             let userId = ${singer.id};
             let videoId = ${videoDto.id};
-            if ($('#playListButton').html() == '플레이리스트 추가') {
+            if ($('#playListButton').html() == '&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;') {
                 $.ajax({
                     type: 'POST',
                     url: '${pageContext.request.contextPath}/singerAddPlaylist',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#playListButton').html('플레이리스트 제거');
+                        $('#playListButton').html('&nbsp;&nbsp;리스트 제거&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');
@@ -519,7 +521,7 @@
                     url: '${pageContext.request.contextPath}/singerRemovePlaylist',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#playListButton').html('플레이리스트 추가');
+                        $('#playListButton').html('&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;');
                     },
                     error: function (e) {
                         console.log('실패!');

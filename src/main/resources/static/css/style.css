@@ -11472,7 +11472,8 @@ table.dataTable thead .sorting::after {
   opacity: 0.5; }
 
 .card-footer {
-  background: white; }
+  background: rgb(11,11,11);
+}
 
 .dropdown-toggle:focus {
   box-shadow: none !important; }

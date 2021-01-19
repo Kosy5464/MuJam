@@ -84,10 +84,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[0].title} - ${singerList[0].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[0].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[0].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[0].viewcount}회 · ${videoList[0].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -96,10 +93,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[1].title} - ${singerList[1].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[1].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[1].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[1].viewcount}회 · ${videoList[1].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -108,10 +102,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[2].title} - ${singerList[2].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[2].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[2].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[2].viewcount}회 · ${videoList[2].createdAt}</small></p>
                             </div>
                         </div>
                     </div><br>
@@ -122,10 +113,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[3].title} - ${singerList[3].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[3].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[3].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[3].viewcount}회 · ${videoList[3].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -134,10 +122,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[4].title} - ${singerList[4].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[4].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[4].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[4].viewcount}회 · ${videoList[4].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -146,10 +131,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[5].title} - ${singerList[5].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[5].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[5].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[5].viewcount}회 · ${videoList[5].createdAt}</small></p>
                             </div>
                         </div>
                     </div><br>
@@ -160,10 +142,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[6].title} - ${singerList[6].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[6].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[6].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[6].viewcount}회 · ${videoList[6].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -172,10 +151,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[7].title} - ${singerList[7].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[7].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[7].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[7].viewcount}회 · ${videoList[7].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -184,10 +160,7 @@
                          </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[8].title} - ${singerList[8].singerName}</h5>
-                                <p class="card-text">조회수 ${videoList[8].viewcount}회</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-muted">${videoList[8].createdAt}</small>
+                                <p class="card-text"><small>조회수 ${videoList[8].viewcount}회 · ${videoList[8].createdAt}</small></p>
                             </div>
                         </div>
                     </div>
