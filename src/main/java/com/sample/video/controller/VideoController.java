@@ -130,8 +130,6 @@ public class VideoController {
         ReplyDto reply = replyService.getReplyByReplyId(replyId);
         reply.setLikeCount(reply.getLikeCount()-1);
         replyService.writeReply(reply);
-
-
     }
 
     @PostMapping("/userAddFollowing")

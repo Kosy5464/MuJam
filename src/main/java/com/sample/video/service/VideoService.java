@@ -93,8 +93,8 @@
             String uploadThumbnailName = thumbnailName.split("[.]")[0]+"_uploadThumbnail"+Long.toString(index)+"."+thumbnailExtension;
             try{
                 //본인 uploadvideo, thumbnail 경로로 바꾸기
-                videoFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/video/"+uploadVideoName));
-                thumbnailFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/thumbnail/"+uploadThumbnailName));
+                videoFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/video/"+uploadVideoName));
+                thumbnailFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/thumbnail/"+uploadThumbnailName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -111,6 +111,7 @@
             videoDto.setVideoFileName(videoName);
             videoDto.setThumbnailFileName(thumbnailName);
             videoDto.setViewcount(0l);
+            videoDto.setLike_count(0l);
             return videoDto;
         }
 
@@ -128,6 +129,7 @@
                     .videoFileName(video.getVideoFileName())
                     .thumbnailFileName(video.getThumbnailFileName())
                     .viewcount(video.getViewcount())
+                    .like_count(video.getLike_count())
                     .build();
 
             return videoDto;

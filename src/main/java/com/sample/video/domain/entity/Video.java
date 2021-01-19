@@ -39,4 +39,6 @@ public class Video extends TimeEntity{
     private String thumbnailFileName;
 
     private Long viewcount;
+
+    private Long like_count;
 }
