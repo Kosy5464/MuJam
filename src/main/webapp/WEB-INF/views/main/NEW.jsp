@@ -62,18 +62,18 @@
                             <label class="input-group-prepend">Genre 1:&nbsp;</label>
                             <select class="custom-select" id="sel1">
                                 <option>전체</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                                <option>Balad</option>
+                                <option>Jazz</option>
+                                <option>Acoustic</option>
                             </select>
                         </div>
                         <div class="col-sm-3 input-group">
                             <label class="input-group-prepend">Genre 2:&nbsp;</label>
                             <select class="custom-select" id="sel2">
                                 <option>전체</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                                <option>신나는</option>
+                                <option>울적한</option>
+                                <option>잔잔한</option>
                             </select>
                         </div>
                     </div><br><br>

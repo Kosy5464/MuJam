@@ -100,18 +100,18 @@
                     <!--<label for="sel1">Genre 1:</label>-->
                     <select name="sel1" class="form-control" id="sel1">
                         <option>Genre1 선택</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>Balad</option>
+                        <option>Jazz</option>
+                        <option>Acoustic</option>
                     </select>
                 </div>
                 <div class="form-group col">
                     <!--<label for="sel2">Genre 2:</label>-->
                     <select name="sel2"class="form-control" id="sel2">
                         <option>Genre2 선택</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                        <option>신나는</option>
+                        <option>울적한</option>
+                        <option>잔잔한</option>
                     </select>
                 </div>
 
