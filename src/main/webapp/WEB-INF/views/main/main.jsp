@@ -92,32 +92,8 @@
                 </div>
             </div></div>
         <hr class="hr">
-
         <div class="card-body">
-            <h2>NEW MUSIC</h2>
-            <div class="row">
-                <div class="form-group col">
-                    <!--<label for="sel1">Genre 1:</label>-->
-                    <select name="sel1" class="form-control" id="sel1">
-                        <option>Genre1 선택</option>
-                        <option>Balad</option>
-                        <option>Jazz</option>
-                        <option>Acoustic</option>
-                    </select>
-                </div>
-                <div class="form-group col">
-                    <!--<label for="sel2">Genre 2:</label>-->
-                    <select name="sel2"class="form-control" id="sel2">
-                        <option>Genre2 선택</option>
-                        <option>신나는</option>
-                        <option>울적한</option>
-                        <option>잔잔한</option>
-                    </select>
-                </div>
-
-            </div>
-
-
+            <h2>HOT MUSIC</h2><br>
             <div class="container-fluid">
                 <div class="card-deck">
                     <div class="card">
@@ -162,6 +138,53 @@
 
             <!-- row -->
         </div>
+        <div class="card-body">
+            <h2>NEW MUSIC</h2><br>
+            <div class="container-fluid">
+                <div class="card-deck">
+                    <div class="card">
+                        <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link">
+                            <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" alt="" />
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">${videoList[0].title} - ${singerList[0].singerName}</h5>
+                            <p class="card-text">조회수 ${videoList[0].viewcount}회</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">${videoList[0].createdAt}</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link">
+                            <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[1].thumbnailStoredLocation}" alt="" />
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">${videoList[1].title} - ${singerList[1].singerName}</h5>
+                            <p class="card-text">조회수 ${videoList[1].viewcount}회</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">${videoList[1].createdAt}</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link">
+                            <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[2].thumbnailStoredLocation}" alt="" />
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">${videoList[2].title} - ${singerList[2].singerName}</h5>
+                            <p class="card-text">조회수 ${videoList[2].viewcount}회</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">${videoList[2].createdAt}</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- row -->
+        </div>
+
 
         <!-- #/ container -->
     </div>

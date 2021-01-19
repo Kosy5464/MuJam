@@ -59,32 +59,20 @@
                 <li class="icons">
                     <div class="search"> <input type="search" class="search-input" placeholder="Search..." name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div>
                 </li>
-                <!--<li class="icons">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1">
-                                <i class="mdi mdi-magnify"></i>
-                            </span>
-                        </div>
-                        <input type="search" class="form-control" placeholder="Search.." aria-label="SearchBox">
-                        <div class="drop-down  d-md-none">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </form>
-                        </div>
-                </li>-->
+
                 <c:catch>
                     <c:choose>
                         <c:when test="${empty user && empty singer}">
                             <li class="icons">
-                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/login'">로그인</button>
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/login'">LOGIN</button>
                             </li>
                             <li class="icons">
-                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/signUp'">회원가입</button>
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/signUp'">SIGN UP</button>
                             </li>
                         </c:when>
                         <c:otherwise>
                             <li class="icons">
-                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/logout'">로그아웃</button>
+                                <button type="button" class="btn mb-1 btn-outline-light" onclick="location.href='${pageContext.request.contextPath}/logout'">LOGOUT</button>
                             </li>
                             <li class="icons">
                                     ${user.userId}
