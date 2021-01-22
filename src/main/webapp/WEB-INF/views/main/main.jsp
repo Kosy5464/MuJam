@@ -101,8 +101,8 @@
                             <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[0].thumbnailStoredLocation}" alt="" />
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">${videoListViewCount[0].title} - ${singerListViewCount[0].singerName}</h5>
-                            <p class="card-text"><small>조회수 ${videoList[0].viewcount}회 · ${videoList[0].createdAt}</small></p>
+                            <h5 class="card-title">${videoListViewCount[0].title} - ${singerList[0].singerName}</h5>
+                            <p class="card-text"><small>조회수 ${videoListViewCount[0].viewcount}회 · ${videoListViewCount[0].createdAt}</small></p>
                         </div>
                     </div>
                     <div class="card">
@@ -110,8 +110,8 @@
                             <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[1].thumbnailStoredLocation}" alt="" />
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">${videoListViewCount[1].title} - ${singerListViewCount[1].singerName}</h5>
-                            <p class="card-text"><small>조회수 ${videoList[1].viewcount}회 · ${videoList[1].createdAt}</small></p>
+                            <h5 class="card-title">${videoListViewCount[1].title} - ${singerList[1].singerName}</h5>
+                            <p class="card-text"><small>조회수 ${videoListViewCount[1].viewcount}회 · ${videoListViewCount[1].createdAt}</small></p>
                         </div>
                     </div>
                     <div class="card">
@@ -120,7 +120,7 @@
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">${videoListViewCount[2].title} - ${singerListViewCount[2].singerName}</h5>
-                            <p class="card-text"><small>조회수 ${videoList[2].viewcount}회 · ${videoList[2].createdAt}</small></p>
+                            <p class="card-text"><small>조회수 ${videoListViewCount[2].viewcount}회 · ${videoListViewCount[2].createdAt}</small></p>
                         </div>
                     </div>
                 </div>

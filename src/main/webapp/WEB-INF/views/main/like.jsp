@@ -57,19 +57,18 @@
 
                     <div class="card-deck">
                         <c:forEach var="video" items="${likeList}" varStatus="status">
-                        <c:set var="count" value="${status.count}" />
+                            <c:set var="count" value="${status.count}" />
                             <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-footer">
-                                <small class="text-muted">${video.createdAt}</small>
-                            </div>
+                                <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
+                                    <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
+                                </a>
+                                <div class="card-footer">
+                                    <small class="text-muted">${video.createdAt}</small>
+                                </div>
 
                             </div>
                         </c:forEach>
                     </div>
-
                 </div>
 
             </div>
@@ -98,3 +97,4 @@
 
 </body>
 </html>
+

@@ -144,7 +144,7 @@
                 </a>
             </li>
             <li>
-                <a  aria-expanded="false" href="${pageContext.request.contextPath}/playList">
+                <a  aria-expanded="false" id="playListLink" href="${pageContext.request.contextPath}/playList">
                     <i class="icon-playlist menu-icon"></i><span class="nav-text">My PlayList</span>
                 </a>
             </li>

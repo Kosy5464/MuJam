@@ -84,7 +84,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[0].title} - ${singerListViewCount[0].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[0].viewcount}회 · ${videoList[0].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[0].viewcount}회 · ${videoListViewCount[0].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -93,7 +93,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[1].title} - ${singerListViewCount[1].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[1].viewcount}회 · ${videoList[1].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[1].viewcount}회 · ${videoListViewCount[1].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -102,7 +102,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[2].title} - ${singerListViewCount[2].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[2].viewcount}회 · ${videoList[2].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[2].viewcount}회 · ${videoListViewCount[2].createdAt}</small></p>
                             </div>
                         </div>
                     </div><br>
@@ -113,7 +113,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[3].title} - ${singerListViewCount[3].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[3].viewcount}회 · ${videoList[3].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[3].viewcount}회 · ${videoListViewCount[3].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -122,7 +122,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[4].title} - ${singerListViewCount[4].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[4].viewcount}회 · ${videoList[4].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[4].viewcount}회 · ${videoListViewCount[4].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -131,7 +131,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[5].title} - ${singerListViewCount[5].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[5].viewcount}회 · ${videoList[5].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[5].viewcount}회 · ${videoListViewCount[5].createdAt}</small></p>
                             </div>
                         </div>
                     </div><br>
@@ -142,7 +142,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[6].title} - ${singerListViewCount[6].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[6].viewcount}회 · ${videoList[6].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[6].viewcount}회 · ${videoListViewCount[6].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -151,7 +151,7 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[7].title} - ${singerListViewCount[7].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[7].viewcount}회 · ${videoList[7].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[7].viewcount}회 · ${videoListViewCount[7].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
@@ -160,8 +160,8 @@
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoListViewCount[8].title} - ${singerListViewCount[8].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[8].viewcount}회 · ${videoList[8].createdAt}</small></p>
-                            </div>
+                                <p class="card-text"><small>조회수 ${videoListViewCount[8].viewcount}회 · ${videoListViewCount[8].createdAt}</small></p>
+                            </div>s
                         </div>
                     </div>
 
