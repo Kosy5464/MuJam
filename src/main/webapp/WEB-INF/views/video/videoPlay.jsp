@@ -131,7 +131,7 @@
                             <div class="row">
                                 <div class="card-text col-sm-2"><small class="text-muted">조회수 ${videoDto.viewcount}회 · ${videoDto.createdAt}</small></div>
                                 <div class="row col-sm-3">
-                                    <div class="col-sm-5"><button class="btn btn-outline-danger p-0 mr-3" id="likeListButton" onclick="">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.viewcount}&nbsp;</button></div>
+                                    <div class="col-sm-5"><button class="btn btn-outline-danger p-0 mr-3" id="likeListButton" onclick="">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;</button></div>
                                     &nbsp;
                                     <div><button class="btn btn-outline-light p-0 mr-3" id="playListButton">&nbsp;&nbsp;리스트 추가&nbsp;<i class="fa fa-list"></i>&nbsp;&nbsp;</button></div>
                                 </div>
@@ -378,6 +378,7 @@
         $('#likeListButton').click(function () {
             let userId = ${user.id};
             let videoId = ${videoDto.id};
+            let videoLikeCount = ${videoDto.like_count};
             if ($('#likeListButton').html() == '&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;') {
                 $.ajax({
                     type: 'POST',
@@ -473,6 +474,7 @@
         $('#likeListButton').click(function () {
             let userId = ${singer.id};
             let videoId = ${videoDto.id};
+            let videoLikeCount = ${videoDto.like_count};
             if ($('#likeListButton').html() == '&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;') {
                 $.ajax({
                     type: 'POST',

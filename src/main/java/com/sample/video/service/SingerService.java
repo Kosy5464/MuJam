@@ -3,6 +3,7 @@ package com.sample.video.service;
 import com.sample.video.domain.entity.Singer;
 import com.sample.video.domain.entity.Video;
 import com.sample.video.domain.repository.SingerRepository;
+import com.sample.video.domain.repository.VideoRepository;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
 import com.sample.video.dto.VideoDto;
@@ -20,10 +21,27 @@ import java.util.Optional;
 @Service
 public class SingerService {
     SingerRepository singerRepository;
+    private VideoRepository videoRepository;
 
-    public SingerService(SingerRepository singerRepository){
+    public SingerService(SingerRepository singerRepository,VideoRepository videoRepository){
         this.singerRepository = singerRepository;
+        this.videoRepository = videoRepository;
     }
+
+    @Transactional
+    public VideoDto getVideo(Long id){
+        Optional<Video> videoWrapper = videoRepository.findById(id);
+        Video video = videoWrapper.get();
+
+        VideoDto videoDto = makeVideoDto(video);
+
+        return videoDto;
+    }
+    @Transactional
+    public void writeVideo(VideoDto videoDto){
+        videoRepository.save(videoDto.toEntity());
+    }
+
 
     @Transactional
     public List<SingerDto> getSingerListByIdDesc(){
@@ -58,7 +76,7 @@ public class SingerService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기
-                singerProfileFile.transferTo(new File("C:/Users/xogh9/Desktop/Mujam/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                singerProfileFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -199,6 +217,9 @@ public class SingerService {
     }
     @Transactional
     public void addLikeList(Long singerId, Long videoId){
+        VideoDto videoDto = getVideo(videoId);
+        videoDto.setLike_count(videoDto.getLike_count() +1);
+        writeVideo(videoDto);
         SingerDto singer = getSingerById(singerId);
         String likeList = singer.getLikeVideoList();
         if(likeList == null){
@@ -210,6 +231,9 @@ public class SingerService {
     }
     @Transactional
     public void removeLikeList(Long singerId, Long videoId){
+        VideoDto videoDto = getVideo(videoId);
+        videoDto.setLike_count(videoDto.getLike_count() -1);
+        writeVideo(videoDto);
         SingerDto singer = getSingerById(singerId);
         ArrayList<Long> likeArrayList = getLikeList(singerId);
         for(int i = 0 ; i < likeArrayList.size(); i++){
@@ -278,5 +302,25 @@ public class SingerService {
                 .youtubeChannel(singer.getYoutubeChannel())
                 .build();
         return singerDto;
+
+    }
+    public VideoDto makeVideoDto(Video video){
+        VideoDto videoDto = VideoDto.builder()
+                .id(video.getId())
+                .title(video.getTitle())
+                .content(video.getContent())
+                .createdAt(video.getCreatedAt())
+                .singerId(video.getSingerId())
+                .storedLocation(video.getStoredLocation())
+                .genre1(video.getGenre1())
+                .genre2(video.getGenre2())
+                .thumbnailStoredLocation(video.getThumbnailStoredLocation())
+                .videoFileName(video.getVideoFileName())
+                .thumbnailFileName(video.getThumbnailFileName())
+                .viewcount(video.getViewcount())
+                .like_count(video.getLike_count())
+                .build();
+
+        return videoDto;
     }
 }

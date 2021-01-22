@@ -40,183 +40,51 @@
                 <div class="col-lg-12 col-xl-12">
                     <div class="row">
                         <div class="col-sm-9">
-                            <iframe width="100%" height="538" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="100%" height="538" src="${playlist[0].storedLocation}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="card-body">
                                 <div class="row">
-                                    <h2 class="col-sm-9">크리스마스니까</h2>
+                                    <h2 class="col-sm-9">${playlist[0].title}</h2>
                                     <div class="col-sm-3 col">
-                                        <h5 class="card-text">장르 1 : 믹스</h5>
-                                        <h5 class="card-text">장르 2 : 기분 좋은 날</h5>
+                                        <h5 class="card-text">장르 1 : ${playlist[0].genre1}</h5>
+                                        <h5 class="card-text">장르 2 : ${playlist[0].genre2}</h5>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="card-text col-sm-2"><small class="text-muted">조회수 : 1,000,000회 • 2020.11.25</small></div>
-                                    <div class="col-sm-2"><button class="btn btn-danger p-0 mr-3">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;300&nbsp;</button></div>
+                                    <div class="card-text col-sm-3"><small class="text-muted">조회수 : ${playlist[0].viewcount} • ${playlist[0].createdAt}</small></div>
+                                    <div class="col-sm-2"><button class="btn btn-danger p-0 mr-3">&nbsp;좋아요&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${playlist[0].like_count}&nbsp;</button></div>
                                 </div><br>
                                 <div class="media align-items-center mb-4">
-                                    <img class="mr-3" src="images/avatar/11.png" width="50" height="50" alt="">
+                                    <img class="mr-3" src="${pageContext.request.contextPath}../resources/${singerList[0].profileImageStoredLocation}" width="50" height="50" alt="">
                                     <div class="media-body">
-                                        <h4 class="mb-0">젤리피쉬 뮤직</h4>
+                                        <h4 class="mb-0">${singerList[0].singerName}</h4>
                                     </div>
                                 </div>
-                                <p class="card-text">다가오는 크리스마스에 여러분들에게 좋은 노래를 들려드리고 싶어. 기획한 곡입니다.<br>
-                                    많은 훌륭한 가수들이 열심히 참여한 곡이니 잘 들어주세요. 박효신, 서인국, 성시경, 빅스, 엘렐레 엘안ㅇㄴ러ㄴ아ㅣ런ㅇ리ㅓㄴㄹ이넝ㄹㄴㅇ러ㅣㅇㄹㅇㄹ
-                                    <br> 그럼 모두들 미리 메리크리스마스~
+                                <p class="card-text">${playlist[0].content}
                                 </p>
                             </div>
                         </div>
                         <div class="col-sm-3" style="overflow-y: scroll; height:850px;">
                             <table>
                                 <tbody>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr> <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
-                                <tr style="height: 150px;">
-                                    <td>
-                                        <iframe width="100%" src="https://www.youtube.com/embed/JkRKxxLiDNI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </td>
-                                    <td style="padding-left: 10px"><b>아직도 그대로</b><br>
-                                        <small>가수명이다</small><br>
-                                        <small>조회수 1천회,2020.12.18</small>
-                                    </td>
-                                    <td><i class="fa fa-bars"></i></td>
-                                </tr>
+                                <c:forEach var="video" items="${playlist}" varStatus="status">
+                                    <c:set var="count" value="${status.count}" />
+                                    <tr style="height: 150px;">
+                                        <td><!-- 썸네일 이미지로 연결 -->
+                                            <a href="${pageContext.request.contextPath}/videoPlay/${playlist[count-1].id}" class="link">
+                                                <img width="100%" src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" />
+                                            </a>
+                                        </td>
+                                        <%--<td> <!-- 영상으로 연결 -->
+                                            <iframe width="100%" src="${playlist[count-1]}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </td>--%>
+                                        <td style="padding-left: 10px"><b>${playlist[count-1].title}</b><br>
+                                            <small>${singerList[count-1].singerName}</small><br>
+                                            <small>${video.viewcount},${video.createdAt}</small>
+                                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>보러가기</span></a>
+                                        </td>
+                                        <td><i class="fa fa-bars"></i></td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
 
                             </table>
