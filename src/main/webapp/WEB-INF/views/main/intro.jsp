@@ -22,9 +22,9 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 </head>
 <body class="main">
-
-<video id="loadingVideo" style="display: none;" src="${pageContext.request.contextPath}../resources/video/mu_Intro.mp4" width="100%" autoplay></video>
-
+<center>
+    <video id="loadingVideo" style="display: none;margin-top:120px;margin-botton:120px;" src="${pageContext.request.contextPath}../resources/video/mu_Intro.mp4" autoplay></video>
+</center>
 <script>
 
     $(document).ready(function () {
