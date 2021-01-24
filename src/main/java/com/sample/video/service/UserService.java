@@ -2,12 +2,9 @@ package com.sample.video.service;
 
 import com.sample.video.domain.entity.Singer;
 import com.sample.video.domain.entity.User;
-import com.sample.video.domain.entity.Video;
 import com.sample.video.domain.repository.UserRepository;
-import com.sample.video.domain.repository.VideoRepository;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
-import com.sample.video.dto.VideoDto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,33 +20,15 @@ import java.util.Optional;
 public class UserService {
 
     private UserRepository userRepository;
-    private VideoRepository videoRepository;
-
-    public UserService(UserRepository userRepository, VideoRepository videoRepository){
+    public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
-        this.videoRepository = videoRepository;
     }
-
 
     @Transactional
     public void writeUser(UserDto user){
         userRepository.save(user.toEntity());
     }
 
-    @Transactional
-    public void writeVideo(VideoDto videoDto){
-        videoRepository.save(videoDto.toEntity());
-    }
-
-    @Transactional
-    public VideoDto getVideo(Long id){
-        Optional<Video> videoWrapper = videoRepository.findById(id);
-        Video video = videoWrapper.get();
-
-        VideoDto videoDto = makeVideoDto(video);
-
-        return videoDto;
-    }
     @Transactional
     public List<UserDto> getUserListByIdDesc(){
         List<User> users = userRepository.findAllByOrderByIdDesc();
@@ -68,7 +47,7 @@ public class UserService {
         if(!getUserListByIdDesc().isEmpty()) {
             index = getUserListByIdDesc().get(0).getId() + 1;
         }
-        if(imageCheck == 1) {
+        if(userProfileFile.getOriginalFilename().length() == 0) {
             profileName = "default.jpg";
             uploadProfileName = "default.jpg";
         }
@@ -79,7 +58,7 @@ public class UserService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기C:/Users/chlee/MuJam/build/resources/main/static/upload/
-                userProfileFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                userProfileFile.transferTo(new File("//Users/chlee140/workspace/study/practice/MuJam/build/resources/main/static/upload/profileImage"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }
@@ -112,7 +91,6 @@ public class UserService {
             return null;
         }
     }
-
 
     @Transactional
     public UserDto getUserByNickname(String nickname){
@@ -255,10 +233,6 @@ public class UserService {
     }
     @Transactional
     public void addLikeList(Long userId, Long videoId){
-        VideoDto videoDto = getVideo(videoId);
-        videoDto.setLike_count(videoDto.getLike_count()+1);
-        writeVideo(videoDto);
-        System.out.println("흠!@!@!@!@!@!@!@!@!@!@!");
         UserDto user = getUserById(userId);
         String likeList = user.getLikeVideoList();
         if(likeList == null){
@@ -270,9 +244,6 @@ public class UserService {
     }
     @Transactional
     public void removeLikeList(Long userId, Long videoId){
-        VideoDto videoDto = getVideo(videoId);
-        videoDto.setLike_count(videoDto.getLike_count() -1);
-        writeVideo(videoDto);
         UserDto user = getUserById(userId);
         ArrayList<Long> likeArrayList = getLikeList(userId);
         for(int i = 0 ; i < likeArrayList.size(); i++){
@@ -337,24 +308,5 @@ public class UserService {
                 .playlist(user.getPlaylist())
                 .build();
         return userDto;
-    }
-    public VideoDto makeVideoDto(Video video){
-        VideoDto videoDto = VideoDto.builder()
-                .id(video.getId())
-                .title(video.getTitle())
-                .content(video.getContent())
-                .createdAt(video.getCreatedAt())
-                .singerId(video.getSingerId())
-                .storedLocation(video.getStoredLocation())
-                .genre1(video.getGenre1())
-                .genre2(video.getGenre2())
-                .thumbnailStoredLocation(video.getThumbnailStoredLocation())
-                .videoFileName(video.getVideoFileName())
-                .thumbnailFileName(video.getThumbnailFileName())
-                .viewcount(video.getViewcount())
-                .like_count(video.getLike_count())
-                .build();
-
-        return videoDto;
     }
 }

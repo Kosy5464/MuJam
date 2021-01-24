@@ -1,6 +1,7 @@
 package com.sample.video.controller;
 
 import com.mysql.cj.xdevapi.JsonArray;
+import com.sample.video.domain.entity.Singer;
 import com.sample.video.dto.SingerDto;
 import com.sample.video.dto.UserDto;
 import com.sample.video.dto.VideoDto;
@@ -208,6 +209,7 @@ public class MainController {
 
     @GetMapping("/searchResult")
     public String searchResult(Model model, String searchTarget) {
+        System.out.println(searchTarget);
         List<SingerDto> singerResultList = singerService.getSingerResultList(searchTarget);
         List<VideoDto> videoResultList = videoService.getVideoResultList(searchTarget);
         List<SingerDto> singerList = new ArrayList();
@@ -218,5 +220,12 @@ public class MainController {
         model.addAttribute("singerResultList", singerResultList);
         model.addAttribute("singerList", singerList);
         return "main/searchResult";
+
+    }
+
+    @PostMapping("/genre1")
+    @ResponseBody
+    public SingerDto genre1(String genre1, Model model){
+        return singerService.getSingerById(11);
     }
 }

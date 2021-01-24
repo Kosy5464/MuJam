@@ -65,7 +65,7 @@ public class SingerService {
         if(!getSingerListByIdDesc().isEmpty()) {
             index = getSingerListByIdDesc().get(0).getId() + 1;
         }
-        if(imageCheck == 1) {
+        if(singerProfileFile.getOriginalFilename().length() == 0) {
             profileName = "default.jpg";
             uploadProfileName = "default.jpg";
         }
@@ -76,7 +76,7 @@ public class SingerService {
             try{
                 //C:/Users/chlee/MuJam/build/resources/main/static/upload/profileImage 경로로 profileImage폴더 만들어야함
                 //본인 profileImage 경로로 바꾸기
-                singerProfileFile.transferTo(new File("C:/Users/kijk6/IdeaProjects/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
+                singerProfileFile.transferTo(new File("//Users/chlee140/workspace/study/practice/MuJam/build/resources/main/static/upload/profileImage/"+uploadProfileName));
             } catch(IllegalStateException | IOException e){
                 e.printStackTrace();
             }

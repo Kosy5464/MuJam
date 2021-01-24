@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>MuJaM</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="${pageContext.request.contextPath}../resources/images/logo_M.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="${pageContext.request.contextPath}../resources/images/logo_M.png">
     <!-- Custom Stylesheet -->
     <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
 </head>
@@ -20,7 +22,7 @@
 <div id="preloader">
     <div class="loader">
         <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10"/>
         </svg>
     </div>
 </div>
@@ -45,7 +47,8 @@
             <div class="col p-md-0">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">PUBLIC</a></li>
-                    <li class="breadcrumb-item active"><a href="${pageContext.request.contextPath}/new">NEW Music</a></li>
+                    <li class="breadcrumb-item active"><a href="${pageContext.request.contextPath}/new">NEW Music</a>
+                    </li>
                 </ol>
             </div>
         </div>
@@ -56,7 +59,8 @@
                 <div class="col-12 m-b-30">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2 class="d-inline">NEW MUSIC</h2>
+                            <h2 id="testh2" class="d-inline">NEW MUSIC</h2>
+                            </div>
                         </div>
                         <div class="col-sm-3 input-group">
                             <label class="input-group-prepend">Genre 1:&nbsp;</label>
@@ -76,91 +80,121 @@
                                 <option>잔잔한</option>
                             </select>
                         </div>
-                    </div><br><br>
+                    </div>
+                    <br><br>
                     <div class="card-deck">
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[0].title} - ${singerList[0].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[0].viewcount}회 · ${videoList[0].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[0].viewcount}회
+                                    · ${videoList[0].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[1].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[1].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[1].title} - ${singerList[1].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[1].viewcount}회 · ${videoList[1].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[1].viewcount}회
+                                    · ${videoList[1].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[2].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[2].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[2].title} - ${singerList[2].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[2].viewcount}회 · ${videoList[2].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[2].viewcount}회
+                                    · ${videoList[2].createdAt}</small></p>
                             </div>
                         </div>
-                    </div><br>
+                    </div>
+                    <br>
                     <div class="card-deck">
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[3].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[3].title} - ${singerList[3].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[3].viewcount}회 · ${videoList[3].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[3].viewcount}회
+                                    · ${videoList[3].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[4].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[4].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[4].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[4].title} - ${singerList[4].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[4].viewcount}회 · ${videoList[4].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[4].viewcount}회
+                                    · ${videoList[4].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[5].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[5].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[5].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[5].title} - ${singerList[5].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[5].viewcount}회 · ${videoList[5].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[5].viewcount}회
+                                    · ${videoList[5].createdAt}</small></p>
                             </div>
                         </div>
-                    </div><br>
+                    </div>
+                    <br>
                     <div class="card-deck">
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[6].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[6].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[6].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[6].title} - ${singerList[6].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[6].viewcount}회 · ${videoList[6].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[6].viewcount}회
+                                    · ${videoList[6].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[7].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[7].thumbnailStoredLocation}" alt="" />
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[7].thumbnailStoredLocation}"
+                                     alt=""/>
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[7].title} - ${singerList[7].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[7].viewcount}회 · ${videoList[7].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[7].viewcount}회
+                                    · ${videoList[7].createdAt}</small></p>
                             </div>
                         </div>
                         <div class="card">
                             <a href="${pageContext.request.contextPath}/videoPlay/${videoList[8].id}" class="link">
-                            <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[8].thumbnailStoredLocation}" alt="" />
-                         </a>
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${videoList[8].thumbnailStoredLocation}"
+                                     alt=""/>
+                            </a>
                             <div class="card-body">
                                 <h5 class="card-title">${videoList[8].title} - ${singerList[8].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[8].viewcount}회 · ${videoList[8].createdAt}</small></p>
+                                <p class="card-text"><small>조회수 ${videoList[8].viewcount}회
+                                    · ${videoList[8].createdAt}</small></p>
                             </div>
                         </div>
                     </div>
@@ -169,7 +203,8 @@
             </div>
         </div>
         <!-- #/ container -->
-    </div><br>
+    </div>
+    <br>
     <!--**********************************
         Content body end
     ***********************************-->
@@ -187,7 +222,24 @@
 <script src="${pageContext.request.contextPath}../resources/js/settings.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/gleek.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/styleSwitcher.js"></script>
-
+<script>
+    $('#sel1').change(changeSel1 = function () {
+        let genre1 = $('#sel1').val();
+        console.log(genre1);
+        $.ajax({
+            type: 'POST',
+            url: '${pageContext.request.contextPath}/genre1',
+            data: {genre1: genre1},
+            success: function (data) {
+            },
+            error: function (e) {
+                error = e;
+                console.log(e);
+                console.log("실패");
+            }
+        })
+    });
+</script>
 </body>
 
 </html>

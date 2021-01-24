@@ -77,6 +77,7 @@ public class VideoController {
         List<UserDto> userDtoList = userService.getUserListByIdDesc();
         System.out.println(userDtoList.get(1));
         List<SingerDto> singerDtoList = singerService.getSingerListByIdDesc();
+        System.out.println(videoDto);
         if(followingList.contains(singerDto.getId())){
             model.addAttribute("follow",1);
         }
