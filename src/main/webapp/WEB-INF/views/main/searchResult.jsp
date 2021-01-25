@@ -86,21 +86,33 @@
         </div>
         <hr class="hr1"/>
         <div class="container-fluid">
-        <div class="container-fluid">
-            <div class="profile-header-container flex flex-4">
-                <div  class="row">
+            <div class="row">
+                <div class="col-12 m-b-30">
+                    <div class="card-deck">
                     <c:forEach var="video" items="${videoResultList}" varStatus="status">
                         <c:set var="index" value="${status.index}"/>
-                        <div class="video col">
+                        <div class="card">
+                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
+                                <img width="370" height="250"
+                                     src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}"
+                                     alt=""/>
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">${video.title} - ${singerList[status.index].singerName}</h5>
+                                <p class="card-text"><small>조회수 ${video.viewcount}회
+                                    · ${video.createdAt}</small></p>
+                            </div>
+                           <%-- ------
                             <div class="image fit">
                                 <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" height="200" width="200" />
 
                             </div>
                             <div>${video.title} - ${singerList[status.index].singerName}</div>
                             <div>조회수 ${video.viewcount}회</div>
-                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>
+                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>--%>
                         </div>
                     </c:forEach>
+                    </div>
                 </div>
             </div>
         </div>
