@@ -52,11 +52,33 @@
         <div class="row page-titles"><h1>LIKE</h1></div><hr class="hr1"/>
         <div class="container-fluid">
             <div class="row">
-
                 <div class="col-12 m-b-30">
-
-                    <div class="card-deck">
+                        <c:set var="total" value="0"/>
                         <c:forEach var="video" items="${likeList}" varStatus="status">
+                                <c:if test="${status.last}">
+                                    <c:set var="total" value="${(status.index/3)+1}"/>
+                                    <fmt:parseNumber integerOnly= "true" value= "${total}" />
+                                    <c:set var="update" value="0"/>
+                                    <c:forEach var="videoLine" begin="1" end="${total}" step="1">
+                                        <div class="card-deck">
+                                            <c:forEach var="like" items="${likeList}" begin="${update}" end="${update+2}" varStatus="status2">
+                                                <c:set var="count" value="${status2.count}" />
+                                                <div class="card">
+                                                    <a href="${pageContext.request.contextPath}/videoPlay/${like.id}" class="link">
+                                                        <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${like.thumbnailStoredLocation}" alt="" />
+                                                    </a>
+                                                    <div class="card-footer">
+                                                        <small class="text-muted">${like.createdAt}</small>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+                                            <c:set var="update" value="${update+3}"/>
+                                        </div>
+                                    </c:forEach>
+                                </c:if>
+                        </c:forEach>
+                    <%-- <div class="card-deck">--%>
+                        <%--<c:forEach var="video" items="${likeList}" varStatus="status" >
                             <c:set var="count" value="${status.count}" />
                             <div class="card">
                                 <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link">
@@ -67,8 +89,8 @@
                                 </div>
 
                             </div>
-                        </c:forEach>
-                    </div>
+                        </c:forEach>--%>
+                    <%--</div>--%>
                 </div>
 
             </div>
