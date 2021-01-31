@@ -385,7 +385,7 @@
                     url: '${pageContext.request.contextPath}/userAddLikeList',
                     data: {userId: userId, videoId: videoId},
                     success: function (data) {
-                        $('#likeListButton').html('&nbsp;좋아요 취소&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count}&nbsp;');
+                        $('#likeListButton').html('&nbsp;좋아요 취소&nbsp;<i class="fa fa-thumbs-up"></i>&nbsp;&nbsp;${videoDto.like_count+1}&nbsp;');
 
                     },
                     error: function (e) {
