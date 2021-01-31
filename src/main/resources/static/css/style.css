@@ -15025,7 +15025,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   font-size: 10px;
   bottom: 45px;
   position: relative;
-  border-radius: 5px
+  border : none;
 }
 
 .search-icon:hover {

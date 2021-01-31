@@ -60,9 +60,6 @@
                     <div class="search">
                         <form id="searchResult" action="${pageContext.request.contextPath}/searchResult" method="get">
                             <input type="search" class="search-input" placeholder="Search..." name="searchTarget">
-                        <!--<a href="${pageContext.request.contextPath}/searchResult" class="search-icon">
-                            <i class="fa fa-2x fa-search"></i>
-                        </a>-->
                             <button class="search-icon" form="searchResult">
                                 <i class="fa fa-2x fa-search"></i>
                             </button>
