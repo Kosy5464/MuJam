@@ -211,14 +211,23 @@ public class MainController {
     public String searchResult(Model model, String searchTarget) {
         System.out.println(searchTarget);
         List<SingerDto> singerResultList = singerService.getSingerResultList(searchTarget);
+        List<VideoDto> singerVideoResultList = videoService.getSingerVideoResultList(singerResultList);
         List<VideoDto> videoResultList = videoService.getVideoResultList(searchTarget);
         List<SingerDto> singerList = new ArrayList();
+        List<SingerDto> singerList2 = new ArrayList();
         for (VideoDto video : videoResultList) {
             singerList.add(singerService.getSingerById(video.getSingerId()));
         }
+        for(VideoDto video : singerVideoResultList){
+            singerList2.add(singerService.getSingerById(video.getSingerId()));
+        }
         model.addAttribute("videoResultList", videoResultList);
         model.addAttribute("singerResultList", singerResultList);
+        model.addAttribute("singerVideoResultList", singerVideoResultList);
         model.addAttribute("singerList", singerList);
+        model.addAttribute("singerList2", singerList2);
+        model.addAttribute("singerSize", singerResultList.size());
+        model.addAttribute("videoSize", videoResultList.size());
         return "main/searchResult";
 
     }

@@ -14,9 +14,6 @@
     <!-- Custom Stylesheet -->
     <link href="${pageContext.request.contextPath}../resources/css/style.css" rel="stylesheet">
 </head>
-<!--*******************
-       Preloader start
-   ********************-->
 <div id="preloader">
     <div class="loader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -24,21 +21,12 @@
         </svg>
     </div>
 </div>
-<!--*******************
-    Preloader end
-********************-->
 <body>
 
 
-<!--**********************************
-    Main wrapper start
-***********************************-->
 <div id="main-wrapper">
 
     <jsp:include page="../main/header.jsp"></jsp:include>
-    <!--**********************************
-        Content body start
-    ***********************************-->
     <div class="content-body">
         <!-- row -->
         <div class="row page-titles mx-0">
@@ -56,6 +44,13 @@
         <div class="container-fluid">
             <div class="profile-header-container flex flex-4">
                 <div  class="row">
+                    <c:set var="singerSize" value="${singerSize}" />
+                    <c:if test="${singerSize eq 0}">
+                        <!-- 가수결과 없음 -->
+                        <div>
+                            가수 결과 없음!
+                        </div>
+                    </c:if>
                     <c:forEach var="singers" items="${singerResultList}" varStatus="status">
                         <div class="profile-header-img col">
                             <a  href="">
@@ -69,6 +64,24 @@
                         </div>
                     </c:forEach>
 
+                </div>
+                <div class="container-fluid">
+                    <div class="profile-header-container flex flex-4">
+                        <div  class="row">
+                            <c:forEach var="video" items="${singerVideoResultList}" varStatus="status">
+                                <c:set var="index" value="${status.index}"/>
+                                <div class="video col">
+                                    <div class="image fit">
+                                        <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" height="200" width="200" />
+
+                                    </div>
+                                    <div>${video.title} - ${singerList2[status.index].singerName}</div>
+                                    <div>조회수 ${video.viewcount}회</div>
+                                    <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,6 +99,16 @@
         </div>
         <hr class="hr1"/>
         <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="profile-header-container flex flex-4">
+                <div  class="row">
+                    <c:set var="videoSize" value="${videoSize}" />
+                    <c:if test="${videoSize eq 0}">
+                        <!-- 비디오 결과 없음 -->
+                        <div>
+                            비디오 결과 없음!
+                        </div>
+                    </c:if>
             <div class="row">
                 <div class="col-12 m-b-30">
                     <div class="card-deck">
@@ -102,35 +125,15 @@
                                 <p class="card-text"><small>조회수 ${video.viewcount}회
                                     · ${video.createdAt}</small></p>
                             </div>
-                           <%-- ------
-                            <div class="image fit">
-                                <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" height="200" width="200" />
-
-                            </div>
-                            <div>${video.title} - ${singerList[status.index].singerName}</div>
-                            <div>조회수 ${video.viewcount}회</div>
-                            <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>--%>
                         </div>
                     </c:forEach>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #/ container -->
     </div>
-    <!--**********************************
-        Content body end
-    ***********************************-->
-
-
     <jsp:include page="../main/footer.jsp"></jsp:include>
 </div>
-<!--**********************************
-    Main wrapper end
-***********************************-->
-<!--**********************************
-       Scripts
-   ***********************************-->
 <script src="${pageContext.request.contextPath}../resources/plugins/common/common.min.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/custom.min.js"></script>
 <script src="${pageContext.request.contextPath}../resources/js/settings.js"></script>
