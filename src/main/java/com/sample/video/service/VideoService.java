@@ -1,7 +1,10 @@
     package com.sample.video.service;
 
+    import com.sample.video.domain.entity.Singer;
     import com.sample.video.domain.entity.Video;
+    import com.sample.video.domain.repository.SingerRepository;
     import com.sample.video.domain.repository.VideoRepository;
+    import com.sample.video.dto.SingerDto;
     import com.sample.video.dto.VideoDto;
     import org.springframework.stereotype.Service;
     import org.springframework.web.multipart.MultipartFile;
@@ -61,6 +64,22 @@
 
             return videoResultList;
         }
+
+        @Transactional
+        public List<VideoDto> getSingerVideoResultList(List<SingerDto> singerList){
+            List<VideoDto> videoResultList = new ArrayList();
+
+            for(SingerDto singerDto : singerList){
+                long id = singerDto.getId();
+                List<Video> videoList = videoRepository.findBySingerId(id);
+                for(Video video : videoList){
+                    VideoDto videoDto = makeVideoDto(video);
+                    videoResultList.add(videoDto);
+                }
+            }
+            return videoResultList;
+        }
+
         @Transactional
         public List<VideoDto> getVideoListByViewcountDesc(){
             List<Video> videos = videoRepository.findAllByOrderByViewcountDesc();

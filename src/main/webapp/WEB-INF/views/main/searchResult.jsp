@@ -56,6 +56,13 @@
         <div class="container-fluid">
             <div class="profile-header-container flex flex-4">
                 <div  class="row">
+                    <c:set var="singerSize" value="${singerSize}" />
+                    <c:if test="${singerSize eq 0}">
+                        <!-- 가수결과 없음 -->
+                        <div>
+                            가수 결과 없음!
+                        </div>
+                    </c:if>
                     <c:forEach var="singers" items="${singerResultList}" varStatus="status">
                         <div class="profile-header-img col">
                             <a  href="">
@@ -69,6 +76,24 @@
                         </div>
                     </c:forEach>
 
+                </div>
+                <div class="container-fluid">
+                    <div class="profile-header-container flex flex-4">
+                        <div  class="row">
+                            <c:forEach var="video" items="${singerVideoResultList}" varStatus="status">
+                                <c:set var="index" value="${status.index}"/>
+                                <div class="video col">
+                                    <div class="image fit">
+                                        <img src="${pageContext.request.contextPath}../resources/${video.thumbnailStoredLocation}" alt="" height="200" width="200" />
+
+                                    </div>
+                                    <div>${video.title} - ${singerList2[status.index].singerName}</div>
+                                    <div>조회수 ${video.viewcount}회</div>
+                                    <a href="${pageContext.request.contextPath}/videoPlay/${video.id}" class="link"><span>Click Me</span></a>
+                                </div>
+                            </c:forEach>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -89,6 +114,13 @@
         <div class="container-fluid">
             <div class="profile-header-container flex flex-4">
                 <div  class="row">
+                    <c:set var="videoSize" value="${videoSize}" />
+                    <c:if test="${videoSize eq 0}">
+                        <!-- 비디오 결과 없음 -->
+                        <div>
+                            비디오 결과 없음!
+                        </div>
+                    </c:if>
                     <c:forEach var="video" items="${videoResultList}" varStatus="status">
                         <c:set var="index" value="${status.index}"/>
                         <div class="video col">

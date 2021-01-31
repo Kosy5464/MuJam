@@ -11,5 +11,6 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     public List<Video> findAllByOrderByIdDesc();
     public List<Video> findAllByOrderByViewcountDesc();
     public List<Video> findByTitleContaining(String searchTarget);
+    public List<Video> findBySingerId(Long singerId);
 }
 //test4
