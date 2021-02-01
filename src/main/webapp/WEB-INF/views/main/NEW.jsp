@@ -64,6 +64,25 @@
                         <div class="col-sm-3 input-group">
                             <label class="input-group-prepend">Genre 1:&nbsp;</label>
                             <select class="custom-select" id="sel1">
+                                <option value="totalGenre1" selected>전체</option>
+                                <c:forEach items="${genre1List}" var="genre" varStatus="st">
+                                    <option value="${genre1List[st.index]}">${genre1List[st.index]}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 input-group">
+                            <label class="input-group-prepend">Genre 2:&nbsp;</label>
+                            <select class="custom-select" id="sel2">
+                                <option value="totalGenre2" selected>전체</option>
+                                <c:forEach items="${genre2List}" var="genre" varStatus="st">
+                                    <option value="${genre2List[st.index]}">${genre2List[st.index]}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <%-- 기존 장르 검색 부분
+                        <div class="col-sm-3 input-group">
+                            <label class="input-group-prepend">Genre 1:&nbsp;</label>
+                            <select class="custom-select" id="sel1">
                                 <option>전체</option>
                                 <option>Balad</option>
                                 <option>Jazz</option>
@@ -78,7 +97,7 @@
                                 <option>울적한</option>
                                 <option>잔잔한</option>
                             </select>
-                        </div>
+                        </div>--%>
                     </div>
                     <br><br>
 

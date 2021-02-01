@@ -94,7 +94,7 @@
         <hr class="hr">
         <div class="card-body">
             <div class="row">
-                <div><h2><i class="icon-fire menu-icon"></i>&nbsp;HOT MUSIC</h2></div>&nbsp;&nbsp;&nbsp;
+                <div><h2>HOT MUSIC</h2></div>&nbsp;&nbsp;&nbsp;
                 <div><button class="btn btn-outline-light btn-sm" style="position:relative; top:5px;" onclick="location.href='${pageContext.request.contextPath}/hot'">더보기</button></div>
             </div>
             <br>
@@ -135,7 +135,7 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div><h2> <i class="icon-star menu-icon"></i>&nbsp;NEW MUSIC</h2></div>&nbsp;&nbsp;&nbsp;
+                <div><h2>NEW MUSIC</h2></div>&nbsp;&nbsp;&nbsp;
                 <div><button class="btn btn-outline-light btn-sm" style="position:relative; top:5px;" onclick="location.href='${pageContext.request.contextPath}/new'">더보기</button></div>
             </div>
             <br>

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Controller
@@ -69,17 +70,24 @@ public class MainController {
 
     @GetMapping("/new")
     public String NEW(Model model) {
-
-
         List<VideoDto> videoList = videoService.getVideoListByIdDesc();
         List<SingerDto> singerList = new ArrayList();
+        List<String> genre1List = new ArrayList();
+        List<String> genre2List = new ArrayList();
         for (VideoDto video : videoList) {
             Long id = video.getSingerId();
+            String check = video.getGenre1();
+            String check2 = video.getGenre2();
             singerList.add(singerService.getSingerById(id));
+            genre1List.add(check);
+            genre2List.add(check2);
         }
+        genre1List = new ArrayList<String>(new HashSet<String>(genre1List));
+        genre2List = new ArrayList<String>(new HashSet<String>(genre2List));
         model.addAttribute("singerList", singerList);
         model.addAttribute("videoList", videoList);
-
+        model.addAttribute("genre1List",genre1List);
+        model.addAttribute("genre2List",genre2List);
         return "main/NEW";
     }
 
@@ -87,15 +95,22 @@ public class MainController {
     public String HOT(Model model) {
         List<VideoDto> videoListViewCount = videoService.getVideoListByViewcountDesc();
         List<SingerDto> singerListViewCount = new ArrayList();
-
+        List<String> genre1List = new ArrayList();
+        List<String> genre2List = new ArrayList();
         for (VideoDto video : videoListViewCount) {
             Long id = video.getSingerId();
+            String check = video.getGenre1();
+            String check2 = video.getGenre2();
             singerListViewCount.add(singerService.getSingerById(id));
+            genre1List.add(check);
+            genre2List.add(check2);
         }
-
+        genre1List = new ArrayList<String>(new HashSet<String>(genre1List));
+        genre2List = new ArrayList<String>(new HashSet<String>(genre2List));
         model.addAttribute("singerListViewCount", singerListViewCount);
         model.addAttribute("videoListViewCount", videoListViewCount);
-
+        model.addAttribute("genre1List",genre1List);
+        model.addAttribute("genre2List",genre2List);
         return "main/HOT";
     }
 
