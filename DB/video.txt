@@ -18,6 +18,10 @@ CREATE TABLE `video` (
 alter table video add viewcount bigint not null default '0';
 alter table video add like_count bigint not null default '0';
 
-
-INSERT INTO video values(1,"노래제목","음악 소개란입니다. 로아아안랑넌온아ㅓㄴ어어나너망넘ㄴ엄ㄴㅇㅁㄴ앙ㅁㄴ어남ㄴㅇㅁㅁ너ㅏ나",11,'2021-01-18',"https://www.youtube.com/embed/WYDMITiZ6qQ","Balad","우울한 날","images/1.jpg","비디오 이름","",0,0);
-select * from video;
+-- 데이터 삽입 예시
+INSERT INTO video values(1,"노래제목","음악 소개란입니다. 로아아안랑넌온아ㅓㄴ어어나너망넘ㄴ엄ㄴㅇㅁㄴ앙ㅁㄴ어남ㄴㅇㅁㅁ너ㅏ나",11,'2021-01-18',"https://www.youtube.com/embed/tqUbLKNQd4s","Acousitc","신나는","images/2.jpg","비디오 이름1","",0,0);
+INSERT INTO video values(2,"노래제목2","음악 소개란입니다.2 로아아안랑넌온아ㅓㄴaaaaaaaaaaaaaaaaaaaaaaaaaa어어나너망넘ㄴ엄ㄴㅇㅁㄴ앙ㅁㄴ어남ㄴㅇㅁㅁ너ㅏ나",11,'2021-01-20',"https://www.youtube.com/embed/tqUbLKNQd4s","Balad","우울한","images/1.jpg","비디오 이름2","",0,0);
+INSERT INTO video values(3,"노래제목3","음악 소개란입니다.3 로아아안랑넌온아ㅓㄴ어어나너망넘ㄴ엄ㄴㅇㅁㄴ앙ㅁㄴ어남ㄴㅇㅁㅁ너ㅏ나",11,'2021-01-21',"https://www.youtube.com/embed/tqUbLKNQd4s","Jazz","우울한","images/3.jpg","비디오 이름3","",0,0);
+INSERT INTO video values(4,"노래제목4","음악 소개란입니다.4 로아아안랑넌온아ㅓㄴ어어나너망넘ㄴ엄ㄴㅇㅁㄴ앙ㅁㄴ어남ㄴㅇㅁㅁ너ㅏ나",11,'2021-01-21',"https://www.youtube.com/embed/tqUbLKNQd4s","Jazz","신나는","images/4.jpg","비디오 이름4","",0,0);
+INSERT INTO video values(5,"노래제목5","음악 소개란입니다.5 로sdfsdfㅁㅁ너ㅏ나",11,'2021-01-27',"https://www.youtube.com/embed/tqUbLKNQd4s","Acoustic","우울한","images/5.jpg","비디오 이름5","",0,0);
+INSERT INTO video values(6,"노래제목6","음악 소개란입니다.6 로sdfsdfㅁㅁ너ㅏ나",10,'2021-02-01',"https://www.youtube.com/embed/tqUbLKNQd4s","Acoustic","잔잔한","images/6.jpg","비디오 이름6","",0,0);
