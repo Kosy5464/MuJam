@@ -60,7 +60,6 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <h2 id="testh2" class="d-inline">NEW MUSIC</h2>
-                            </div>
                         </div>
                         <div class="col-sm-3 input-group">
                             <label class="input-group-prepend">Genre 1:&nbsp;</label>
@@ -82,122 +81,35 @@
                         </div>
                     </div>
                     <br><br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[0].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[0].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[0].title} - ${singerList[0].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[0].viewcount}회
-                                    · ${videoList[0].createdAt}</small></p>
+
+                <c:set var="total" value="0"/>
+                <c:forEach var="video" items="${videoList}" varStatus="status">
+                    <c:if test="${status.last}">
+                        <c:set var="total" value="${(status.index/3)+1}"/>
+                        <fmt:parseNumber integerOnly= "true" value= "${total}" />
+                        <c:set var="update" value="0"/>
+                        <c:forEach var="videoLine" begin="1" end="${total}" step="1">
+                            <div class="card-deck">
+                                <c:forEach var="new" items="${videoList}" begin="${update}" end="${update+2}" varStatus="status2">
+                                    <c:set var="count" value="${status2.count}" />
+                                    <div class="card">
+                                        <a href="{pageContext.request.contextPath}/videoPlay/${videoList[status2.index].id}" class="link">
+                                            <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoList[status2.index].thumbnailStoredLocation}" alt="" />
+                                        </a>
+                                        <div class="card-body">
+                                            <h5 class="card-title">${videoList[status2.index].title} - ${singerList[status2.index].singerName}</h5>
+                                            <p class="card-text"><small>조회수 ${videoList[status2.index].viewcount}회
+                                                · ${videoList[status2.index].createdAt}</small></p>
+                                        </div>
+                                    </div>
+                                </c:forEach>
+                                <c:set var="update" value="${update+3}"/>
                             </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[1].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[1].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[1].title} - ${singerList[1].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[1].viewcount}회
-                                    · ${videoList[1].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[2].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[2].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[2].title} - ${singerList[2].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[2].viewcount}회
-                                    · ${videoList[2].createdAt}</small></p>
-                            </div>
-                        </div>
-                    </div>
+                        </c:forEach>
+                    </c:if>
+                </c:forEach>
                     <br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[3].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[3].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[3].title} - ${singerList[3].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[3].viewcount}회
-                                    · ${videoList[3].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[4].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[4].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[4].title} - ${singerList[4].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[4].viewcount}회
-                                    · ${videoList[4].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[5].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[5].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[5].title} - ${singerList[5].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[5].viewcount}회
-                                    · ${videoList[5].createdAt}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[6].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[6].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[6].title} - ${singerList[6].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[6].viewcount}회
-                                    · ${videoList[6].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[7].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[7].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[7].title} - ${singerList[7].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[7].viewcount}회
-                                    · ${videoList[7].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoList[8].id}" class="link">
-                                <img width="370" height="250"
-                                     src="${pageContext.request.contextPath}../resources/${videoList[8].thumbnailStoredLocation}"
-                                     alt=""/>
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoList[8].title} - ${singerList[8].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoList[8].viewcount}회
-                                    · ${videoList[8].createdAt}</small></p>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
