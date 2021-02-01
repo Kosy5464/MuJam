@@ -22,16 +22,18 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 </head>
 <body class="main">
+<div>
     <center>
-    <video id="loadingVideo" style="display: none;margin-top:120px;margin-botton:120px;" src="${pageContext.request.contextPath}../resources/video/mu_Intro.mp4" autoplay></video>
+    <video id="loadingVideo2" style="display: none;margin-top:120px;margin-botton:120px;" src="${pageContext.request.contextPath}../resources/video/mu_Intro.mp4" autoplay></video>
     </center>
+</div>
 <script>
 
     $(document).ready(function () {
 
         setTimeout(function() {
 
-            $("#loadingVideo").fadeIn(1500);
+            $("#loadingVideo2").fadeIn(1500);
 
         });
 
