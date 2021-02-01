@@ -88,7 +88,7 @@
                                     <c:forEach var="new" items="${videoListViewCount}" begin="${update}" end="${update+2}" varStatus="status2">
                                         <c:set var="count" value="${status2.count}" />
                                         <div class="card">
-                                            <a href="{pageContext.request.contextPath}/videoPlay/${videoListViewCount[status2.index].id}" class="link">
+                                            <a href="videoPlay/${videoListViewCount[status2.index].id}" class="link">
                                                 <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[status2.index].thumbnailStoredLocation}" alt="" />
                                             </a>
                                             <div class="card-body">
