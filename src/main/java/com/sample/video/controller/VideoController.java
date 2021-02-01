@@ -107,6 +107,17 @@ public class VideoController {
         model.addAttribute("singerDtoList", singerDtoList);
         model.addAttribute("likeReplyList",likeReplyList);
 
+        /*임의로 추천영상 인기영상으로 대체*/
+        List<VideoDto> videoListViewCount = videoService.getVideoListByViewcountDesc();
+        List<SingerDto> singerListViewCount = new ArrayList();
+
+        for (VideoDto video : videoListViewCount) {
+            Long sid = video.getSingerId();
+            singerListViewCount.add(singerService.getSingerById(sid));
+        }
+        model.addAttribute("singerListViewCount", singerListViewCount);
+        model.addAttribute("videoListViewCount", videoListViewCount);
+        /*MainController에서 가져옴*/
         videoService.writeVideo(videoDto);
         return "video/videoPlay";
     }

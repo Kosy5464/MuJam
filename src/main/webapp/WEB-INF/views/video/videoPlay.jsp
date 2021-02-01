@@ -228,38 +228,22 @@
                         <hr class="hr"><br>
                         <h3 style="text-align: center;">같은 Genre 추천 영상</h3>
                         <br>
-                        <div class="card-deck">
-                            <div class="card">
-                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="card-body">
-                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="card-body">
-                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <iframe width="auto" height="250" src="https://www.youtube.com/embed/nPlNf7bJfXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="card-body">
-                                    <h5 class="card-title">크리스마스 캐롤 - 모음집</h5>
-                                    <p class="card-text"></p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
-                                </div>
-                            </div>
-                        </div><br>
+                                    <div class="card-deck">
+                                        <c:forEach var="new" items="${videoListViewCount}" begin="0" end="2" varStatus="status2">
+                                            <c:set var="count" value="${status2.count}"/>
+                                            <div class="card">
+                                                <a href="videoPlay/${videoListViewCount[status2.index].id}" class="link">
+                                                    <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[status2.index].thumbnailStoredLocation}" alt="" />
+                                                </a>
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${videoListViewCount[status2.index].title} - ${singerListViewCount[status2.index].singerName}</h5>
+                                                    <p class="card-text"><small>조회수 ${videoListViewCount[status2.index].viewcount}회
+                                                        · ${videoListViewCount[status2.index].createdAt}</small></p>
+                                                </div>
+                                            </div>
+                                        </c:forEach>
+                                    </div>
+                            <br>
                     </div>
                 </div>
             </div>

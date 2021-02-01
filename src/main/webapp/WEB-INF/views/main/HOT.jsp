@@ -85,7 +85,7 @@
                             <c:set var="update" value="0"/>
                             <c:forEach var="videoLine" begin="1" end="${total}" step="1">
                                 <div class="card-deck">
-                                    <c:forEach var="new" items="${videoListViewCount}" begin="${update}" end="${update+2}" varStatus="status2">
+                                    <c:forEach var="hot" items="${videoListViewCount}" begin="${update}" end="${update+2}" varStatus="status2">
                                         <c:set var="count" value="${status2.count}" />
                                         <div class="card">
                                             <a href="videoPlay/${videoListViewCount[status2.index].id}" class="link">
