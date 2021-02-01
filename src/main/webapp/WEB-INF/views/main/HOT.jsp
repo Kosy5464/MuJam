@@ -77,94 +77,33 @@
                             </select>
                         </div>
                     </div><br><br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[0].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[0].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[0].title} - ${singerListViewCount[0].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[0].viewcount}회 · ${videoListViewCount[0].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[1].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[1].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[1].title} - ${singerListViewCount[1].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[1].viewcount}회 · ${videoListViewCount[1].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[2].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[2].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[2].title} - ${singerListViewCount[2].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[2].viewcount}회 · ${videoListViewCount[2].createdAt}</small></p>
-                            </div>
-                        </div>
-                    </div><br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[3].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[3].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[3].title} - ${singerListViewCount[3].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[3].viewcount}회 · ${videoListViewCount[3].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[4].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[4].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[4].title} - ${singerListViewCount[4].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[4].viewcount}회 · ${videoListViewCount[4].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[5].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[5].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[5].title} - ${singerListViewCount[5].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[5].viewcount}회 · ${videoListViewCount[5].createdAt}</small></p>
-                            </div>
-                        </div>
-                    </div><br>
-                    <div class="card-deck">
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[6].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[6].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[6].title} - ${singerListViewCount[6].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[6].viewcount}회 · ${videoListViewCount[6].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[7].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[7].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[7].title} - ${singerListViewCount[7].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[7].viewcount}회 · ${videoListViewCount[7].createdAt}</small></p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <a href="${pageContext.request.contextPath}/videoPlay/${videoListViewCount[8].id}" class="link">
-                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[8].thumbnailStoredLocation}" alt="" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">${videoListViewCount[8].title} - ${singerListViewCount[8].singerName}</h5>
-                                <p class="card-text"><small>조회수 ${videoListViewCount[8].viewcount}회 · ${videoListViewCount[8].createdAt}</small></p>
-                            </div>s
-                        </div>
-                    </div>
-
+                    <c:set var="total" value="0"/>
+                    <c:forEach var="video" items="${videoListViewCount}" varStatus="status">
+                        <c:if test="${status.last}">
+                            <c:set var="total" value="${(status.index/3)+1}"/>
+                            <fmt:parseNumber integerOnly= "true" value= "${total}" />
+                            <c:set var="update" value="0"/>
+                            <c:forEach var="videoLine" begin="1" end="${total}" step="1">
+                                <div class="card-deck">
+                                    <c:forEach var="new" items="${videoListViewCount}" begin="${update}" end="${update+2}" varStatus="status2">
+                                        <c:set var="count" value="${status2.count}" />
+                                        <div class="card">
+                                            <a href="{pageContext.request.contextPath}/videoPlay/${videoListViewCount[status2.index].id}" class="link">
+                                                <img width="370" height="250" src="${pageContext.request.contextPath}../resources/${videoListViewCount[status2.index].thumbnailStoredLocation}" alt="" />
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title">${videoListViewCount[status2.index].title} - ${singerListViewCount[status2.index].singerName}</h5>
+                                                <p class="card-text"><small>조회수 ${videoListViewCount[status2.index].viewcount}회
+                                                    · ${videoListViewCount[status2.index].createdAt}</small></p>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                    <c:set var="update" value="${update+3}"/>
+                                </div>
+                            </c:forEach>
+                        </c:if>
+                    </c:forEach>
+                    <br>
                 </div>
             </div>
         </div>
